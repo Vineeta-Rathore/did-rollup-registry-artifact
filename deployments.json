@@ -13,7 +13,7 @@
       "explorer": "https://sepolia-optimism.etherscan.io",
       "erc1056": "0x98C8d0dF99E0D4C599fe69242aE4daD95b9A148D",
       "storage": "0x278612A4da3D085B0d6359e9Ba1eA442Da16b13B",
-      "setAttributeTx": "0xb0b05d1fb3e56e068ceb4139650fedb9b375b27323dbfb867279280506367f1e"
+      "setAttributeTx": "0xe52c7720178da61401d8f00f6b33a73dbd5011cb39da6804ab143887cd8064dd"
     },
     "arbSepolia": {
       "chainId": 421614,

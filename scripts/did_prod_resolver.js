@@ -42,7 +42,7 @@ function summarize(doc) {
       const doc = res.didDocument || {};
       const s = summarize(doc);
       // Non-default entries = still-valid document material from setAttribute/addDelegate
-      const extra = s.verificationMethod - 1 + s.service; // 1 default controller VM
+      const extra = Math.max(0, s.verificationMethod - 1 + s.service); // valid entries beyond the default controller VM
       const err = (res.didResolutionMetadata && res.didResolutionMetadata.error) || null;
       const msg = (res.didResolutionMetadata && res.didResolutionMetadata.message) || null;
       console.log(JSON.stringify({

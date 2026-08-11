@@ -33,7 +33,7 @@ TRANSACTIONS.md             # full human-readable on-chain trail + explorer link
 hardhat.config.js           # solc 0.8.24, optimizer on, Paris EVM (to recompile the contracts)
 ```
 
-## Reproduce the headline result (read-only, no keys, ~30 s)
+## Reproduce the headline result (read-only, no keys, ~1 min)
 
 ```bash
 npm install
@@ -49,6 +49,15 @@ node scripts/did_pointer_direct.js
 
 node scripts/did_prod_diag.js       # shows the verbatim resolver error + expiry
 ```
+
+**Reading the output.** The Arbitrum failure is deterministic: `error="notFound"`
+with `message` = *"No logs found for block 11300426 but previousChange points
+here..."*. Public RPCs are rate-limited and Sepolia log history is often pruned on
+non-archive nodes, so a **transient** RPC/TLS failure also surfaces as
+`error="notFound"` on Sepolia; always read the `message` field to tell a real
+result from a network hiccup, and re-run (or point `SEPOLIA_RPC_URL` at an archive
+node) if the Sepolia control shows a socket/timeout message. The Arbitrum result
+does not depend on RPC choice.
 
 These run against public RPC endpoints and read only on-chain state. To inspect
 or recompile the contracts: `npm install && npx hardhat compile`.

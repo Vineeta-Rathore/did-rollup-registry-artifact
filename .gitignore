@@ -3,6 +3,3 @@ node_modules/
 artifacts/
 cache/
 build/
-figs/
-__pycache__/
-*.pyc

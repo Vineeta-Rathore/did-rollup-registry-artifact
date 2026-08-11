@@ -43,7 +43,9 @@ const idTopic = ethers.zeroPadValue(IDENTITY, 32);
     for (const lg of events) {
       try { const pl = fullAbi.parseLog({ topics: lg.topics, data: lg.data }); validTos.push(Number(pl.args.validTo)); } catch (e) {}
     }
-    console.log(`[${net}] changed[identity]=${V}  logs_at_pointer=${events.length}  validTo(s)=${JSON.stringify(validTos)}  allExpired=${validTos.length>0 && validTos.every(v=>v<now)}`);
+    const attrStatus = validTos.length === 0 ? "no-attribute-event-at-pointer"
+      : (validTos.every(v => v < now) ? "all-expired" : "some-valid");
+    console.log(`[${net}] changed[identity]=${V}  logs_at_pointer=${events.length}  validTo(s)=${JSON.stringify(validTos)}  attributes=${attrStatus}`);
   }
   console.log("\n=== production resolver full output ===");
   const resolver = new Resolver(getResolver({ networks: [

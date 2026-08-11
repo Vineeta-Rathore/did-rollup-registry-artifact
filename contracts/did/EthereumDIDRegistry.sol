@@ -1,5 +1,10 @@
 /* SPDX-License-Identifier: MIT */
 
+// Unmodified ERC-1056 reference registry, verbatim from the reference
+// implementation at github.com/uport-project/ethr-did-registry
+// (contracts/EthereumDIDRegistry.sol). Included for inspection and to
+// recompile and verify the deployed bytecode.
+
 pragma solidity ^0.8.6;
 
 contract EthereumDIDRegistry {
