@@ -1,5 +1,5 @@
-/** Hardhat config. Local EVM (Paris) for deterministic gas measurement.
- *  `.env` (not committed) supplies a testnet key + RPC URLs for did_l2.js. */
+/** Hardhat configuration for compiling the registry contracts
+ *  (Solidity 0.8.24, optimizer enabled, Paris EVM). */
 require("@nomicfoundation/hardhat-toolbox");
 
 module.exports = {

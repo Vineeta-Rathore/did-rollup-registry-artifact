@@ -1,9 +1,16 @@
-/** Paper 4 (RQ3): DIRECT evidence for the Arbitrum ERC-1056 resolution failure.
- * Reads the on-chain history pointer changed[identity] live and compares it to
- * (a) the actual L2 block where the identity's events were mined and (b) the
- * chain's current L1-block estimate, then checks eth_getLogs at the pointer vs
- * at the true event block. Read-only, public RPCs, no keys.
- * Writes build/did_pointer_direct.jsonl
+/**
+ * Direct on-chain evidence for the Arbitrum did:ethr resolution failure.
+ *
+ * Reads the ERC-1056 history pointer `changed[identity]` live and compares it
+ * to (a) the L2 block where the identity's events were actually mined and (b)
+ * the chain's current L1-block estimate, then queries `eth_getLogs` at the
+ * pointer block versus at the true event block. On Arbitrum the pointer holds
+ * an L1 estimate while the events sit at a much larger L2 height, so the query
+ * at the pointer block returns zero logs.
+ *
+ * Usage:   node scripts/did_pointer_direct.js   (reads deployments.json)
+ * Access:  read-only calls to public RPC endpoints; no private key required.
+ * Output:  one JSON line per network; also written to build/did_pointer_direct.jsonl.
  */
 const fs = require("fs"), path = require("path");
 const { ethers } = require("ethers");

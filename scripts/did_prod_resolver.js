@@ -1,8 +1,15 @@
-/** Paper 4 (RQ3, reviewer Priority-1): run the PRODUCTION ethr-did-resolver
- * (DIF/Veramo, npm ethr-did-resolver@14) against the same did:ethr identity on
- * Sepolia (L1), OP Sepolia, and Arbitrum Sepolia. Tests whether the deployed
- * production library - not our spec-faithful walk - reconstructs the full DID
- * document, or silently returns an empty one on Arbitrum. Read-only, public RPCs.
+/**
+ * Production did:ethr resolver check.
+ *
+ * Runs the reference ethr-did-resolver library (npm ethr-did-resolver v14,
+ * did-resolver v5) against the same did:ethr identity on Ethereum Sepolia, OP
+ * Sepolia, and Arbitrum Sepolia, and reports the resolution outcome for each.
+ * The resolver returns a valid DID document on Sepolia and OP Sepolia but
+ * aborts with a "notFound" error on Arbitrum, where the on-chain history
+ * pointer references an L1 block estimate rather than the L2 log index.
+ *
+ * Usage:   node scripts/did_prod_resolver.js
+ * Access:  read-only calls to public RPC endpoints; no private key required.
  */
 const { getResolver } = require("ethr-did-resolver");
 const { Resolver } = require("did-resolver");

@@ -1,6 +1,14 @@
-/** Diagnose the production ethr-did-resolver result: (a) are the identity's
- * attributes/delegates EXPIRED (validTo < now)? (b) what exactly happens on
- * Arbitrum? Read-only, public RPCs. */
+/**
+ * Arbitrum resolution-failure diagnostic.
+ *
+ * Explains the did:ethr resolution outcome by (a) reading the on-chain history
+ * pointer `changed[identity]` and checking whether the identity's attributes
+ * are still valid (validTo), and (b) printing the full resolver metadata so the
+ * Arbitrum "notFound" error and its message are visible.
+ *
+ * Usage:   node scripts/did_prod_diag.js
+ * Access:  read-only calls to public RPC endpoints; no private key required.
+ */
 const { ethers } = require("ethers");
 const { getResolver } = require("ethr-did-resolver");
 const { Resolver } = require("did-resolver");
