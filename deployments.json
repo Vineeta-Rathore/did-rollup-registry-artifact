@@ -1,0 +1,26 @@
+{
+  "identity": "0x7ab54d25541FD1309457eE086A06dD0a42a88555",
+  "networks": {
+    "sepolia": {
+      "chainId": 11155111,
+      "explorer": "https://sepolia.etherscan.io",
+      "erc1056": "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49",
+      "storage": "0x3Fd09677bA5Bb0C0e1db8f90955523Db1c4a97FE",
+      "setAttributeTx": "0xb26b68af7dd28a86e0d0f4860b02b7c3e7b8a4998359ef3b10a7e90906b2d2d7"
+    },
+    "opSepolia": {
+      "chainId": 11155420,
+      "explorer": "https://sepolia-optimism.etherscan.io",
+      "erc1056": "0x98C8d0dF99E0D4C599fe69242aE4daD95b9A148D",
+      "storage": "0x278612A4da3D085B0d6359e9Ba1eA442Da16b13B",
+      "setAttributeTx": "0xb0b05d1fb3e56e068ceb4139650fedb9b375b27323dbfb867279280506367f1e"
+    },
+    "arbSepolia": {
+      "chainId": 421614,
+      "explorer": "https://sepolia.arbiscan.io",
+      "erc1056": "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d",
+      "storage": "0x54007A660AE6ebf0dAb901117CB8d9B8BF26bC8F",
+      "setAttributeTx": "0x81a86ea90e7c4b1fff95e2edf3233da9834c9aae8ceaf1aefd3713a8a50ac261"
+    }
+  }
+}

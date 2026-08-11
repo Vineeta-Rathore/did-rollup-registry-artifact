@@ -1,0 +1,22 @@
+{
+  "name": "did-rollup-registry-artifact",
+  "version": "1.0.0",
+  "description": "Review-time verification artifact: event-based (ERC-1056) vs storage-based DID registries on Ethereum rollups",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prod-resolver": "node scripts/did_prod_resolver.js",
+    "pointer": "node scripts/did_pointer_direct.js",
+    "prod-diag": "node scripts/did_prod_diag.js",
+    "compile": "hardhat compile"
+  },
+  "dependencies": {
+    "did-resolver": "^5.0.1",
+    "ethers": "^6.13.0",
+    "ethr-did-resolver": "^14.1.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
+  }
+}
