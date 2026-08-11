@@ -15,8 +15,8 @@ const { Resolver } = require("did-resolver");
 
 const IDENTITY = "0x7ab54d25541FD1309457eE086A06dD0a42a88555";
 const NETS = {
-  sepolia: { rpc: "https://ethereum-sepolia-rpc.publicnode.com", erc: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49", chainId: 11155111 },
-  arbsep:  { rpc: "https://sepolia-rollup.arbitrum.io/rpc",      erc: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d", chainId: 421614 },
+  sepolia: { rpc: process.env.SEPOLIA_RPC_URL || "https://ethereum-sepolia-rpc.publicnode.com", erc: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49", chainId: 11155111 },
+  arbsep:  { rpc: process.env.ARB_RPC || "https://sepolia-rollup.arbitrum.io/rpc",      erc: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d", chainId: 421614 },
 };
 const ABI = ["function changed(address) view returns (uint256)"];
 const idTopic = ethers.zeroPadValue(IDENTITY, 32);

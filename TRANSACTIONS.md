@@ -1,8 +1,11 @@
 # On-chain verification trail
 
-Public, independently verifiable record of every deployment and lifecycle
-transaction behind this paper. Inspect any address/hash on its block explorer
-- no data file needed. All operations act on the test identity `0x7ab54d25541FD1309457eE086A06dD0a42a88555`.
+Public, independently verifiable record of every canonical deployment and
+lifecycle transaction behind this paper. Inspect any address/hash on its block
+explorer - no data file needed. All operations act on the test identity `0x7ab54d25541FD1309457eE086A06dD0a42a88555`.
+
+Only transactions sent to the **canonical** registry pair on each network are
+listed (development re-deployments on OP Sepolia are omitted).
 
 ## Registry deployments (canonical)
 
@@ -33,15 +36,6 @@ sent to it, with the exact gas and (on rollups) L1-data fee reported in the pape
 - storage `changeOwner`: [`0x6eda2884c53ab0e0...`](https://sepolia.etherscan.io/tx/0x6eda2884c53ab0e0ce0c61a295514dfcddb8c3be06ba1b13841c18cddcba7305)
 
 ### opSepolia
-_Registry re-deployed during development; verify against the canonical addresses above._
-- erc1056 `addDelegate`: [`0x40e360e020cffeb1...`](https://sepolia-optimism.etherscan.io/tx/0x40e360e020cffeb159dba9a283b1afa3d40ef976544ea3a936a601331b9ad3e5)
-- erc1056 `revokeDelegate`: [`0x583430b5c682be74...`](https://sepolia-optimism.etherscan.io/tx/0x583430b5c682be74d4193a350705557e24127de9fd33499e1a334e57f8e83236)
-- erc1056 `addDelegate`: [`0xd64bb0df1d0c7270...`](https://sepolia-optimism.etherscan.io/tx/0xd64bb0df1d0c7270193a86d3c8fe376465c9abae2d3f35542c68e7612213bfec)
-- erc1056 `revokeDelegate`: [`0xf793845b6fb47bec...`](https://sepolia-optimism.etherscan.io/tx/0xf793845b6fb47bec8a9f112128f44af29a19e09c2910694b146652f33c6131d2)
-- erc1056 `setAttribute` (32B): [`0xb0b05d1fb3e56e06...`](https://sepolia-optimism.etherscan.io/tx/0xb0b05d1fb3e56e068ceb4139650fedb9b375b27323dbfb867279280506367f1e)
-- erc1056 `setAttribute` (256B): [`0x9051f7d1df3dc830...`](https://sepolia-optimism.etherscan.io/tx/0x9051f7d1df3dc8305b91bf384b3e7925a485c918ed6a2e0bfa5a27ecf4a0c586)
-- erc1056 `revokeAttribute` (256B): [`0x13bd1c23c44fe79a...`](https://sepolia-optimism.etherscan.io/tx/0x13bd1c23c44fe79aec0d70a040c84976d755b5a95e415df1ba14ddbc3ee0aa27)
-- erc1056 `changeOwner`: [`0xaf9e4a4d8d27b46b...`](https://sepolia-optimism.etherscan.io/tx/0xaf9e4a4d8d27b46b35f8847124c104b4a3a4cf127c53a49ff8c19b5f6f3ea8cd)
 - erc1056 `addDelegate`: [`0xd737346210f42efa...`](https://sepolia-optimism.etherscan.io/tx/0xd737346210f42efa0e32d3addf139d2bdaea5f5fe4eee103132d9edc4fb629f1)
 - erc1056 `revokeDelegate`: [`0x178fe13b76538271...`](https://sepolia-optimism.etherscan.io/tx/0x178fe13b7653827167c06ea92ee0803ca6bc8aab4e52e52f0c87637b26db6f53)
 - erc1056 `setAttribute` (32B): [`0xe52c7720178da614...`](https://sepolia-optimism.etherscan.io/tx/0xe52c7720178da61401d8f00f6b33a73dbd5011cb39da6804ab143887cd8064dd)

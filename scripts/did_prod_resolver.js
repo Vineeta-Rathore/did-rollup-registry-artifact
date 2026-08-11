@@ -17,9 +17,9 @@ const { Resolver } = require("did-resolver");
 const IDENTITY = "0x7ab54d25541FD1309457eE086A06dD0a42a88555";
 const providerConfig = {
   networks: [
-    { name: "sepolia",   chainId: 11155111, rpcUrl: "https://ethereum-sepolia-rpc.publicnode.com", registry: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49" },
-    { name: "opsep",     chainId: 11155420, rpcUrl: "https://sepolia.optimism.io",                  registry: "0x98C8d0dF99E0D4C599fe69242aE4daD95b9A148D" },
-    { name: "arbsep",    chainId: 421614,   rpcUrl: "https://sepolia-rollup.arbitrum.io/rpc",       registry: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d" },
+    { name: "sepolia", chainId: 11155111, rpcUrl: process.env.SEPOLIA_RPC_URL || "https://ethereum-sepolia-rpc.publicnode.com", registry: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49" },
+    { name: "opsep",   chainId: 11155420, rpcUrl: process.env.OP_RPC || "https://sepolia.optimism.io",                          registry: "0x98C8d0dF99E0D4C599fe69242aE4daD95b9A148D" },
+    { name: "arbsep",  chainId: 421614,   rpcUrl: process.env.ARB_RPC || "https://sepolia-rollup.arbitrum.io/rpc",              registry: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d" },
   ],
 };
 

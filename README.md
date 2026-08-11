@@ -59,8 +59,11 @@ result from a network hiccup, and re-run (or point `SEPOLIA_RPC_URL` at an archi
 node) if the Sepolia control shows a socket/timeout message. The Arbitrum result
 does not depend on RPC choice.
 
-These run against public RPC endpoints and read only on-chain state. To inspect
-or recompile the contracts: `npm install && npx hardhat compile`.
+These run against public RPC endpoints and read only on-chain state. The same
+three steps are available as `npm run prod-resolver` / `pointer` / `prod-diag`.
+Set `SEPOLIA_RPC_URL`, `OP_RPC`, or `ARB_RPC` to point any script at your own
+endpoint (e.g. a Sepolia archive node). Recompiling the contracts to verify the
+deployed bytecode is optional: `npx hardhat compile` (or `npm run compile`).
 
 ## On-chain trail
 

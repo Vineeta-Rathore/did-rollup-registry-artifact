@@ -17,9 +17,9 @@ const { ethers } = require("ethers");
 
 const IDENTITY = "0x7ab54d25541FD1309457eE086A06dD0a42a88555";
 const NETS = {
-  sepolia:    { rpc: "https://ethereum-sepolia-rpc.publicnode.com", erc: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49" },
-  opSepolia:  { rpc: "https://sepolia.optimism.io",                 erc: "0x98C8d0dF99E0D4C599fe69242aE4daD95b9A148D" },
-  arbSepolia: { rpc: "https://sepolia-rollup.arbitrum.io/rpc",      erc: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d" },
+  sepolia:    { rpc: process.env.SEPOLIA_RPC_URL || "https://ethereum-sepolia-rpc.publicnode.com", erc: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49" },
+  opSepolia:  { rpc: process.env.OP_RPC || "https://sepolia.optimism.io",                 erc: "0x98C8d0dF99E0D4C599fe69242aE4daD95b9A148D" },
+  arbSepolia: { rpc: process.env.ARB_RPC || "https://sepolia-rollup.arbitrum.io/rpc",      erc: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d" },
 };
 const iface = new ethers.Interface(["function changed(address) view returns (uint256)"]);
 const idTopic = ethers.zeroPadValue(IDENTITY, 32);
