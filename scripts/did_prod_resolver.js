@@ -1,7 +1,7 @@
 /** Paper 4 (RQ3, reviewer Priority-1): run the PRODUCTION ethr-did-resolver
  * (DIF/Veramo, npm ethr-did-resolver@14) against the same did:ethr identity on
  * Sepolia (L1), OP Sepolia, and Arbitrum Sepolia. Tests whether the deployed
- * production library — not our spec-faithful walk — reconstructs the full DID
+ * production library - not our spec-faithful walk - reconstructs the full DID
  * document, or silently returns an empty one on Arbitrum. Read-only, public RPCs.
  */
 const { getResolver } = require("ethr-did-resolver");

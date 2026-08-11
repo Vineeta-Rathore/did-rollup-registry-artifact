@@ -2,7 +2,7 @@
 
 Public, independently verifiable record of every deployment and lifecycle
 transaction behind this paper. Inspect any address/hash on its block explorer
-— no data file needed. All operations act on the test identity `0x7ab54d25541FD1309457eE086A06dD0a42a88555`.
+- no data file needed. All operations act on the test identity `0x7ab54d25541FD1309457eE086A06dD0a42a88555`.
 
 ## Registry deployments (canonical)
 

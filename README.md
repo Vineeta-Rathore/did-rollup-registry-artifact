@@ -1,4 +1,4 @@
-# Anchoring DIDs on Ethereum Rollups — Verification Artifact (review-time)
+# Anchoring DIDs on Ethereum Rollups - Verification Artifact (review-time)
 
 Anonymous artifact for the paper *"Anchoring Decentralized Identifiers on
 Ethereum Rollups: A Gas-Level Comparison of Event-Based and Storage-Based
@@ -6,7 +6,7 @@ Registry Designs"* (double-blind submission; author identity omitted).
 
 **Scope.** This is a *review-time* artifact: it provides the two registry
 contracts, the complete **on-chain verification trail** (every deployment
-address and transaction hash — see [`TRANSACTIONS.md`](TRANSACTIONS.md)), and
+address and transaction hash - see [`TRANSACTIONS.md`](TRANSACTIONS.md)), and
 **read-only scripts that reproduce the paper's headline result from the public
 chains with no keys**. It is meant to let reviewers independently confirm that
 the experiments were really run and that the central Arbitrum finding holds.
