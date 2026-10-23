@@ -1,0 +1,100 @@
+{"design": "erc1056", "op": "create", "payload": 0, "run": 0, "gasUsed": 0, "calldataBytes": 0, "note": "implicit; free by design"}
+{"design": "erc1056", "op": "changeOwner", "payload": 0, "run": 0, "gasUsed": 68627, "calldataBytes": 68, "note": ""}
+{"design": "erc1056", "op": "changeOwner", "payload": 0, "run": 1, "gasUsed": 68615, "calldataBytes": 68, "note": ""}
+{"design": "erc1056", "op": "changeOwner", "payload": 0, "run": 2, "gasUsed": 68627, "calldataBytes": 68, "note": ""}
+{"design": "erc1056", "op": "addDelegate", "payload": 0, "run": 0, "gasUsed": 71998, "calldataBytes": 132, "note": ""}
+{"design": "erc1056", "op": "addDelegate", "payload": 0, "run": 1, "gasUsed": 54910, "calldataBytes": 132, "note": ""}
+{"design": "erc1056", "op": "addDelegate", "payload": 0, "run": 2, "gasUsed": 54910, "calldataBytes": 132, "note": ""}
+{"design": "erc1056", "op": "revokeDelegate", "payload": 0, "run": 0, "gasUsed": 37431, "calldataBytes": 100, "note": ""}
+{"design": "erc1056", "op": "revokeDelegate", "payload": 0, "run": 1, "gasUsed": 37443, "calldataBytes": 100, "note": ""}
+{"design": "erc1056", "op": "revokeDelegate", "payload": 0, "run": 2, "gasUsed": 37443, "calldataBytes": 100, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 32, "run": 0, "gasUsed": 34154, "calldataBytes": 196, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 32, "run": 1, "gasUsed": 34154, "calldataBytes": 196, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 32, "run": 2, "gasUsed": 34154, "calldataBytes": 196, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 32, "run": 0, "gasUsed": 34154, "calldataBytes": 196, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 32, "run": 1, "gasUsed": 34154, "calldataBytes": 196, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 32, "run": 2, "gasUsed": 34154, "calldataBytes": 196, "note": ""}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 32, "run": 0, "gasUsed": 33790, "calldataBytes": 164, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 32, "run": 1, "gasUsed": 33790, "calldataBytes": 164, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 32, "run": 2, "gasUsed": 33790, "calldataBytes": 164, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "setAttribute", "payload": 64, "run": 0, "gasUsed": 34998, "calldataBytes": 228, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 64, "run": 1, "gasUsed": 34998, "calldataBytes": 228, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 64, "run": 2, "gasUsed": 34998, "calldataBytes": 228, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 64, "run": 0, "gasUsed": 34998, "calldataBytes": 228, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 64, "run": 1, "gasUsed": 34998, "calldataBytes": 228, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 64, "run": 2, "gasUsed": 34998, "calldataBytes": 228, "note": ""}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 64, "run": 0, "gasUsed": 34634, "calldataBytes": 196, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 64, "run": 1, "gasUsed": 34634, "calldataBytes": 196, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 64, "run": 2, "gasUsed": 34634, "calldataBytes": 196, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "setAttribute", "payload": 128, "run": 0, "gasUsed": 36698, "calldataBytes": 292, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 128, "run": 1, "gasUsed": 36698, "calldataBytes": 292, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 128, "run": 2, "gasUsed": 36698, "calldataBytes": 292, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 128, "run": 0, "gasUsed": 36698, "calldataBytes": 292, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 128, "run": 1, "gasUsed": 36698, "calldataBytes": 292, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 128, "run": 2, "gasUsed": 36698, "calldataBytes": 292, "note": ""}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 128, "run": 0, "gasUsed": 36334, "calldataBytes": 260, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 128, "run": 1, "gasUsed": 36334, "calldataBytes": 260, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 128, "run": 2, "gasUsed": 36334, "calldataBytes": 260, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "setAttribute", "payload": 256, "run": 0, "gasUsed": 40075, "calldataBytes": 420, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 256, "run": 1, "gasUsed": 40075, "calldataBytes": 420, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "payload": 256, "run": 2, "gasUsed": 40075, "calldataBytes": 420, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 256, "run": 0, "gasUsed": 40075, "calldataBytes": 420, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 256, "run": 1, "gasUsed": 40075, "calldataBytes": 420, "note": ""}
+{"design": "erc1056", "op": "setAttribute_update", "payload": 256, "run": 2, "gasUsed": 40075, "calldataBytes": 420, "note": ""}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 256, "run": 0, "gasUsed": 39711, "calldataBytes": 388, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 256, "run": 1, "gasUsed": 39711, "calldataBytes": 388, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "revokeAttribute", "payload": 256, "run": 2, "gasUsed": 39711, "calldataBytes": 388, "note": "signature carries value bytes"}
+{"design": "erc1056", "op": "deactivate", "payload": 0, "run": 0, "gasUsed": 48703, "calldataBytes": 68, "note": "method-spec deactivation = owner->0x0"}
+{"design": "erc1056", "op": "deactivate", "payload": 0, "run": 1, "gasUsed": 48703, "calldataBytes": 68, "note": "method-spec deactivation = owner->0x0"}
+{"design": "erc1056", "op": "deactivate", "payload": 0, "run": 2, "gasUsed": 48703, "calldataBytes": 68, "note": "method-spec deactivation = owner->0x0"}
+{"design": "storage", "op": "create", "payload": 0, "run": 0, "gasUsed": 68173, "calldataBytes": 36, "note": "explicit registration"}
+{"design": "storage", "op": "create", "payload": 0, "run": 1, "gasUsed": 68173, "calldataBytes": 36, "note": "explicit registration"}
+{"design": "storage", "op": "create", "payload": 0, "run": 2, "gasUsed": 68173, "calldataBytes": 36, "note": "explicit registration"}
+{"design": "storage", "op": "changeOwner", "payload": 0, "run": 0, "gasUsed": 48291, "calldataBytes": 68, "note": ""}
+{"design": "storage", "op": "changeOwner", "payload": 0, "run": 1, "gasUsed": 48303, "calldataBytes": 68, "note": ""}
+{"design": "storage", "op": "changeOwner", "payload": 0, "run": 2, "gasUsed": 48303, "calldataBytes": 68, "note": ""}
+{"design": "storage", "op": "addDelegate", "payload": 0, "run": 0, "gasUsed": 49417, "calldataBytes": 132, "note": ""}
+{"design": "storage", "op": "addDelegate", "payload": 0, "run": 1, "gasUsed": 49429, "calldataBytes": 132, "note": ""}
+{"design": "storage", "op": "addDelegate", "payload": 0, "run": 2, "gasUsed": 49429, "calldataBytes": 132, "note": ""}
+{"design": "storage", "op": "revokeDelegate", "payload": 0, "run": 0, "gasUsed": 32014, "calldataBytes": 100, "note": ""}
+{"design": "storage", "op": "revokeDelegate", "payload": 0, "run": 1, "gasUsed": 32026, "calldataBytes": 100, "note": ""}
+{"design": "storage", "op": "revokeDelegate", "payload": 0, "run": 2, "gasUsed": 32026, "calldataBytes": 100, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 32, "run": 0, "gasUsed": 95053, "calldataBytes": 196, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 32, "run": 1, "gasUsed": 95053, "calldataBytes": 196, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 32, "run": 2, "gasUsed": 95053, "calldataBytes": 196, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 32, "run": 0, "gasUsed": 38299, "calldataBytes": 196, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 32, "run": 1, "gasUsed": 38299, "calldataBytes": 196, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 32, "run": 2, "gasUsed": 38299, "calldataBytes": 196, "note": ""}
+{"design": "storage", "op": "revokeAttribute", "payload": 32, "run": 0, "gasUsed": 33689, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "revokeAttribute", "payload": 32, "run": 1, "gasUsed": 33689, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "revokeAttribute", "payload": 32, "run": 2, "gasUsed": 33689, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "setAttribute", "payload": 64, "run": 0, "gasUsed": 117756, "calldataBytes": 228, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 64, "run": 1, "gasUsed": 117756, "calldataBytes": 228, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 64, "run": 2, "gasUsed": 117756, "calldataBytes": 228, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 64, "run": 0, "gasUsed": 41102, "calldataBytes": 228, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 64, "run": 1, "gasUsed": 41102, "calldataBytes": 228, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 64, "run": 2, "gasUsed": 41102, "calldataBytes": 228, "note": ""}
+{"design": "storage", "op": "revokeAttribute", "payload": 64, "run": 0, "gasUsed": 37728, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "revokeAttribute", "payload": 64, "run": 1, "gasUsed": 37728, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "revokeAttribute", "payload": 64, "run": 2, "gasUsed": 37728, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "setAttribute", "payload": 128, "run": 0, "gasUsed": 163174, "calldataBytes": 292, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 128, "run": 1, "gasUsed": 163174, "calldataBytes": 292, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 128, "run": 2, "gasUsed": 163174, "calldataBytes": 292, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 128, "run": 0, "gasUsed": 46720, "calldataBytes": 292, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 128, "run": 1, "gasUsed": 46720, "calldataBytes": 292, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 128, "run": 2, "gasUsed": 46720, "calldataBytes": 292, "note": ""}
+{"design": "storage", "op": "revokeAttribute", "payload": 128, "run": 0, "gasUsed": 45816, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "revokeAttribute", "payload": 128, "run": 1, "gasUsed": 45816, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "revokeAttribute", "payload": 128, "run": 2, "gasUsed": 45816, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "setAttribute", "payload": 256, "run": 0, "gasUsed": 253986, "calldataBytes": 420, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 256, "run": 1, "gasUsed": 253986, "calldataBytes": 420, "note": ""}
+{"design": "storage", "op": "setAttribute", "payload": 256, "run": 2, "gasUsed": 253986, "calldataBytes": 420, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 256, "run": 0, "gasUsed": 57932, "calldataBytes": 420, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 256, "run": 1, "gasUsed": 57932, "calldataBytes": 420, "note": ""}
+{"design": "storage", "op": "setAttribute_update", "payload": 256, "run": 2, "gasUsed": 57932, "calldataBytes": 420, "note": ""}
+{"design": "storage", "op": "revokeAttribute", "payload": 256, "run": 0, "gasUsed": 61973, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "revokeAttribute", "payload": 256, "run": 1, "gasUsed": 61973, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "revokeAttribute", "payload": 256, "run": 2, "gasUsed": 61973, "calldataBytes": 68, "note": "delete -> refund applies"}
+{"design": "storage", "op": "deactivate", "payload": 0, "run": 0, "gasUsed": 47651, "calldataBytes": 36, "note": ""}
+{"design": "storage", "op": "deactivate", "payload": 0, "run": 1, "gasUsed": 47651, "calldataBytes": 36, "note": ""}
+{"design": "storage", "op": "deactivate", "payload": 0, "run": 2, "gasUsed": 47651, "calldataBytes": 36, "note": ""}

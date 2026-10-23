@@ -1,0 +1,13 @@
+{
+  "name": "did-resolver-versions",
+  "private": true,
+  "description": "Paper 4 revision: compare ethr-did-resolver releases on Arbitrum (isolated install)",
+  "dependencies": {
+    "did-resolver": "5.0.1",
+    "dotenv": "16.6.1",
+    "ethers": "6.17.0",
+    "ethr-did-resolver-11.0.4": "npm:ethr-did-resolver@11.0.4",
+    "ethr-did-resolver-14.1.2": "npm:ethr-did-resolver@14.1.2",
+    "ethr-did-resolver-14.1.4": "npm:ethr-did-resolver@14.1.4"
+  }
+}

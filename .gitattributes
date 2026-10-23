@@ -1,0 +1,4 @@
+# Keep LF everywhere: the Solidity sources must stay byte-identical to the deployed
+# contracts (the metadata hash in the runtime bytecode covers the source bytes).
+* text=auto eol=lf
+*.sol text eol=lf

@@ -1,0 +1,17 @@
+Third-party code in this repository
+===================================
+
+contracts/did/EthereumDIDRegistry.sol
+  The ERC-1056 reference registry, unmodified in code, from
+  https://github.com/uport-project/ethr-did-registry (contracts/EthereumDIDRegistry.sol,
+  last changed upstream in commit 0ab4f151ddde5b7739b97827c4fb901289f57892).
+  The file carries an SPDX MIT header; the upstream repository is licensed Apache-2.0.
+  It is reproduced here byte for byte as compiled and deployed for the measurements
+  (see scripts/verify_bytecode.js), so no provenance comment was added to the file.
+
+contracts/did/EthereumDIDRegistryArbL2.sol
+  The same registry with one change for the revision experiment: the history pointer
+  stores ArbSys(address(100)).arbBlockNumber() instead of block.number. Deployable on
+  Arbitrum chains only.
+
+All other code: MIT (see LICENSE). Measurement data in data/: CC-BY-4.0 (see data/LICENSE).

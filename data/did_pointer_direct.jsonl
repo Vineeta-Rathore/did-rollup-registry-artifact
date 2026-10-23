@@ -1,0 +1,3 @@
+{"net": "sepolia", "pointer_changed": "11300445", "head_L2": "11453280", "latest_l1_estimate": null, "logs_at_pointer": 1, "event_L2_block": "11300441", "logs_at_event_block": 1, "eventblock_over_pointer_ratio": 0.9999996460316386}
+{"net": "opSepolia", "pointer_changed": "46297692", "head_L2": "47244470", "latest_l1_estimate": null, "logs_at_pointer": 1, "event_L2_block": "46297613", "logs_at_event_block": 0, "eventblock_over_pointer_ratio": 0.9999982936514417}
+{"net": "arbSepolia", "pointer_changed": "11300426", "head_L2": "296400695", "latest_l1_estimate": "11453281", "logs_at_pointer": 0, "event_L2_block": "288846294", "logs_at_event_block": 1, "eventblock_over_pointer_ratio": 25.56065532396743}

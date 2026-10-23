@@ -20,7 +20,17 @@
       "explorer": "https://sepolia.arbiscan.io",
       "erc1056": "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d",
       "storage": "0x54007A660AE6ebf0dAb901117CB8d9B8BF26bC8F",
-      "setAttributeTx": "0x81a86ea90e7c4b1fff95e2edf3233da9834c9aae8ceaf1aefd3713a8a50ac261"
+      "setAttributeTx": "0x81a86ea90e7c4b1fff95e2edf3233da9834c9aae8ceaf1aefd3713a8a50ac261",
+      "erc1056_arbSysPointer": [
+        "0x3b3c53ce023b43a5dfc5be10a08549ed3be71559",
+        "0x741a09edbf55fac1efe90f98271611ad8ff70220"
+      ]
     }
-  }
+  },
+  "revisionIdentities": {
+    "compress": "0x599FAF924B0884D172e2147Ba36B8B3e15ea0630",
+    "historyRun1": "0xd3401C1030aB8800CB89f2694F66f0D0f4853DfC",
+    "historyRun2": "0x89b7aE28C9469B58ca48a53ED8C8CE178Cef25f0"
+  },
+  "note": "identity = July lifecycle identity; revisionIdentities = October 2026 revision runs (derived keys)."
 }

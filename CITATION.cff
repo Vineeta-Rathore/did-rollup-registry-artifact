@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the paper and the artifact."
+title: "did-rollup-registry-artifact: event-based vs storage-based DID registries on Ethereum rollups"
+version: 1.0.0
+date-released: 2026-10-24
+license: MIT
+repository-code: "https://github.com/Vineeta-Rathore/did-rollup-registry-artifact"
+authors:
+  - family-names: Rathore
+    given-names: Vineeta
+    affiliation: "Medicaps University, Indore, India"
+  - family-names: Rawat
+    given-names: Manoj Kumar
+    affiliation: "Medicaps University, Indore, India"
+keywords:
+  - decentralized identifiers
+  - ERC-1056
+  - did:ethr
+  - layer-2 rollups
+  - gas measurement
+preferred-citation:
+  type: conference-paper
+  title: "Anchoring Decentralized Identifiers on Ethereum Rollups: A Gas-Level Comparison of Event-Based and Storage-Based Registry Designs"
+  authors:
+    - family-names: Rathore
+      given-names: Vineeta
+    - family-names: Rawat
+      given-names: Manoj Kumar
+  collection-title: "Proceedings of the 23rd IEEE India Council International Conference (INDICON 2026)"
+  conference:
+    name: "IEEE INDICON 2026"
+    city: Chennai
+    country: IN
+  year: 2026

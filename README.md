@@ -1,82 +1,135 @@
-# Anchoring DIDs on Ethereum Rollups - Verification Artifact (review-time)
+# Event-based vs storage-based DID registries on Ethereum rollups: artifact
 
-Anonymous artifact for the paper *"Anchoring Decentralized Identifiers on
-Ethereum Rollups: A Gas-Level Comparison of Event-Based and Storage-Based
-Registry Designs"* (double-blind submission; author identity omitted).
+Artifact for the paper *"Anchoring Decentralized Identifiers on Ethereum Rollups: A
+Gas-Level Comparison of Event-Based and Storage-Based Registry Designs"*, V. Rathore and
+M. K. Rawat, IEEE INDICON 2026.
 
-**Scope.** This is a *review-time* artifact: it provides the two registry
-contracts, the complete **on-chain verification trail** (every deployment
-address and transaction hash - see [`TRANSACTIONS.md`](TRANSACTIONS.md)), and
-**read-only scripts that reproduce the paper's headline result from the public
-chains with no keys**. It is meant to let reviewers independently confirm that
-the experiments were really run and that the central Arbitrum finding holds.
-The **complete raw measurement data and the full measurement pipeline
-(local-gas, L2-fee, and resolution-latency scripts) will be released on
-acceptance.**
-
-Everything here is independently verifiable: the deployments and their
-lifecycle transactions live on public testnets, and the two read-only scripts
-re-derive the Arbitrum resolution failure live.
+It contains the registry contracts, every measurement script, the raw data behind each
+table and figure, the analysis and figure scripts, and the on-chain transaction trail.
+All deployments are on public testnets, so every measured transaction can be checked on
+a block explorer.
 
 ## Layout
 
 ```
 contracts/did/
-  EthereumDIDRegistry.sol   # unmodified ERC-1056 reference registry (event-carried)
-  StorageDIDRegistry.sol    # minimal storage-based counterpart (state-carried)
+  EthereumDIDRegistry.sol        ERC-1056 reference registry, code unmodified (see NOTICE)
+  StorageDIDRegistry.sol         storage-based registry with the same functions
+  EthereumDIDRegistryArbL2.sol   ERC-1056 storing ArbSys.arbBlockNumber() as pointer (Arbitrum only)
 scripts/
-  did_pointer_direct.js     # reads changed[identity] live vs the true L2 event block
-  did_prod_resolver.js      # runs the PRODUCTION ethr-did-resolver on all 3 networks
-  did_prod_diag.js          # attribute-expiry + Arbitrum-error diagnostic
-deployments.json            # canonical registry addresses + key tx hashes (machine-readable)
-TRANSACTIONS.md             # full human-readable on-chain trail + explorer links
-hardhat.config.js           # solc 0.8.24, optimizer on, Paris EVM (to recompile the contracts)
+  did_gas.js            lifecycle gas matrix on the local EVM            (Table I, Fig. 1)
+  did_l2.js             lifecycle transactions on the three testnets     (July receipts)
+  did_compress.js       repetitive vs random payloads, rollup data fee   (Fig. 2)
+  did_mainnet_snapshot.js  read-only OP Mainnet / Arbitrum One fee levels (Fig. 3)
+  did_history.js        resolution latency vs history length, ArbSys fix (Fig. 4)
+  did_rev_common.js     shared helpers (derived identities, signing, receipts)
+  did_pointer_direct.js read-only: changed[identity] vs true L2 event block on Arbitrum
+  did_prod_resolver.js  read-only: production resolver on the three networks
+  did_prod_diag.js      read-only: resolver error text and attribute expiry
+  did_resolve.js        original six-event resolution timing (superseded by did_history.js)
+  verify_bytecode.js    read-only: compiled sources == deployed bytecode
+resver/                 isolated install of ethr-did-resolver 11.0.4, 14.1.2, 14.1.4
+  did_resolver_versions.js                                                (Table II)
+analysis/
+  common.py             data filters shared by the two scripts below (one definition each)
+  paper_numbers.py      recomputes every number quoted in the paper from data/
+  make_figures.py       regenerates Figs. 1-4 from data/
+  vendor_data.py        copies build/*.jsonl into data/, strips URLs from error text, writes SHA256SUMS
+data/                   raw JSONL measurements (see data/README.md), CC BY 4.0
+deployments.json, TRANSACTIONS.md   addresses and transaction hashes
 ```
 
-## Reproduce the headline result (read-only, no keys, ~1 min)
+## Reproduce the paper's numbers and figures (no network, about 1 min)
 
 ```bash
-npm install
-
-# The production ethr-did-resolver: resolves on Sepolia/OP, FAILS on Arbitrum.
-node scripts/did_prod_resolver.js
-#   -> sepolia/opsep: error=null ;  arbsep: error="notFound"
-
-# Why: the on-chain pointer holds an L1 block estimate, not the L2 event height.
-node scripts/did_pointer_direct.js
-#   -> arbSepolia: pointer_changed ~11.30M (L1 scale), event_L2_block ~288.8M,
-#      logs_at_pointer=0, logs_at_event_block=1
-
-node scripts/did_prod_diag.js       # shows the verbatim resolver error + expiry
+pip install -r analysis/requirements.txt          # matplotlib 3.10.x (Python 3.10+)
+python3 analysis/paper_numbers.py data            # prints every quoted number
+python3 analysis/make_figures.py data             # writes analysis/figs/*.pdf
+sha256sum -c data/SHA256SUMS                       # optional: check the data files (run inside data/)
 ```
 
-**Reading the output.** The Arbitrum failure is deterministic: `error="notFound"`
-with `message` = *"No logs found for block 11300426 but previousChange points
-here..."*. Public RPCs are rate-limited and Sepolia log history is often pruned on
-non-archive nodes, so a **transient** RPC/TLS failure also surfaces as
-`error="notFound"` on Sepolia; always read the `message` field to tell a real
-result from a network hiccup, and re-run (or point `SEPOLIA_RPC_URL` at an archive
-node) if the Sepolia control shows a socket/timeout message. The Arbitrum result
-does not depend on RPC choice.
+On Windows use `py` instead of `python3`. Filters (for example, dropping the first
+ERC-1056 write of each run, which also initialises the registry pointer) are defined
+once in `analysis/common.py` and documented there.
 
-These run against public RPC endpoints and read only on-chain state. The same
-three steps are available as `npm run prod-resolver` / `pointer` / `prod-diag`.
-Set `SEPOLIA_RPC_URL`, `OP_RPC`, or `ARB_RPC` to point any script at your own
-endpoint (e.g. a Sepolia archive node). Recompiling the contracts to verify the
-deployed bytecode is optional: `npx hardhat compile` (or `npm run compile`).
+## Check the on-chain claims (read-only, no keys)
 
-## On-chain trail
+Requires Node 22 and `npm ci` (versions pinned in `package-lock.json`;
+ethr-did-resolver is pinned to 14.1.2, the release used in the paper).
 
-See [`TRANSACTIONS.md`](TRANSACTIONS.md) for every deployment address and
-lifecycle transaction hash with block-explorer links. The gas and (on rollups)
-L1-data-fee figures in the paper are recoverable directly from those receipts.
-Test identity: `0x7ab54d25541FD1309457eE086A06dD0a42a88555`.
+```bash
+npm ci
+npm run verify-bytecode   # all 8 deployments equal the compiled sources, metadata hash included
+npm run prod-resolver     # Sepolia and OP Sepolia resolve; Arbitrum Sepolia returns notFound
+npm run pointer           # Arbitrum: changed[identity] holds an L1 block estimate
+cd resver && npm ci && node did_resolver_versions.js    # Table II (11.0.4 / 14.1.2 / 14.1.4)
+```
 
-## Environment
+Releases 14.1.3 and later report the same Arbitrum failure as `internalError`
+instead of `notFound`; 11.0.4 returns no error and an incomplete document.
+Table II compares each resolution with on-chain truth at run time (a ranged log scan),
+so verdicts follow attribute expiry: the revision identities' entries are valid until
+about October 2027. Endpoint failures are retried and reported as `INFRA ERROR`,
+never as a resolver result.
 
-Node 18+; `ethers` v6, `ethr-did-resolver` v14, `did-resolver` v5.
-Contracts: Solidity 0.8.24 (optimizer on, Paris EVM).
+Public RPC endpoints are rate-limited. A transient failure (socket error, HTTP 429,
+"no backend is currently healthy") can also surface as a resolver error, so read the
+`message` field and rerun. Set `SEPOLIA_RPC_URL`, `OP_RPC` and `ARB_RPC` to use your own
+endpoints. The Arbitrum result does not depend on the endpoint.
+
+## Rerun the measurements (sends testnet transactions)
+
+Copy `.env.example` to `.env` and set `PRIVATE_KEY` to a funded **testnet-only** key.
+The revision scripts derive fresh identities from it (`keccak256(key || label)`), so
+reruns do not touch the identities used in the paper. Outputs go to `build/`, which is
+not tracked; the published data are in `data/`.
+
+```bash
+npx hardhat run scripts/did_gas.js                     # local EVM, deterministic
+NET=opSepolia REPS=3 node scripts/did_compress.js      # also arbSepolia; NET=local needs `npx hardhat node` running
+NET=sepolia node scripts/did_history.js                # also opSepolia, arbSepolia; resumable (RUN=v2 is the default)
+node scripts/did_mainnet_snapshot.js                   # read-only; samples every 30 min for 24 h
+```
+
+In PowerShell set variables first, e.g. `$env:NET="opSepolia"; node scripts/did_compress.js`.
+Do not run two measurement scripts on the same network at the same time: they share
+the funding wallet.
+```
+
+`did_history.js` stores its progress in `build/did_history_state_<net>_v2.json` (no
+suffix for the first run) and
+records each transaction hash before broadcasting it, so an interrupted run can be
+restarted without losing or duplicating history events; timing rows of a checkpoint are
+written only when the checkpoint completes.
+
+## Notes on the data
+
+- The July lifecycle runs used the repeated byte `0xab` as attribute payload. It
+  compresses almost entirely under the OP Stack's FastLZ size estimate, so it
+  understates the rollup data fee for real (incompressible) key material.
+  `did_compress.jsonl` measures both.
+- In the first history run (`did_history.jsonl`) the production resolver used its
+  default in-memory cache, which stores logs of finalized blocks. Those production
+  timings mix cold and warm resolutions and are not used in the paper; the v2 run
+  measures both conditions separately.
+- Fees on testnets change by orders of magnitude over time. The stable quantities
+  are gas and charged bytes.
+
+## Security notes
+
+- **The revision DIDs are public test material.** The secp256k1 verification keys set on
+  the history identities (`did_history.js`, `keyAt`) are derived from public strings, so
+  anyone can compute their private keys. Never accept these DIDs as credential issuers.
+  The keys stay valid until about October 2027 so that Table II can be rerun.
+- `StorageDIDRegistry.changeOwner(identity, address(0))` hands control back to the
+  identity key, as in ERC-1056; use `deactivate()` to end an identity. The contract is
+  kept as deployed (changing the source would change the bytecode checked by
+  `verify_bytecode.js`); do not reuse it in production without hardening.
+- Use a testnet-only key. Scripts never print it, read it from `.env` without exposing it
+  to dependencies, pin each network's chain ID, and strip RPC URLs (which may carry API
+  keys) from logged and saved error messages.
 
 ## License
 
-MIT (see `LICENSE`).
+Code: MIT (`LICENSE`). Data: CC BY 4.0 (`data/LICENSE`). Third-party code: see `NOTICE`.
+Please cite the paper and this artifact (`CITATION.cff`).

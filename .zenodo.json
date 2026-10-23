@@ -1,0 +1,13 @@
+{
+  "upload_type": "software",
+  "title": "did-rollup-registry-artifact: event-based vs storage-based DID registries on Ethereum rollups",
+  "description": "Contracts, measurement scripts, raw measurement data, analysis and figure scripts, and the on-chain transaction trail for the paper 'Anchoring Decentralized Identifiers on Ethereum Rollups: A Gas-Level Comparison of Event-Based and Storage-Based Registry Designs' (IEEE INDICON 2026). Code: MIT. Data: CC-BY-4.0.",
+  "creators": [
+    { "name": "Rathore, Vineeta", "affiliation": "Medicaps University" },
+    { "name": "Rawat, Manoj Kumar", "affiliation": "Medicaps University" }
+  ],
+  "license": "MIT",
+  "keywords": ["decentralized identifiers", "ERC-1056", "did:ethr", "Ethereum", "layer-2 rollups", "Arbitrum", "OP Stack", "gas"],
+  "version": "1.0.0",
+  "language": "eng"
+}

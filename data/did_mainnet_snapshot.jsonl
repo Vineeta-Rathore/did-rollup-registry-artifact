@@ -1,0 +1,601 @@
+{"net": "opMainnet", "oracle": {"l1BaseFee": "68167953", "blobBaseFee": "4237004", "baseFeeScalar": "5227", "blobBaseFeeScalar": "1014213"}, "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "336", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "2463", "l1Fee": "1539649018", "gasUsed": "1101321", "effectiveGasPriceWei": "335", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "325", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "48886", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "313", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "2959", "l1Fee": "1849099755", "gasUsed": "76100", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "335", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "327", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "2771", "l1Fee": "1732010287", "gasUsed": "1075633", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "326", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "2651", "l1Fee": "1656738486", "gasUsed": "350874", "effectiveGasPriceWei": "7240379", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554882, "baseFeeWei": "283", "l1GasUsed": "6479", "l1Fee": "4048709049", "gasUsed": "161951", "effectiveGasPriceWei": "200000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "4337", "l1Fee": "2710543699", "gasUsed": "844849", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "324", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "331", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "336", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "2289", "l1Fee": "1430923084", "gasUsed": "446442", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "332", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "308", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "322", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "4993", "l1Fee": "3120356837", "gasUsed": "67788", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554881, "baseFeeWei": "283", "l1GasUsed": "134296", "l1Fee": "83920453344", "gasUsed": "3518578", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "6599", "l1Fee": "4123980849", "gasUsed": "165386", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "328", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "4404", "l1Fee": "2752361366", "gasUsed": "452245", "effectiveGasPriceWei": "483", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "338", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "334", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "318", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "313", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "2972", "l1Fee": "1857463289", "gasUsed": "49983", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554880, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "321", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "14696", "l1Fee": "9183918577", "gasUsed": "2862302", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "6117", "l1Fee": "3822893646", "gasUsed": "91155", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "906457", "effectiveGasPriceWei": "483", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "342", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "2370", "l1Fee": "1481104284", "gasUsed": "354586", "effectiveGasPriceWei": "304", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "337", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "338", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "326", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "14643", "l1Fee": "9150464443", "gasUsed": "3331994", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "326", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "8178", "l1Fee": "5110877795", "gasUsed": "104276", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "44944", "l1Fee": "28085504138", "gasUsed": "1089680", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554879, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "314", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1634", "l1Fee": "1021109945", "gasUsed": "46806", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "337", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "3280", "l1Fee": "2049824558", "gasUsed": "415155", "effectiveGasPriceWei": "284", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "337", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "326", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "340", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "322", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554878, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "314", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "241056", "effectiveGasPriceWei": "20000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1620", "l1Fee": "1012746412", "gasUsed": "32018", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "100035", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "4779", "l1Fee": "2986540302", "gasUsed": "348432", "effectiveGasPriceWei": "100524", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "318", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "7295", "l1Fee": "4558884588", "gasUsed": "131771", "effectiveGasPriceWei": "1283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "325", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "323", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "2825", "l1Fee": "1765464421", "gasUsed": "1231547", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "14281", "l1Fee": "8924649041", "gasUsed": "1749624", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "321", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "143183", "l1Fee": "89473839544", "gasUsed": "4084080", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "316", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554877, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "333", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "5087", "l1Fee": "3178901571", "gasUsed": "36896", "effectiveGasPriceWei": "333", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "316", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "337", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "313", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "337", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "2102", "l1Fee": "1313833616", "gasUsed": "101948", "effectiveGasPriceWei": "293", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "39430", "l1Fee": "24639728363", "gasUsed": "960816", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "308", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1634", "l1Fee": "1021109945", "gasUsed": "58218", "effectiveGasPriceWei": "8002264", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "2811", "l1Fee": "1757100888", "gasUsed": "1161426", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554876, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "320", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "5100", "l1Fee": "3187265105", "gasUsed": "741786", "effectiveGasPriceWei": "335", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "4779", "l1Fee": "2986540302", "gasUsed": "348432", "effectiveGasPriceWei": "100524", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "335", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "325", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "8714", "l1Fee": "5445419132", "gasUsed": "121577", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "324", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "341", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "43793", "l1Fee": "27366240263", "gasUsed": "1383667", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "308", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554875, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "323", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "315", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "340", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845352", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "4993", "l1Fee": "3120356837", "gasUsed": "67788", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "4404", "l1Fee": "2752361366", "gasUsed": "452568", "effectiveGasPriceWei": "483", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "309", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "315", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "308", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554874, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "311", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "4779", "l1Fee": "2986540302", "gasUsed": "348432", "effectiveGasPriceWei": "100510", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "336", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "316", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "2798", "l1Fee": "1748737354", "gasUsed": "1105283", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "336", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "341", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "4859", "l1Fee": "3036721503", "gasUsed": "120167", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "333", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "36967", "l1Fee": "23100838211", "gasUsed": "1333134", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "341", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554873, "baseFeeWei": "283", "l1GasUsed": "2811", "l1Fee": "1757100888", "gasUsed": "2681431", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "2825", "l1Fee": "1765464421", "gasUsed": "1114179", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "323", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "2811", "l1Fee": "1757100888", "gasUsed": "1308996", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "2664", "l1Fee": "1665102020", "gasUsed": "74066", "effectiveGasPriceWei": "312", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "308", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "309", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "318", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "321", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554872, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "999824678", "gasUsed": "177974", "effectiveGasPriceWei": "323", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "3307", "l1Fee": "2037277874", "gasUsed": "208168", "effectiveGasPriceWei": "1283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "2825", "l1Fee": "1740455723", "gasUsed": "1072677", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "4779", "l1Fee": "2944234446", "gasUsed": "348432", "effectiveGasPriceWei": "100523", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "11029", "l1Fee": "6794677348", "gasUsed": "415560", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "177974", "effectiveGasPriceWei": "327", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "2530", "l1Fee": "1559064409", "gasUsed": "325092", "effectiveGasPriceWei": "284", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "177974", "effectiveGasPriceWei": "314", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1741", "l1Fee": "1072605884", "gasUsed": "24824", "effectiveGasPriceWei": "386283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "177974", "effectiveGasPriceWei": "339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "34317", "l1Fee": "21141081307", "gasUsed": "901948", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "177974", "effectiveGasPriceWei": "336", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "177974", "effectiveGasPriceWei": "313", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "985661655", "gasUsed": "177974", "effectiveGasPriceWei": "327", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "9048", "l1Fee": "5574408505", "gasUsed": "94541", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554871, "baseFeeWei": "283", "l1GasUsed": "2972", "l1Fee": "1831151380", "gasUsed": "49983", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "312", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "2825", "l1Fee": "1855807111", "gasUsed": "1192755", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "333", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "24080", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "330", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "322", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "2811", "l1Fee": "1847015597", "gasUsed": "1022827", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "324", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554870, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "323", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "35049", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "4779", "l1Fee": "3139368125", "gasUsed": "348432", "effectiveGasPriceWei": "100523", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "308", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "340", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1634", "l1Fee": "1073362383", "gasUsed": "46806", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "318", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "15218", "l1Fee": "9996748887", "gasUsed": "5082964", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "77534", "l1Fee": "50930037127", "gasUsed": "1997581", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "309", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "322", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "3119", "l1Fee": "2049220414", "gasUsed": "448862", "effectiveGasPriceWei": "293", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "327", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554869, "baseFeeWei": "283", "l1GasUsed": "4993", "l1Fee": "3280032346", "gasUsed": "67788", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "7897", "l1Fee": "5187790840", "gasUsed": "117474", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "314", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "2370", "l1Fee": "1556895641", "gasUsed": "352993", "effectiveGasPriceWei": "304", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "3159", "l1Fee": "2075594955", "gasUsed": "427385", "effectiveGasPriceWei": "284", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "2691", "l1Fee": "1767891973", "gasUsed": "2897510", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "318", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "334", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "324", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "13773", "l1Fee": "9047265397", "gasUsed": "3128373", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "309", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554868, "baseFeeWei": "283", "l1GasUsed": "4217", "l1Fee": "2770124545", "gasUsed": "407289", "effectiveGasPriceWei": "483", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "3333", "l1Fee": "2189884635", "gasUsed": "311878", "effectiveGasPriceWei": "303", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "845352", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "4779", "l1Fee": "3139368125", "gasUsed": "348432", "effectiveGasPriceWei": "100515", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "321", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "3159", "l1Fee": "2075594955", "gasUsed": "557413", "effectiveGasPriceWei": "284", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "2289", "l1Fee": "1504146559", "gasUsed": "353792", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "4498", "l1Fee": "2954746335", "gasUsed": "129893", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "7295", "l1Fee": "4792172719", "gasUsed": "131771", "effectiveGasPriceWei": "1283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "308", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "311", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "3400", "l1Fee": "2233842204", "gasUsed": "85348", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "92538", "l1Fee": "60785324094", "gasUsed": "2588013", "effectiveGasPriceWei": "411", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "333", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "1518252", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "323", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554867, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "333", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "24068", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "2423", "l1Fee": "1592061697", "gasUsed": "42957", "effectiveGasPriceWei": "60000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "317", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "2637", "l1Fee": "1732725917", "gasUsed": "356468", "effectiveGasPriceWei": "296", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "320", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "845364", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "4003", "l1Fee": "2629460325", "gasUsed": "82377", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "326", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "1131126", "effectiveGasPriceWei": "327", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "332", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554866, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1050987901", "gasUsed": "177974", "effectiveGasPriceWei": "329", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "177974", "effectiveGasPriceWei": "200283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "24080", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "177974", "effectiveGasPriceWei": "100283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "5796", "l1Fee": "3841514066", "gasUsed": "186624", "effectiveGasPriceWei": "30707423", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "845352", "effectiveGasPriceWei": "5000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1982", "l1Fee": "1313564563", "gasUsed": "57194", "effectiveGasPriceWei": "1000283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "4779", "l1Fee": "3167394198", "gasUsed": "348432", "effectiveGasPriceWei": "100517", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "177974", "effectiveGasPriceWei": "337", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "2959", "l1Fee": "1961074435", "gasUsed": "392206", "effectiveGasPriceWei": "284", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "177974", "effectiveGasPriceWei": "342", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "opMainnet", "block": 158554865, "baseFeeWei": "283", "l1GasUsed": "1600", "l1Fee": "1060370383", "gasUsed": "21000", "effectiveGasPriceWei": "1200339", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355365, "baseFeeWei": "20002000", "gasUsedForL1": "576", "gasUsed": "62747", "effectiveGasPriceWei": "21102550", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355365, "baseFeeWei": "20002000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20002000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355364, "baseFeeWei": "20000000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21100000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355364, "baseFeeWei": "20000000", "gasUsedForL1": "591", "gasUsed": "51643", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355364, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355363, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355362, "baseFeeWei": "20012000", "gasUsedForL1": "588", "gasUsed": "40847", "effectiveGasPriceWei": "20012000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355361, "baseFeeWei": "20010000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21110330", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355361, "baseFeeWei": "20010000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20010000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355361, "baseFeeWei": "20010000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20010000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355360, "baseFeeWei": "20006000", "gasUsedForL1": "591", "gasUsed": "40862", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355359, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355359, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355358, "baseFeeWei": "20016000", "gasUsedForL1": "937", "gasUsed": "102875", "effectiveGasPriceWei": "20016010", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355358, "baseFeeWei": "20016000", "gasUsedForL1": "594", "gasUsed": "40853", "effectiveGasPriceWei": "20016000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355358, "baseFeeWei": "20016000", "gasUsedForL1": "591", "gasUsed": "40862", "effectiveGasPriceWei": "20016000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355357, "baseFeeWei": "20006000", "gasUsedForL1": "393", "gasUsed": "21438", "effectiveGasPriceWei": "20116000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355357, "baseFeeWei": "20006000", "gasUsedForL1": "604", "gasUsed": "44633", "effectiveGasPriceWei": "20006001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355357, "baseFeeWei": "20006000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355356, "baseFeeWei": "20000000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21100000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355356, "baseFeeWei": "20000000", "gasUsedForL1": "846", "gasUsed": "57544", "effectiveGasPriceWei": "21014380", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355356, "baseFeeWei": "20000000", "gasUsedForL1": "604", "gasUsed": "61733", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355355, "baseFeeWei": "20088000", "gasUsedForL1": "1955", "gasUsed": "163963", "effectiveGasPriceWei": "20088000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355355, "baseFeeWei": "20088000", "gasUsedForL1": "478", "gasUsed": "43891", "effectiveGasPriceWei": "20088000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355354, "baseFeeWei": "20066000", "gasUsedForL1": "847", "gasUsed": "185194", "effectiveGasPriceWei": "26000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355354, "baseFeeWei": "20066000", "gasUsedForL1": "1032", "gasUsed": "150765", "effectiveGasPriceWei": "20066000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355353, "baseFeeWei": "20000000", "gasUsedForL1": "1248", "gasUsed": "190559", "effectiveGasPriceWei": "21000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355353, "baseFeeWei": "20000000", "gasUsedForL1": "598", "gasUsed": "35113", "effectiveGasPriceWei": "20110000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355353, "baseFeeWei": "20000000", "gasUsedForL1": "591", "gasUsed": "62762", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355353, "baseFeeWei": "20000000", "gasUsedForL1": "1519", "gasUsed": "177226", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355352, "baseFeeWei": "20014000", "gasUsedForL1": "578", "gasUsed": "62737", "effectiveGasPriceWei": "21114000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355352, "baseFeeWei": "20014000", "gasUsedForL1": "199", "gasUsed": "1312657", "effectiveGasPriceWei": "100000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355352, "baseFeeWei": "20014000", "gasUsedForL1": "594", "gasUsed": "56043", "effectiveGasPriceWei": "20014000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355351, "baseFeeWei": "20000000", "gasUsedForL1": "654", "gasUsed": "125132", "effectiveGasPriceWei": "40028000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355351, "baseFeeWei": "20000000", "gasUsedForL1": "601", "gasUsed": "34765", "effectiveGasPriceWei": "20110000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355350, "baseFeeWei": "20000000", "gasUsedForL1": "1114", "gasUsed": "53340", "effectiveGasPriceWei": "21000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355350, "baseFeeWei": "20000000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21100770", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355350, "baseFeeWei": "20000000", "gasUsedForL1": "1889", "gasUsed": "236063", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355349, "baseFeeWei": "20014000", "gasUsedForL1": "1751", "gasUsed": "184911", "effectiveGasPriceWei": "21014000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355348, "baseFeeWei": "20004000", "gasUsedForL1": "822", "gasUsed": "32446", "effectiveGasPriceWei": "20114000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355348, "baseFeeWei": "20004000", "gasUsedForL1": "888", "gasUsed": "213150", "effectiveGasPriceWei": "30004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355348, "baseFeeWei": "20004000", "gasUsedForL1": "1130", "gasUsed": "98449", "effectiveGasPriceWei": "20004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355347, "baseFeeWei": "20000000", "gasUsedForL1": "1049", "gasUsed": "165734", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355347, "baseFeeWei": "20000000", "gasUsedForL1": "915", "gasUsed": "32283", "effectiveGasPriceWei": "24004800", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355346, "baseFeeWei": "20010000", "gasUsedForL1": "861", "gasUsed": "140769", "effectiveGasPriceWei": "25040000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355345, "baseFeeWei": "20006000", "gasUsedForL1": "1970", "gasUsed": "195898", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355345, "baseFeeWei": "20006000", "gasUsedForL1": "1888", "gasUsed": "171418", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355344, "baseFeeWei": "20004000", "gasUsedForL1": "794", "gasUsed": "54711", "effectiveGasPriceWei": "20004001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355343, "baseFeeWei": "20000000", "gasUsedForL1": "1219", "gasUsed": "77765", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355342, "baseFeeWei": "20026000", "gasUsedForL1": "1284", "gasUsed": "117503", "effectiveGasPriceWei": "38007600", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355341, "baseFeeWei": "20000000", "gasUsedForL1": "8", "gasUsed": "21008", "effectiveGasPriceWei": "1021000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355341, "baseFeeWei": "20000000", "gasUsedForL1": "537", "gasUsed": "44554", "effectiveGasPriceWei": "22004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355340, "baseFeeWei": "20004000", "gasUsedForL1": "6928", "gasUsed": "627370", "effectiveGasPriceWei": "20004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355339, "baseFeeWei": "20000000", "gasUsedForL1": "353", "gasUsed": "21353", "effectiveGasPriceWei": "22000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355338, "baseFeeWei": "20006000", "gasUsedForL1": "1071", "gasUsed": "133979", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355338, "baseFeeWei": "20006000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355337, "baseFeeWei": "20004000", "gasUsedForL1": "203", "gasUsed": "1555180", "effectiveGasPriceWei": "100000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355337, "baseFeeWei": "20004000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355337, "baseFeeWei": "20004000", "gasUsedForL1": "3731", "gasUsed": "327655", "effectiveGasPriceWei": "21004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355337, "baseFeeWei": "20004000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355336, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355336, "baseFeeWei": "20000000", "gasUsedForL1": "598", "gasUsed": "47392", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355335, "baseFeeWei": "20000000", "gasUsedForL1": "398", "gasUsed": "41273", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355335, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355335, "baseFeeWei": "20000000", "gasUsedForL1": "395", "gasUsed": "21395", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355335, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355334, "baseFeeWei": "20056000", "gasUsedForL1": "387", "gasUsed": "21387", "effectiveGasPriceWei": "20056000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355333, "baseFeeWei": "20042000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20042000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355332, "baseFeeWei": "20038000", "gasUsedForL1": "869", "gasUsed": "131272", "effectiveGasPriceWei": "25040000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355332, "baseFeeWei": "20038000", "gasUsedForL1": "1096", "gasUsed": "135451", "effectiveGasPriceWei": "20038000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355332, "baseFeeWei": "20038000", "gasUsedForL1": "587", "gasUsed": "40858", "effectiveGasPriceWei": "20038000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355331, "baseFeeWei": "20000000", "gasUsedForL1": "591", "gasUsed": "40862", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355331, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355330, "baseFeeWei": "20000000", "gasUsedForL1": "761", "gasUsed": "57459", "effectiveGasPriceWei": "23349972", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355330, "baseFeeWei": "20000000", "gasUsedForL1": "373", "gasUsed": "21373", "effectiveGasPriceWei": "21000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355330, "baseFeeWei": "20000000", "gasUsedForL1": "1516", "gasUsed": "174548", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355330, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355330, "baseFeeWei": "20000000", "gasUsedForL1": "1558", "gasUsed": "543254", "effectiveGasPriceWei": "27600000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355330, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355329, "baseFeeWei": "20048000", "gasUsedForL1": "593", "gasUsed": "40864", "effectiveGasPriceWei": "20048000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355328, "baseFeeWei": "20032000", "gasUsedForL1": "701", "gasUsed": "71093", "effectiveGasPriceWei": "20032000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355327, "baseFeeWei": "20000000", "gasUsedForL1": "621", "gasUsed": "116748", "effectiveGasPriceWei": "22500000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355327, "baseFeeWei": "20000000", "gasUsedForL1": "905", "gasUsed": "202699", "effectiveGasPriceWei": "21814322", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355326, "baseFeeWei": "20278000", "gasUsedForL1": "851", "gasUsed": "738703", "effectiveGasPriceWei": "20278000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355325, "baseFeeWei": "20160000", "gasUsedForL1": "322", "gasUsed": "108582", "effectiveGasPriceWei": "30000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355325, "baseFeeWei": "20160000", "gasUsedForL1": "322", "gasUsed": "108582", "effectiveGasPriceWei": "30000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355325, "baseFeeWei": "20160000", "gasUsedForL1": "917", "gasUsed": "196148", "effectiveGasPriceWei": "21223871", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355325, "baseFeeWei": "20160000", "gasUsedForL1": "536", "gasUsed": "68780", "effectiveGasPriceWei": "30000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355324, "baseFeeWei": "20010000", "gasUsedForL1": "7", "gasUsed": "58988", "effectiveGasPriceWei": "2485641742", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355324, "baseFeeWei": "20010000", "gasUsedForL1": "69", "gasUsed": "194979", "effectiveGasPriceWei": "285814197", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355324, "baseFeeWei": "20010000", "gasUsedForL1": "766", "gasUsed": "35095", "effectiveGasPriceWei": "40010000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355324, "baseFeeWei": "20010000", "gasUsedForL1": "1187", "gasUsed": "44509", "effectiveGasPriceWei": "30010000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355324, "baseFeeWei": "20010000", "gasUsedForL1": "766", "gasUsed": "44626", "effectiveGasPriceWei": "22012200", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355324, "baseFeeWei": "20010000", "gasUsedForL1": "573", "gasUsed": "328288", "effectiveGasPriceWei": "40000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355324, "baseFeeWei": "20010000", "gasUsedForL1": "322", "gasUsed": "1683224", "effectiveGasPriceWei": "30003000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "4245", "gasUsed": "909157", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "3", "gasUsed": "205714", "effectiveGasPriceWei": "6269514565", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "2", "gasUsed": "37402", "effectiveGasPriceWei": "3422998274", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "12", "gasUsed": "299203", "effectiveGasPriceWei": "2483300510", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "6", "gasUsed": "231985", "effectiveGasPriceWei": "1505626217", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "39", "gasUsed": "563635", "effectiveGasPriceWei": "954959389", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "37", "gasUsed": "205287", "effectiveGasPriceWei": "665590536", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "27", "gasUsed": "37427", "effectiveGasPriceWei": "350932759", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "113", "gasUsed": "205632", "effectiveGasPriceWei": "257746283", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "52", "gasUsed": "201066", "effectiveGasPriceWei": "192686359", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "576", "gasUsed": "31033", "effectiveGasPriceWei": "39100964", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "322", "gasUsed": "143162", "effectiveGasPriceWei": "30000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355323, "baseFeeWei": "20000000", "gasUsedForL1": "591", "gasUsed": "46797", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355322, "baseFeeWei": "20022000", "gasUsedForL1": "597", "gasUsed": "45668", "effectiveGasPriceWei": "20022010", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355322, "baseFeeWei": "20022000", "gasUsedForL1": "322", "gasUsed": "152439", "effectiveGasPriceWei": "30024000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355322, "baseFeeWei": "20022000", "gasUsedForL1": "1113", "gasUsed": "53339", "effectiveGasPriceWei": "21022000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355321, "baseFeeWei": "20000000", "gasUsedForL1": "1732", "gasUsed": "1435314", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355320, "baseFeeWei": "20098000", "gasUsedForL1": "1747", "gasUsed": "133798", "effectiveGasPriceWei": "30000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355320, "baseFeeWei": "20098000", "gasUsedForL1": "2208", "gasUsed": "203911", "effectiveGasPriceWei": "20098000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355320, "baseFeeWei": "20098000", "gasUsedForL1": "1756", "gasUsed": "194478", "effectiveGasPriceWei": "20098000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355319, "baseFeeWei": "20072000", "gasUsedForL1": "596", "gasUsed": "577280", "effectiveGasPriceWei": "20072000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355319, "baseFeeWei": "20072000", "gasUsedForL1": "940", "gasUsed": "138990", "effectiveGasPriceWei": "21052765", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355318, "baseFeeWei": "20000000", "gasUsedForL1": "363", "gasUsed": "310682", "effectiveGasPriceWei": "70000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355318, "baseFeeWei": "20000000", "gasUsedForL1": "1967", "gasUsed": "210061", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355317, "baseFeeWei": "20006000", "gasUsedForL1": "591", "gasUsed": "213144", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355317, "baseFeeWei": "20006000", "gasUsedForL1": "499", "gasUsed": "104067", "effectiveGasPriceWei": "20016000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355317, "baseFeeWei": "20006000", "gasUsedForL1": "1666", "gasUsed": "1187819", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355317, "baseFeeWei": "20006000", "gasUsedForL1": "705", "gasUsed": "63394", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355316, "baseFeeWei": "20000000", "gasUsedForL1": "1055", "gasUsed": "128410", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355315, "baseFeeWei": "20012000", "gasUsedForL1": "2276", "gasUsed": "196722", "effectiveGasPriceWei": "20012000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355314, "baseFeeWei": "20000000", "gasUsedForL1": "1810", "gasUsed": "47021", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355314, "baseFeeWei": "20000000", "gasUsedForL1": "1081", "gasUsed": "513698", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355314, "baseFeeWei": "20000000", "gasUsedForL1": "954", "gasUsed": "53865", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355313, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355313, "baseFeeWei": "20000000", "gasUsedForL1": "1964", "gasUsed": "255279", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355312, "baseFeeWei": "20076000", "gasUsedForL1": "387", "gasUsed": "21387", "effectiveGasPriceWei": "20076000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355311, "baseFeeWei": "20068000", "gasUsedForL1": "577", "gasUsed": "62748", "effectiveGasPriceWei": "21168880", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355311, "baseFeeWei": "20068000", "gasUsedForL1": "2296", "gasUsed": "213635", "effectiveGasPriceWei": "20068000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355310, "baseFeeWei": "20006000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355310, "baseFeeWei": "20006000", "gasUsedForL1": "597", "gasUsed": "47403", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355310, "baseFeeWei": "20006000", "gasUsedForL1": "1133", "gasUsed": "121497", "effectiveGasPriceWei": "20006001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355309, "baseFeeWei": "20000000", "gasUsedForL1": "3167", "gasUsed": "1295959", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355308, "baseFeeWei": "20062000", "gasUsedForL1": "576", "gasUsed": "62735", "effectiveGasPriceWei": "21220190", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355308, "baseFeeWei": "20062000", "gasUsedForL1": "387", "gasUsed": "21387", "effectiveGasPriceWei": "20062000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355308, "baseFeeWei": "20062000", "gasUsedForL1": "387", "gasUsed": "21387", "effectiveGasPriceWei": "20062000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355308, "baseFeeWei": "20062000", "gasUsedForL1": "700", "gasUsed": "88081", "effectiveGasPriceWei": "20062000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355307, "baseFeeWei": "20016000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20016000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355306, "baseFeeWei": "20002000", "gasUsedForL1": "944", "gasUsed": "126342", "effectiveGasPriceWei": "21109323", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355306, "baseFeeWei": "20002000", "gasUsedForL1": "1018", "gasUsed": "139920", "effectiveGasPriceWei": "21046860", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355306, "baseFeeWei": "20002000", "gasUsedForL1": "938", "gasUsed": "287531", "effectiveGasPriceWei": "21035099", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355306, "baseFeeWei": "20002000", "gasUsedForL1": "973", "gasUsed": "158706", "effectiveGasPriceWei": "21021252", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355306, "baseFeeWei": "20002000", "gasUsedForL1": "1307", "gasUsed": "142207", "effectiveGasPriceWei": "20002008", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355306, "baseFeeWei": "20002000", "gasUsedForL1": "12", "gasUsed": "61129", "effectiveGasPriceWei": "1021002000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355305, "baseFeeWei": "20000000", "gasUsedForL1": "594", "gasUsed": "40853", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355305, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355305, "baseFeeWei": "20000000", "gasUsedForL1": "1012", "gasUsed": "139915", "effectiveGasPriceWei": "21239539", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355305, "baseFeeWei": "20000000", "gasUsedForL1": "959", "gasUsed": "127522", "effectiveGasPriceWei": "21131127", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355304, "baseFeeWei": "21058000", "gasUsedForL1": "369", "gasUsed": "21369", "effectiveGasPriceWei": "21058000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355304, "baseFeeWei": "21058000", "gasUsedForL1": "558", "gasUsed": "40817", "effectiveGasPriceWei": "21058000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355303, "baseFeeWei": "20876000", "gasUsedForL1": "563", "gasUsed": "40834", "effectiveGasPriceWei": "20876000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355303, "baseFeeWei": "20876000", "gasUsedForL1": "563", "gasUsed": "40834", "effectiveGasPriceWei": "20876000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355303, "baseFeeWei": "20876000", "gasUsedForL1": "556", "gasUsed": "62727", "effectiveGasPriceWei": "21976000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355302, "baseFeeWei": "20550000", "gasUsedForL1": "200", "gasUsed": "96849", "effectiveGasPriceWei": "100000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355302, "baseFeeWei": "20550000", "gasUsedForL1": "6206", "gasUsed": "3187826", "effectiveGasPriceWei": "20550000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355302, "baseFeeWei": "20550000", "gasUsedForL1": "578", "gasUsed": "40849", "effectiveGasPriceWei": "20550000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355302, "baseFeeWei": "20550000", "gasUsedForL1": "378", "gasUsed": "21378", "effectiveGasPriceWei": "20550000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355302, "baseFeeWei": "20550000", "gasUsedForL1": "572", "gasUsed": "40831", "effectiveGasPriceWei": "20550000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355302, "baseFeeWei": "20550000", "gasUsedForL1": "200", "gasUsed": "96849", "effectiveGasPriceWei": "100000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355301, "baseFeeWei": "20000000", "gasUsedForL1": "200", "gasUsed": "1497561", "effectiveGasPriceWei": "100000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355301, "baseFeeWei": "20000000", "gasUsedForL1": "993", "gasUsed": "107768", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355301, "baseFeeWei": "20000000", "gasUsedForL1": "594", "gasUsed": "40853", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355301, "baseFeeWei": "20000000", "gasUsedForL1": "5275", "gasUsed": "1675788", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355301, "baseFeeWei": "20000000", "gasUsedForL1": "591", "gasUsed": "40862", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355301, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40847", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355301, "baseFeeWei": "20000000", "gasUsedForL1": "4867", "gasUsed": "2962456", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355301, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355300, "baseFeeWei": "20022000", "gasUsedForL1": "202", "gasUsed": "134738", "effectiveGasPriceWei": "100000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355300, "baseFeeWei": "20022000", "gasUsedForL1": "14189", "gasUsed": "4970139", "effectiveGasPriceWei": "20022001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355300, "baseFeeWei": "20022000", "gasUsedForL1": "13158", "gasUsed": "4625447", "effectiveGasPriceWei": "20022001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355300, "baseFeeWei": "20022000", "gasUsedForL1": "1655", "gasUsed": "1204908", "effectiveGasPriceWei": "20022000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355300, "baseFeeWei": "20022000", "gasUsedForL1": "2888", "gasUsed": "284565", "effectiveGasPriceWei": "21022000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355300, "baseFeeWei": "20022000", "gasUsedForL1": "594", "gasUsed": "40865", "effectiveGasPriceWei": "20022000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355299, "baseFeeWei": "20000000", "gasUsedForL1": "198", "gasUsed": "146319", "effectiveGasPriceWei": "100000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355299, "baseFeeWei": "20000000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21107810", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355298, "baseFeeWei": "20000000", "gasUsedForL1": "479", "gasUsed": "474812", "effectiveGasPriceWei": "21000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355298, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40847", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355297, "baseFeeWei": "20200000", "gasUsedForL1": "373", "gasUsed": "21373", "effectiveGasPriceWei": "21200000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355296, "baseFeeWei": "20142000", "gasUsedForL1": "575", "gasUsed": "62734", "effectiveGasPriceWei": "21243430", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355295, "baseFeeWei": "20000000", "gasUsedForL1": "392", "gasUsed": "21392", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355295, "baseFeeWei": "20000000", "gasUsedForL1": "1667", "gasUsed": "1195249", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355294, "baseFeeWei": "20026000", "gasUsedForL1": "4965", "gasUsed": "2932777", "effectiveGasPriceWei": "20026001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355294, "baseFeeWei": "20026000", "gasUsedForL1": "587", "gasUsed": "46978", "effectiveGasPriceWei": "20026000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355293, "baseFeeWei": "20020000", "gasUsedForL1": "578", "gasUsed": "62749", "effectiveGasPriceWei": "21120220", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355293, "baseFeeWei": "20020000", "gasUsedForL1": "594", "gasUsed": "31675", "effectiveGasPriceWei": "20020001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355292, "baseFeeWei": "20006000", "gasUsedForL1": "990", "gasUsed": "155196", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355291, "baseFeeWei": "20000000", "gasUsedForL1": "1196", "gasUsed": "166756", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355291, "baseFeeWei": "20000000", "gasUsedForL1": "598", "gasUsed": "57957", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355291, "baseFeeWei": "20000000", "gasUsedForL1": "1123", "gasUsed": "53349", "effectiveGasPriceWei": "21000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355290, "baseFeeWei": "20096000", "gasUsedForL1": "2647", "gasUsed": "170820", "effectiveGasPriceWei": "20096000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355289, "baseFeeWei": "20004000", "gasUsedForL1": "84", "gasUsed": "689540", "effectiveGasPriceWei": "112500000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355289, "baseFeeWei": "20004000", "gasUsedForL1": "2460", "gasUsed": "3049587", "effectiveGasPriceWei": "20004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355288, "baseFeeWei": "20002000", "gasUsedForL1": "1261", "gasUsed": "844508", "effectiveGasPriceWei": "20002000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355288, "baseFeeWei": "20002000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21102220", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355288, "baseFeeWei": "20002000", "gasUsedForL1": "2085", "gasUsed": "946114", "effectiveGasPriceWei": "20002000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355287, "baseFeeWei": "20000000", "gasUsedForL1": "1353", "gasUsed": "99411", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355286, "baseFeeWei": "20014000", "gasUsedForL1": "12", "gasUsed": "63897", "effectiveGasPriceWei": "1021014000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355285, "baseFeeWei": "20004000", "gasUsedForL1": "579", "gasUsed": "62738", "effectiveGasPriceWei": "21112580", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355285, "baseFeeWei": "20004000", "gasUsedForL1": "598", "gasUsed": "61727", "effectiveGasPriceWei": "20004010", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355284, "baseFeeWei": "20000000", "gasUsedForL1": "601", "gasUsed": "45660", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355284, "baseFeeWei": "20000000", "gasUsedForL1": "1526", "gasUsed": "172505", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355283, "baseFeeWei": "20160000", "gasUsedForL1": "1188", "gasUsed": "120634", "effectiveGasPriceWei": "38011400", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355282, "baseFeeWei": "20156000", "gasUsedForL1": "1177", "gasUsed": "78842", "effectiveGasPriceWei": "20156001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355282, "baseFeeWei": "20156000", "gasUsedForL1": "1205", "gasUsed": "190149", "effectiveGasPriceWei": "21156000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355281, "baseFeeWei": "20134000", "gasUsedForL1": "452", "gasUsed": "44469", "effectiveGasPriceWei": "26015600", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355281, "baseFeeWei": "20134000", "gasUsedForL1": "575", "gasUsed": "62746", "effectiveGasPriceWei": "21234660", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355280, "baseFeeWei": "20000000", "gasUsedForL1": "794", "gasUsed": "119559", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355280, "baseFeeWei": "20000000", "gasUsedForL1": "1912", "gasUsed": "154923", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355280, "baseFeeWei": "20000000", "gasUsedForL1": "1130", "gasUsed": "85018", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355280, "baseFeeWei": "20000000", "gasUsedForL1": "1441", "gasUsed": "101800", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355279, "baseFeeWei": "20022000", "gasUsedForL1": "4972", "gasUsed": "2826741", "effectiveGasPriceWei": "20022001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355278, "baseFeeWei": "20012000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21112330", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355278, "baseFeeWei": "20012000", "gasUsedForL1": "588", "gasUsed": "39817", "effectiveGasPriceWei": "20012000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355278, "baseFeeWei": "20012000", "gasUsedForL1": "851", "gasUsed": "57561", "effectiveGasPriceWei": "21187258", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355277, "baseFeeWei": "20000000", "gasUsedForL1": "960", "gasUsed": "53871", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355277, "baseFeeWei": "20000000", "gasUsedForL1": "582", "gasUsed": "95193", "effectiveGasPriceWei": "21000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355277, "baseFeeWei": "20000000", "gasUsedForL1": "1121", "gasUsed": "57393", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355276, "baseFeeWei": "20010000", "gasUsedForL1": "597", "gasUsed": "47403", "effectiveGasPriceWei": "20010000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355276, "baseFeeWei": "20010000", "gasUsedForL1": "1035", "gasUsed": "67438", "effectiveGasPriceWei": "20010001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355276, "baseFeeWei": "20010000", "gasUsedForL1": "767", "gasUsed": "198032", "effectiveGasPriceWei": "20010000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355275, "baseFeeWei": "20006000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21107100", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355274, "baseFeeWei": "20006000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355273, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355272, "baseFeeWei": "20064000", "gasUsedForL1": "387", "gasUsed": "21387", "effectiveGasPriceWei": "20064000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355272, "baseFeeWei": "20064000", "gasUsedForL1": "392", "gasUsed": "166689", "effectiveGasPriceWei": "20174000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355271, "baseFeeWei": "20020000", "gasUsedForL1": "578", "gasUsed": "62749", "effectiveGasPriceWei": "21120110", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355271, "baseFeeWei": "20020000", "gasUsedForL1": "385", "gasUsed": "21385", "effectiveGasPriceWei": "20020000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355270, "baseFeeWei": "20006000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355270, "baseFeeWei": "20006000", "gasUsedForL1": "499", "gasUsed": "946747", "effectiveGasPriceWei": "20016000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355269, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355269, "baseFeeWei": "20000000", "gasUsedForL1": "941", "gasUsed": "223892", "effectiveGasPriceWei": "30000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355268, "baseFeeWei": "20018000", "gasUsedForL1": "1760", "gasUsed": "171380", "effectiveGasPriceWei": "22018139", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355268, "baseFeeWei": "20018000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20018000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355267, "baseFeeWei": "20014000", "gasUsedForL1": "810", "gasUsed": "103989", "effectiveGasPriceWei": "20014001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355266, "baseFeeWei": "20002000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20002000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355266, "baseFeeWei": "20002000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20002000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355265, "baseFeeWei": "20000000", "gasUsedForL1": "588", "gasUsed": "40859", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355265, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355265, "baseFeeWei": "20000000", "gasUsedForL1": "832", "gasUsed": "185179", "effectiveGasPriceWei": "26004800", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355265, "baseFeeWei": "20000000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21100000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355264, "baseFeeWei": "20158000", "gasUsedForL1": "583", "gasUsed": "40854", "effectiveGasPriceWei": "20158000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355264, "baseFeeWei": "20158000", "gasUsedForL1": "385", "gasUsed": "21385", "effectiveGasPriceWei": "20158000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355263, "baseFeeWei": "20150000", "gasUsedForL1": "386", "gasUsed": "21386", "effectiveGasPriceWei": "20150000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355263, "baseFeeWei": "20150000", "gasUsedForL1": "871", "gasUsed": "230233", "effectiveGasPriceWei": "30150000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355263, "baseFeeWei": "20150000", "gasUsedForL1": "587", "gasUsed": "35719", "effectiveGasPriceWei": "20150000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355262, "baseFeeWei": "20000000", "gasUsedForL1": "1207", "gasUsed": "120665", "effectiveGasPriceWei": "38000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355262, "baseFeeWei": "20000000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21100000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355261, "baseFeeWei": "20000000", "gasUsedForL1": "1229", "gasUsed": "82802", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355261, "baseFeeWei": "20000000", "gasUsedForL1": "379", "gasUsed": "205264", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355261, "baseFeeWei": "20000000", "gasUsedForL1": "4978", "gasUsed": "2826759", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355260, "baseFeeWei": "20250000", "gasUsedForL1": "590", "gasUsed": "51543", "effectiveGasPriceWei": "20250000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355259, "baseFeeWei": "20004000", "gasUsedForL1": "1372", "gasUsed": "344802", "effectiveGasPriceWei": "20004001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355258, "baseFeeWei": "20000000", "gasUsedForL1": "7753", "gasUsed": "3388219", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355258, "baseFeeWei": "20000000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21100220", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355258, "baseFeeWei": "20000000", "gasUsedForL1": "5069", "gasUsed": "1571514", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355257, "baseFeeWei": "20056000", "gasUsedForL1": "593", "gasUsed": "47399", "effectiveGasPriceWei": "20056000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355257, "baseFeeWei": "20056000", "gasUsedForL1": "297", "gasUsed": "44314", "effectiveGasPriceWei": "40052000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355257, "baseFeeWei": "20056000", "gasUsedForL1": "596", "gasUsed": "47390", "effectiveGasPriceWei": "20056000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355256, "baseFeeWei": "20004000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21106200", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355255, "baseFeeWei": "20000000", "gasUsedForL1": "1526", "gasUsed": "987976", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355255, "baseFeeWei": "20000000", "gasUsedForL1": "444", "gasUsed": "39673", "effectiveGasPriceWei": "26052000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355255, "baseFeeWei": "20000000", "gasUsedForL1": "1133", "gasUsed": "53359", "effectiveGasPriceWei": "21000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355254, "baseFeeWei": "20046000", "gasUsedForL1": "962", "gasUsed": "155158", "effectiveGasPriceWei": "20046000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355253, "baseFeeWei": "20040000", "gasUsedForL1": "578", "gasUsed": "62749", "effectiveGasPriceWei": "21140110", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355253, "baseFeeWei": "20040000", "gasUsedForL1": "444", "gasUsed": "39673", "effectiveGasPriceWei": "26005200", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355252, "baseFeeWei": "20036000", "gasUsedForL1": "2706", "gasUsed": "107906", "effectiveGasPriceWei": "20146000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355251, "baseFeeWei": "20000000", "gasUsedForL1": "395", "gasUsed": "21395", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355250, "baseFeeWei": "20004000", "gasUsedForL1": "398", "gasUsed": "57769", "effectiveGasPriceWei": "30004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355250, "baseFeeWei": "20004000", "gasUsedForL1": "732", "gasUsed": "791843", "effectiveGasPriceWei": "20004000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355249, "baseFeeWei": "20002000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21102330", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355249, "baseFeeWei": "20002000", "gasUsedForL1": "385", "gasUsed": "21385", "effectiveGasPriceWei": "20002004", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355248, "baseFeeWei": "20000000", "gasUsedForL1": "1153", "gasUsed": "60522", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355247, "baseFeeWei": "20026000", "gasUsedForL1": "597", "gasUsed": "56926", "effectiveGasPriceWei": "20026000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355246, "baseFeeWei": "20006000", "gasUsedForL1": "1274", "gasUsed": "65209", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355245, "baseFeeWei": "20000000", "gasUsedForL1": "1005", "gasUsed": "130211", "effectiveGasPriceWei": "21000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355245, "baseFeeWei": "20000000", "gasUsedForL1": "1238", "gasUsed": "252578", "effectiveGasPriceWei": "21538055", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355245, "baseFeeWei": "20000000", "gasUsedForL1": "579", "gasUsed": "62750", "effectiveGasPriceWei": "21100880", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355244, "baseFeeWei": "20000000", "gasUsedForL1": "1859", "gasUsed": "130512", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355243, "baseFeeWei": "20020000", "gasUsedForL1": "376", "gasUsed": "39492", "effectiveGasPriceWei": "21020000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355242, "baseFeeWei": "20016000", "gasUsedForL1": "578", "gasUsed": "62737", "effectiveGasPriceWei": "21116660", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355242, "baseFeeWei": "20016000", "gasUsedForL1": "65", "gasUsed": "45737", "effectiveGasPriceWei": "120000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355241, "baseFeeWei": "20012000", "gasUsedForL1": "924", "gasUsed": "51011", "effectiveGasPriceWei": "20012000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355240, "baseFeeWei": "20000000", "gasUsedForL1": "1431", "gasUsed": "60290", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355240, "baseFeeWei": "20000000", "gasUsedForL1": "591", "gasUsed": "42588", "effectiveGasPriceWei": "20000001", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355239, "baseFeeWei": "20020000", "gasUsedForL1": "960", "gasUsed": "281946", "effectiveGasPriceWei": "20020000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355239, "baseFeeWei": "20020000", "gasUsedForL1": "594", "gasUsed": "34770", "effectiveGasPriceWei": "20130000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355238, "baseFeeWei": "20012000", "gasUsedForL1": "2423", "gasUsed": "198695", "effectiveGasPriceWei": "21012000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355238, "baseFeeWei": "20012000", "gasUsedForL1": "289", "gasUsed": "21289", "effectiveGasPriceWei": "26187200", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355237, "baseFeeWei": "20006000", "gasUsedForL1": "591", "gasUsed": "56040", "effectiveGasPriceWei": "20006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355237, "baseFeeWei": "20006000", "gasUsedForL1": "578", "gasUsed": "62737", "effectiveGasPriceWei": "21113700", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355237, "baseFeeWei": "20006000", "gasUsedForL1": "572", "gasUsed": "47123", "effectiveGasPriceWei": "21006000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355236, "baseFeeWei": "20000000", "gasUsedForL1": "291", "gasUsed": "21291", "effectiveGasPriceWei": "26000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355236, "baseFeeWei": "20000000", "gasUsedForL1": "388", "gasUsed": "21388", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355236, "baseFeeWei": "20000000", "gasUsedForL1": "1134", "gasUsed": "98453", "effectiveGasPriceWei": "20000000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355235, "baseFeeWei": "20144000", "gasUsedForL1": "587", "gasUsed": "178940", "effectiveGasPriceWei": "20144000", "ts": "2026-10-22T22:35:41.073Z"}
+{"net": "arbOne", "block": 517355234, "baseFeeWei": "20140000", "gasUsedForL1": "575", "gasUsed": "62746", "effectiveGasPriceWei": "21240220", "ts": "2026-10-22T22:35:41.073Z"}

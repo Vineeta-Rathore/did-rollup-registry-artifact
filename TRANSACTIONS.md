@@ -1,8 +1,8 @@
 # On-chain verification trail
 
-Public, independently verifiable record of every canonical deployment and
-lifecycle transaction behind this paper. Inspect any address/hash on its block
-explorer - no data file needed. All operations act on the test identity `0x7ab54d25541FD1309457eE086A06dD0a42a88555`.
+Public, independently verifiable record of every deployment and
+transaction behind this paper. Inspect any address/hash on its block
+explorer. The July lifecycle runs act on the identity `0x7ab54d25541FD1309457eE086A06dD0a42a88555`; the October revision runs use the identities listed at the end.
 
 Only transactions sent to the **canonical** registry pair on each network are
 listed (development re-deployments on OP Sepolia are omitted).
@@ -72,3 +72,26 @@ npm install
 node scripts/did_pointer_direct.js   # changed[identity] (L1 estimate) vs true L2 event block
 node scripts/did_prod_resolver.js    # production ethr-did-resolver: OK on Sepolia/OP, notFound on Arbitrum
 ```
+
+## Revision experiments (October 2026)
+
+These used fresh identities derived from the measurement key, on the same canonical
+registry pairs listed above, plus two deployments of the ArbSys-pointer registry on
+Arbitrum Sepolia. Every transaction hash, block and receipt field is in the data
+files named below; open any address on its explorer to list the transactions.
+
+| Purpose | Identity | Networks | Transactions (data file) |
+|---|---|---|---|
+| Payload compressibility (Fig. 2) | `0x599FAF924B0884D172e2147Ba36B8B3e15ea0630` | OP Sepolia, Arbitrum Sepolia | 48 + 48 (`data/did_compress.jsonl`) |
+| History sweep, run 1 | `0xd3401C1030aB8800CB89f2694F66f0D0f4853DfC` | Sepolia, OP Sepolia, Arbitrum Sepolia | 98 + 98 + 163 (`data/did_history_tx.jsonl`) |
+| History sweep, run 2 (Fig. 4) | `0x89b7aE28C9469B58ca48a53ED8C8CE178Cef25f0` | Sepolia, OP Sepolia, Arbitrum Sepolia | see `data/did_history_tx_v2.jsonl` |
+
+ArbSys-pointer registry (`contracts/did/EthereumDIDRegistryArbL2.sol`), Arbitrum Sepolia:
+
+| Run | Address | Deployment transaction |
+|---|---|---|
+| 1 | [`0x3b3c53ce023b43a5dfc5be10a08549ed3be71559`](https://sepolia.arbiscan.io/address/0x3b3c53ce023b43a5dfc5be10a08549ed3be71559) | [`0x06c50f37...`](https://sepolia.arbiscan.io/tx/0x06c50f375003bb4caffd0fd41cfbea952f2408e3a517691f55fb9c9a362d2a59) |
+| 2 | [`0x741a09edbf55fac1efe90f98271611ad8ff70220`](https://sepolia.arbiscan.io/address/0x741a09edbf55fac1efe90f98271611ad8ff70220) | [`0xdc69da6c...`](https://sepolia.arbiscan.io/tx/0xdc69da6cdb2dc0b299cd95c3f793f1c598ab2409e3de19ff4fea27e40c86fa35) |
+
+`scripts/verify_bytecode.js` checks that both, and the six canonical registries,
+match the compiled sources byte for byte.

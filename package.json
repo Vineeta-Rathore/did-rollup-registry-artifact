@@ -1,22 +1,28 @@
 {
   "name": "did-rollup-registry-artifact",
   "version": "1.0.0",
-  "description": "Review-time verification artifact: event-based (ERC-1056) vs storage-based DID registries on Ethereum rollups",
+  "description": "Artifact for 'Anchoring Decentralized Identifiers on Ethereum Rollups' (IEEE INDICON 2026): contracts, measurement scripts and raw data for event-based (ERC-1056) vs storage-based DID registries on Ethereum L1 and rollups",
   "license": "MIT",
   "private": true,
+  "engines": { "node": ">=22" },
   "scripts": {
+    "compile": "hardhat compile",
+    "verify-bytecode": "hardhat compile && node scripts/verify_bytecode.js",
     "prod-resolver": "node scripts/did_prod_resolver.js",
     "pointer": "node scripts/did_pointer_direct.js",
     "prod-diag": "node scripts/did_prod_diag.js",
-    "compile": "hardhat compile"
+    "gas-local": "hardhat run scripts/did_gas.js",
+    "numbers": "python analysis/paper_numbers.py data",
+    "figures": "python analysis/make_figures.py data"
   },
   "dependencies": {
-    "did-resolver": "^5.0.1",
-    "ethers": "^6.13.0",
-    "ethr-did-resolver": "^14.1.2"
+    "did-resolver": "5.0.1",
+    "dotenv": "16.6.1",
+    "ethers": "6.17.0",
+    "ethr-did-resolver": "14.1.2"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.0"
+    "@nomicfoundation/hardhat-toolbox": "5.0.0",
+    "hardhat": "2.28.6"
   }
 }
