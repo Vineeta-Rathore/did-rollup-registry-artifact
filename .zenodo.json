@@ -3,11 +3,34 @@
   "title": "did-rollup-registry-artifact: event-based vs storage-based DID registries on Ethereum rollups",
   "description": "Contracts, measurement scripts, raw measurement data, analysis and figure scripts, and the on-chain transaction trail for the paper 'Anchoring Decentralized Identifiers on Ethereum Rollups: A Gas-Level Comparison of Event-Based and Storage-Based Registry Designs' (IEEE INDICON 2026). Code: MIT. Data: CC-BY-4.0.",
   "creators": [
-    { "name": "Rathore, Vineeta", "affiliation": "Medicaps University" },
-    { "name": "Rawat, Manoj Kumar", "affiliation": "Medicaps University" }
+    {
+      "name": "Rathore, Vineeta",
+      "affiliation": "Medicaps University"
+    },
+    {
+      "name": "Rawat, Manoj Kumar",
+      "affiliation": "Medicaps University"
+    }
   ],
   "license": "MIT",
-  "keywords": ["decentralized identifiers", "ERC-1056", "did:ethr", "Ethereum", "layer-2 rollups", "Arbitrum", "OP Stack", "gas"],
+  "keywords": [
+    "decentralized identifiers",
+    "ERC-1056",
+    "did:ethr",
+    "Ethereum",
+    "layer-2 rollups",
+    "Arbitrum",
+    "OP Stack",
+    "gas"
+  ],
   "version": "1.0.0",
-  "language": "eng"
+  "language": "eng",
+  "notes": "AI-use disclosure (per IEEE policy on AI-generated content): Claude (Anthropic), an AI assistant, assisted with writing the measurement, analysis and plotting scripts and the documentation. It produced no measurement data; the authors verified all results and take full responsibility.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/decentralized-identity/ethr-did-resolver/issues/328",
+      "relation": "references",
+      "resource_type": "other"
+    }
+  ]
 }

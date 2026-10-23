@@ -1,4 +1,5 @@
-/** Paper 4 revision: how three ethr-did-resolver releases behave on Arbitrum.
+// SPDX-License-Identifier: MIT
+/** Table II: how three ethr-did-resolver releases behave on Arbitrum.
  * 11.0.4 (pinned by ethr-did 3.0.38, used by Veramo's ethr provider), 14.1.2 (used in the
  * paper's experiments) and 14.1.4 (latest on 2026-10-23). Read-only; public RPCs.
  * Each case is compared with on-chain truth: identityOwner() and the identity's events found

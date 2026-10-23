@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Copy measurement JSONL from a build directory into data/, replacing any URL inside
 error/message text with "<url>" (RPC URLs can carry API keys), then refuse to finish if
 any URL remains, and write data/SHA256SUMS.  Usage: python vendor_data.py <build_dir> [names...]"""

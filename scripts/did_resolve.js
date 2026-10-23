@@ -1,4 +1,5 @@
-/** Paper 4: DID resolution latency - event-walk (ERC-1056, the linked-list
+// SPDX-License-Identifier: MIT
+/** Original six-event resolution timing (superseded by did_history.js): event-walk (ERC-1056, the linked-list
  * eth_getLogs traversal ethr-did-resolver performs) vs view-call reads
  * (StorageDIDRegistry). Read-only; no key. Interleaved runs to spread public
  * RPC jitter fairly; n runs per design per network; wall-clock ms.

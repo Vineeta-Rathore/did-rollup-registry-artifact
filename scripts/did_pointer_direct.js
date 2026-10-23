@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 /**
  * Direct on-chain evidence for the Arbitrum did:ethr resolution failure.
  *

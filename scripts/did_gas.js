@@ -1,4 +1,5 @@
-/** Paper 4: DID registry lifecycle gas - local Hardhat (Paris EVM).
+// SPDX-License-Identifier: MIT
+/** Table I and Fig. 1: DID registry lifecycle gas - local Hardhat (Paris EVM).
  * Compares ERC-1056 EthereumDIDRegistry (event-carried attribute data) vs
  * StorageDIDRegistry (state-carried). Fresh identities/names per run keep
  * storage slots cold and comparable; explicit *_update rows measure the warm

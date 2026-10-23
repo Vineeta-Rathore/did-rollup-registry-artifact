@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Shared data access and filters for paper_numbers.py and make_figures.py, so that every
 number in the text and every point in a figure comes from the same rows.
 

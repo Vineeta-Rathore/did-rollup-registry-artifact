@@ -129,7 +129,67 @@ written only when the checkpoint completes.
   to dependencies, pin each network's chain ID, and strip RPC URLs (which may carry API
   keys) from logged and saved error messages.
 
+## Provenance and versions
+
+- Lifecycle gas and testnet lifecycle runs: July 2026. Payload, resolution-history,
+  resolver-release and mainnet-fee experiments: 22-24 October 2026. Each JSONL row
+  carries its own timestamp; `data/README.md` lists script, date and content per file.
+- Toolchain: Node 22, Hardhat 2.28.6, ethers 6.17.0, Solidity 0.8.24 (optimizer 200
+  runs, Paris EVM), ethr-did-resolver 14.1.2 (Table II also 11.0.4 and 14.1.4),
+  Python 3.12 with matplotlib 3.10.5.
+- `data/SHA256SUMS` fixes the exact data the paper's numbers and figures were computed
+  from. Changes between releases are listed in `CHANGELOG.md`.
+
+## Research ethics and privacy
+
+All transactions were sent on public test networks from test accounts created for this
+study; the mainnet data are read-only samples of public fee fields. No personal data are
+collected. Blockchain addresses are pseudonymous public data. One third-party identity
+on the canonical ERC-1056 deployment on Arbitrum Sepolia is resolved (read-only) to show
+that the failure is not specific to our deployments; the paper does not name it and we
+make no attempt to identify its owner. Mainnet senders are stored only as truncated
+hashes, used to cap rows per sender. The resolver failure was reported to its
+maintainers before publication of the paper: [ethr-did-resolver issue #328](https://github.com/decentralized-identity/ethr-did-resolver/issues/328).
+
+## Use of AI tools
+
+In line with IEEE policy on AI-generated content (which covers text, figures and code),
+we disclose that Claude (Anthropic), an AI assistant, was used in preparing this
+artifact: it assisted with writing the measurement, analysis and plotting scripts and
+the documentation. It produced no measurement data. The authors directed the work,
+reviewed the code, verified every reported value against the raw data, and take full
+responsibility for the artifact. The paper carries the corresponding disclosure in its
+Acknowledgment.
+
+## How to cite
+
+Please cite the paper and, when you use the code or data, this artifact
+(machine-readable metadata: `CITATION.cff`).
+
+```bibtex
+@inproceedings{rathore2026anchoring,
+  author    = {Rathore, Vineeta and Rawat, Manoj Kumar},
+  title     = {Anchoring Decentralized Identifiers on Ethereum Rollups: A Gas-Level
+               Comparison of Event-Based and Storage-Based Registry Designs},
+  booktitle = {Proc. 23rd IEEE India Council Int. Conf. (INDICON)},
+  address   = {Chennai, India},
+  year      = {2026}
+}
+@software{rathore2026artifact,
+  author  = {Rathore, Vineeta and Rawat, Manoj Kumar},
+  title   = {did-rollup-registry-artifact: event-based vs storage-based DID registries on Ethereum rollups},
+  version = {1.0.0},
+  year    = {2026},
+  url     = {https://github.com/Vineeta-Rathore/did-rollup-registry-artifact}
+}
+```
+
+## Contact
+
+Vineeta Rathore (corresponding author), Department of Computer Science and Engineering,
+Medicaps University, Indore, India: rathore.vineeta1@gmail.com. Bug reports and questions
+about the artifact: GitHub issues on this repository.
+
 ## License
 
 Code: MIT (`LICENSE`). Data: CC BY 4.0 (`data/LICENSE`). Third-party code: see `NOTICE`.
-Please cite the paper and this artifact (`CITATION.cff`).

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 /**
  * Arbitrum resolution-failure diagnostic.
  *

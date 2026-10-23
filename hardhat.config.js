@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 /** Hardhat configuration for compiling the registry contracts
  *  (Solidity 0.8.24, optimizer enabled, Paris EVM). */
 require("@nomicfoundation/hardhat-toolbox");

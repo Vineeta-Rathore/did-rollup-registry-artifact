@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 /**
  * Production did:ethr resolver check.
  *

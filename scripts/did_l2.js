@@ -1,4 +1,5 @@
-/** Paper 4: DID registry ops on live networks - Sepolia (validation) and
+// SPDX-License-Identifier: MIT
+/** July 2026 lifecycle runs: DID registry ops on live networks - Sepolia (validation) and
  * OP/Arbitrum Sepolia (L1-data fee decomposition). Raw receipts are read so
  * the rollup fee fields are kept; the key stays in .env and is never printed.
  * Env: NET (sepolia|opSepolia|arbSepolia). Appends build/did_l2_measured.jsonl.

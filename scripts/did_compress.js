@@ -1,4 +1,5 @@
-/** Paper 4 revision (reviewer R1, Sec. V.B): does the rollup L1 data fee scale
+// SPDX-License-Identifier: MIT
+/** Fig. 2 (Sec. V-B): does the rollup L1 data fee scale
  * with attribute payload? The original sweep used the repetitive payload
  * 0xabab..ab, which OP Stack's FastLZ-based size estimate (Fjord) compresses to
  * near the 100-byte floor. Here each setAttribute is sent twice per size: once

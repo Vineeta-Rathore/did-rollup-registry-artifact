@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 /** Check that contracts/did/*.sol, compiled with hardhat.config.js (solc 0.8.24,
  * optimizer 200 runs, Paris EVM), reproduce the runtime bytecode deployed on the public
  * testnets exactly, including the metadata hash (which covers the source bytes).

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Recompute every number quoted in the paper from the raw JSONL data.
 Usage: python analysis/paper_numbers.py [data_dir]   (default: ../data)
 Filters are defined once in common.py and shared with make_figures.py."""

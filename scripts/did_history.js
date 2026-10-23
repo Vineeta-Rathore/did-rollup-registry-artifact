@@ -1,4 +1,5 @@
-/** Paper 4 revision (reviewer R1): resolution latency versus history length,
+// SPDX-License-Identifier: MIT
+/** Fig. 4 (Sec. V-C): resolution latency versus history length,
  * and the ArbSys.arbBlockNumber() pointer fix on Arbitrum.
  *
  * One fresh identity per network keeps a constant DID document - one service

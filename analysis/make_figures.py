@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Figures 1-4 of the paper (IEEE two-column) from the raw JSONL data.
 Usage: python analysis/make_figures.py [data_dir] [--out DIR]   (defaults: ../data, ./figs)
 Figures are written at final size (3.5 in single column, 7.16 in double column) so LaTeX

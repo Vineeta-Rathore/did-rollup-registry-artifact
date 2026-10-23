@@ -1,7 +1,7 @@
 {
   "name": "did-resolver-versions",
   "private": true,
-  "description": "Paper 4 revision: compare ethr-did-resolver releases on Arbitrum (isolated install)",
+  "description": "Compare ethr-did-resolver releases on Arbitrum (isolated install for Table II)",
   "dependencies": {
     "did-resolver": "5.0.1",
     "dotenv": "16.6.1",

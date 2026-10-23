@@ -1,4 +1,5 @@
-/** Paper 4 revision: shared helpers for did_compress.js and did_history.js.
+// SPDX-License-Identifier: MIT
+/** Shared helpers for the October 2026 measurement scripts (did_compress.js, did_history.js, ...).
  * Fresh measurement identities are derived deterministically from PRIVATE_KEY
  * (keccak256(key || label)), so no new secret is stored and runs are resumable.
  * The funding wallet (PRIVATE_KEY) only tops these identities up. Keys are never

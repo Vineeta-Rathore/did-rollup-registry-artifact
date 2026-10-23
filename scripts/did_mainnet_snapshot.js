@@ -1,4 +1,5 @@
-/** Paper 4 revision: read-only sample of MAINNET fee conditions, used only to place
+// SPDX-License-Identifier: MIT
+/** Fig. 3 points C-E: read-only sample of MAINNET fee conditions, used only to place
  * operating points on the fee model (nothing is sent on mainnet).
  * Every INTERVAL_MIN minutes, for SAMPLES rounds (default: every 30 min for 24 h), the script
  * reads one recent block on each chain (head - 5) and the receipts of all its user
