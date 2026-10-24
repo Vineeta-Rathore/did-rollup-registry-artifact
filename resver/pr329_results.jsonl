@@ -1,0 +1,8 @@
+{"run":"current document","note":"PR 329 head c6452e4, public Arbitrum Sepolia endpoint, cache off, one resolution per identity, 24 October 2026"}
+{"identity":"0xd3401C1030aB8800CB89f2694F66f0D0f4853DfC","truthEvents":64,"truthKeys":1,"truthServices":1}
+{"identity":"0xd3401C1030aB8800CB89f2694F66f0D0f4853DfC","round":1,"ms":358854,"error":null,"verificationMethods":2,"services":1,"currentKeyPresent":true,"http":658,"rpcItems":1917}
+{"identity":"0x89b7aE28C9469B58ca48a53ED8C8CE178Cef25f0","truthEvents":64,"truthKeys":1,"truthServices":1}
+{"identity":"0x89b7aE28C9469B58ca48a53ED8C8CE178Cef25f0","round":1,"ms":338304,"error":null,"verificationMethods":2,"services":1,"currentKeyPresent":true,"http":657,"rpcItems":1978}
+{"run":"historical version (versionId)"}
+{"identity":"0xd3401C1030aB8800CB89f2694F66f0D0f4853DfC","versionId":321863282,"truthEvents":32,"truthKeys":1,"truthServices":1}
+{"identity":"0xd3401C1030aB8800CB89f2694F66f0D0f4853DfC","round":1,"ms":349535,"error":null,"verificationMethods":2,"services":1,"currentKeyPresent":true,"http":659,"rpcItems":1918}

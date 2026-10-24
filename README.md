@@ -17,23 +17,29 @@ contracts/did/
   StorageDIDRegistry.sol         storage-based registry with the same functions
   EthereumDIDRegistryArbL2.sol   ERC-1056 storing ArbSys.arbBlockNumber() as pointer (Arbitrum only)
 scripts/
-  did_gas.js            lifecycle gas matrix on the local EVM            (Table I, Fig. 1)
+  did_gas_steady.js     gas by phase (fresh / initialised / repeated), incl. replacement  (Table I, Fig. 1)
+  did_gas.js            first lifecycle matrix on the local EVM (superseded by did_gas_steady.js)
   did_l2.js             lifecycle transactions on the three testnets     (July receipts)
-  did_compress.js       repetitive vs random payloads, rollup data fee   (Fig. 2)
-  did_mainnet_snapshot.js  read-only OP Mainnet / Arbitrum One fee levels (Fig. 3)
-  did_history.js        resolution latency vs history length, ArbSys fix (Fig. 4)
+  did_compress.js       repetitive vs random payloads, rollup data fee   (Fig. 2a)
+  did_mainnet_snapshot.js  read-only OP Mainnet / Arbitrum One fee levels, 48 rounds (Table II, Fig. 2b)
+  did_history.js        resolution latency vs history length, ArbSys fix (Fig. 3)
+  did_resolve_methods.js  read-only: walk vs ranged scans vs storage reads at 64 events (Table III)
+  did_arb_l1price.js    read-only: Arbitrum L1 price estimate at the July receipt blocks
+  did_operator_fee_check.js  read-only: OP Stack operator-fee fields in receipts
   did_rev_common.js     shared helpers (derived identities, signing, receipts)
   did_pointer_direct.js read-only: changed[identity] vs true L2 event block on Arbitrum
   did_prod_resolver.js  read-only: production resolver on the three networks
   did_prod_diag.js      read-only: resolver error text and attribute expiry
   did_resolve.js        original six-event resolution timing (superseded by did_history.js)
   verify_bytecode.js    read-only: compiled sources == deployed bytecode
-resver/                 isolated install of ethr-did-resolver 11.0.4, 14.1.2, 14.1.4
-  did_resolver_versions.js                                                (Table II)
+resver/                 isolated install of ethr-did-resolver 11.0.4, 14.1.2, 14.1.4;
+                        pr329_live_check*.mjs + pr329_results.jsonl: run of a third party's fix (PR 329)
+  did_resolver_versions.js                                                (Table IV)
 analysis/
   common.py             data filters shared by the two scripts below (one definition each)
   paper_numbers.py      recomputes every number quoted in the paper from data/
-  make_figures.py       regenerates Figs. 1-4 from data/
+  make_figures.py       regenerates Figs. 1-3 from data/
+  make_tables.py        regenerates the LaTeX tables I-IV from data/
   vendor_data.py        copies build/*.jsonl into data/, strips URLs from error text, writes SHA256SUMS
 data/                   raw JSONL measurements (see data/README.md), CC BY 4.0
 deployments.json, TRANSACTIONS.md   addresses and transaction hashes
@@ -45,6 +51,8 @@ deployments.json, TRANSACTIONS.md   addresses and transaction hashes
 pip install -r analysis/requirements.txt          # matplotlib 3.10.x (Python 3.10+)
 python3 analysis/paper_numbers.py data            # prints every quoted number
 python3 analysis/make_figures.py data             # writes analysis/figs/*.pdf
+python3 analysis/make_tables.py data              # writes analysis/tables/*.tex
+python3 analysis/test_model.py data               # checks Eq. (1)-(3), the Fjord size rule, the quoted slopes and the data checksums
 sha256sum -c data/SHA256SUMS                       # optional: check the data files (run inside data/)
 ```
 
@@ -62,13 +70,18 @@ npm ci
 npm run verify-bytecode   # all 8 deployments equal the compiled sources, metadata hash included
 npm run prod-resolver     # Sepolia and OP Sepolia resolve; Arbitrum Sepolia returns notFound
 npm run pointer           # Arbitrum: changed[identity] holds an L1 block estimate
-cd resver && npm ci && node did_resolver_versions.js    # Table II (11.0.4 / 14.1.2 / 14.1.4)
+cd resver && npm ci && node did_resolver_versions.js    # Table IV (11.0.4 / 14.1.2 / 14.1.4)
+cd .. && node scripts/did_resolve_methods.js            # Table III: needs NET=sepolia|opSepolia|arbSepolia and the state files of did_history.js
 ```
+
+Each run of `did_resolve_methods.js` appends one session of 20 interleaved rounds. Table III pools
+two sessions per network (the paper's data hold both, ordered by timestamp; `analysis/common.py`
+assigns each row to its session from the `setup` rows, and `paper_numbers.py` prints the session medians).
 
 Releases 14.1.3 and later report the same Arbitrum failure as `internalError`
 instead of `notFound`; 11.0.4 returns no error and an incomplete document.
-Table II compares each resolution with on-chain truth at run time (a ranged log scan),
-so verdicts follow attribute expiry: the revision identities' entries are valid until
+Table IV compares each resolution with on-chain truth at run time (identityOwner() and a
+ranged log scan that does not use the pointer), so verdicts follow attribute expiry: the revision identities' entries are valid until
 about October 2027. Endpoint failures are retried and reported as `INFRA ERROR`,
 never as a resolver result.
 
@@ -88,7 +101,7 @@ not tracked; the published data are in `data/`.
 npx hardhat run scripts/did_gas.js                     # local EVM, deterministic
 NET=opSepolia REPS=3 node scripts/did_compress.js      # also arbSepolia; NET=local needs `npx hardhat node` running
 NET=sepolia node scripts/did_history.js                # also opSepolia, arbSepolia; resumable (RUN=v2 is the default)
-node scripts/did_mainnet_snapshot.js                   # read-only; samples every 30 min for 24 h
+node scripts/did_mainnet_snapshot.js                   # read-only; 48 rounds, one every 30 min
 ```
 
 In PowerShell set variables first, e.g. `$env:NET="opSepolia"; node scripts/did_compress.js`.
@@ -114,13 +127,27 @@ written only when the checkpoint completes.
   measures both conditions separately.
 - Fees on testnets change by orders of magnitude over time. The stable quantities
   are gas and charged bytes.
+- Table III pools two sessions of the same protocol, run 40 minutes apart on 23 October 2026.
+  The second was started by a chained script while the first was finishing; both are complete
+  and both are kept. Because that script moved the first session's file while its last OP
+  Sepolia round was still running, that round was written to the second file; sorting all rows
+  by timestamp restores the order. An earlier attempt of the same experiment hit a local DNS
+  outage and was discarded (its failures were network errors, not endpoint answers); the script
+  now repeats a round that is hit by a network error.
+- The OP Mainnet / Arbitrum One sample (`did_mainnet_snapshot_24h.jsonl`) was planned as 48 rounds, one block every
+  30 minutes. Forty-five OP Mainnet rounds (44 for Arbitrum One) returned a block, 533 and 131 transactions. The rounds
+  took 35.4 hours (23 Oct 05:34Z to 24 Oct 16:58Z) because the sampling laptop slept twice (gaps of 7.4 and 5.6 hours)
+  and three consecutive rounds failed (2 hours; `missed` rows). 19 of the 24 hours of the day are covered, on a Friday
+  and a Saturday. `paper_numbers.py` prints the coverage; the sample says nothing about other days or fee spikes.
+- `did_operator_fee_check.jsonl` counts, in recent receipts of OP Sepolia and OP Mainnet, those
+  that carry OP Stack operator-fee fields (Isthmus); the fee model of the paper omits that term.
 
 ## Security notes
 
 - **The revision DIDs are public test material.** The secp256k1 verification keys set on
   the history identities (`did_history.js`, `keyAt`) are derived from public strings, so
   anyone can compute their private keys. Never accept these DIDs as credential issuers.
-  The keys stay valid until about October 2027 so that Table II can be rerun.
+  The keys stay valid until about October 2027 so that Table IV can be rerun.
 - `StorageDIDRegistry.changeOwner(identity, address(0))` hands control back to the
   identity key, as in ERC-1056; use `deactivate()` to end an identity. The contract is
   kept as deployed (changing the source would change the bytecode checked by
@@ -135,7 +162,7 @@ written only when the checkpoint completes.
   resolver-release and mainnet-fee experiments: 22-24 October 2026. Each JSONL row
   carries its own timestamp; `data/README.md` lists script, date and content per file.
 - Toolchain: Node 22, Hardhat 2.28.6, ethers 6.17.0, Solidity 0.8.24 (optimizer 200
-  runs, Paris EVM), ethr-did-resolver 14.1.2 (Table II also 11.0.4 and 14.1.4),
+  runs, Paris EVM), ethr-did-resolver 14.1.2 (Table IV also 11.0.4 and 14.1.4),
   Python 3.12 with matplotlib 3.10.5.
 - `data/SHA256SUMS` fixes the exact data the paper's numbers and figures were computed
   from. Changes between releases are listed in `CHANGELOG.md`.
@@ -153,13 +180,13 @@ maintainers before publication of the paper: [ethr-did-resolver issue #328](http
 
 ## Use of AI tools
 
-In line with IEEE policy on AI-generated content (which covers text, figures and code),
-we disclose that Claude (Anthropic), an AI assistant, was used in preparing this
-artifact: it assisted with writing the measurement, analysis and plotting scripts and
-the documentation. It produced no measurement data. The authors directed the work,
-reviewed the code, verified every reported value against the raw data, and take full
-responsibility for the artifact. The paper carries the corresponding disclosure in its
-Acknowledgment.
+In line with IEEE policy on AI-generated content (text, figures, images and code), we disclose that Claude
+(Anthropic), an AI assistant, was used in preparing this artifact and the paper. It wrote the storage-registry
+contract, the ArbSys-pointer variant of ERC-1056, the measurement, analysis and plotting scripts and the
+documentation, and it ran these scripts under the authors' direction. It generated no measurement data: every
+value comes from running the released scripts against the networks. The authors directed the work, reviewed the
+results and take full responsibility for the artifact. The paper carries the same disclosure in its
+Acknowledgment. The ERC-1056 registry itself is third-party code.
 
 ## How to cite
 

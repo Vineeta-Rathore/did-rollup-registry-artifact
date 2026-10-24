@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: MIT
-/** Fig. 3 points C-E: read-only sample of MAINNET fee conditions, used only to place
+/** Table II price points: read-only sample of MAINNET fee conditions, used only to place
  * operating points on the fee model (nothing is sent on mainnet).
- * Every INTERVAL_MIN minutes, for SAMPLES rounds (default: every 30 min for 24 h), the script
+ * Every INTERVAL_MIN minutes, for SAMPLES rounds (default: 48 rounds, one every 30 min), the script
  * reads one recent block on each chain (head - 5) and the receipts of all its user
  * transactions. Public endpoints serve receipts only for recent blocks, so the sample is
  * collected forward in time. At most MAX_PER_SENDER rows are kept per sender over the whole
@@ -9,14 +8,18 @@
  *  - OP Mainnet: l1GasUsed (= 16 x charged size), l1Fee, effectiveGasPrice, block base fee;
  *    the L1 price per charged byte is l1Fee / (l1GasUsed / 16) for each transaction.
  *  - Arbitrum One: gasUsedForL1, gasUsed, effectiveGasPrice, block base fee.
- * Env: [SAMPLES=48] [INTERVAL_MIN=30] [MAX_PER_SENDER=5] [OPMAIN_RPC] [ARB1_RPC]
+ * A later run can continue an earlier one: it restores the per-sender counts from the output file and
+ * numbers its rounds from START_ROUND (the first run used 0..47, the continuation 48..61).
+ * Env: [SAMPLES=48] [START_ROUND=0] [INTERVAL_MIN=30] [MAX_PER_SENDER=5] [OPMAIN_RPC] [ARB1_RPC]
  * Appends build/did_mainnet_snapshot_24h.jsonl (a header row per chain, then one row per tx).
  */
+const fs = require("fs");
 const path = require("path");
 const { ethers } = require("ethers");
 const { BUILD, ENV, retry, redact, appendJsonl } = require("./did_rev_common");
 
 const SAMPLES = Number(ENV.SAMPLES || 48);
+const START_ROUND = Number(ENV.START_ROUND || 0);
 const INTERVAL_MIN = Number(ENV.INTERVAL_MIN || 30);
 const MAX_PER_SENDER = Number(ENV.MAX_PER_SENDER || 5);
 const OUT = path.join(BUILD, "did_mainnet_snapshot_24h.jsonl");
@@ -31,10 +34,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function sampleOnce(c, prov, perSender, round) {
   const bn = (await retry(() => prov.getBlockNumber())) - 5;
-  const blk = await retry(() => prov.send("eth_getBlockByNumber", [ethers.toBeHex(bn), false]));
+  const blk = await retry(() => prov.send("eth_getBlockByNumber", [ethers.toQuantity(bn), false]));
   if (!blk) throw new Error(`block ${bn} unavailable`);
   // one call per block where the endpoint supports it, otherwise one receipt per transaction
-  let rcs = await prov.send("eth_getBlockReceipts", [ethers.toBeHex(bn)]).catch(() => null);
+  let rcs = await prov.send("eth_getBlockReceipts", [ethers.toQuantity(bn)]).catch(() => null);
   if (!Array.isArray(rcs)) {
     rcs = [];
     for (const h of blk.transactions) rcs.push(await retry(() => prov.send("eth_getTransactionReceipt", [h])));
@@ -61,9 +64,15 @@ async function sampleOnce(c, prov, perSender, round) {
 async function main() {
   const provs = CHAINS.map((c) => new ethers.JsonRpcProvider(c.rpc, c.chainId, { staticNetwork: true, batchMaxCount: 1 }));
   const perSender = CHAINS.map(() => new Map());
+  if (fs.existsSync(OUT))                                         // continuation: keep the cap over the whole sample
+    for (const line of fs.readFileSync(OUT, "utf8").split(/\r?\n/)) {
+      if (!line) continue;
+      const r = JSON.parse(line), i = CHAINS.findIndex((c) => c.net === r.net);
+      if (i >= 0 && r.sender) perSender[i].set(r.sender, (perSender[i].get(r.sender) || 0) + 1);
+    }
   for (const c of CHAINS)
-    appendJsonl(OUT, { net: c.net, header: { samples: SAMPLES, intervalMin: INTERVAL_MIN, maxPerSender: MAX_PER_SENDER, start: new Date().toISOString() } });
-  for (let round = 0; round < SAMPLES; round++) {
+    appendJsonl(OUT, { net: c.net, header: { samples: SAMPLES, startRound: START_ROUND, intervalMin: INTERVAL_MIN, maxPerSender: MAX_PER_SENDER, start: new Date().toISOString() } });
+  for (let round = START_ROUND; round < START_ROUND + SAMPLES; round++) {
     const t0 = Date.now();
     for (let i = 0; i < CHAINS.length; i++) {
       try {
@@ -74,7 +83,7 @@ async function main() {
         console.log(`round ${round} ${CHAINS[i].net}: missed (${redact(e.shortMessage || e.message).slice(0, 80)})`);
       }
     }
-    if (round < SAMPLES - 1) await sleep(Math.max(0, INTERVAL_MIN * 60000 - (Date.now() - t0)));
+    if (round < START_ROUND + SAMPLES - 1) await sleep(Math.max(0, INTERVAL_MIN * 60000 - (Date.now() - t0)));
   }
   console.log("done");
 }

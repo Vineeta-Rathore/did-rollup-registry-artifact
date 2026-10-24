@@ -1,5 +1,4 @@
-// SPDX-License-Identifier: MIT
-/** Original six-event resolution timing (superseded by did_history.js): event-walk (ERC-1056, the linked-list
+/** Original six-event DID resolution timing (superseded by did_history.js): event walk (ERC-1056, the linked-list
  * eth_getLogs traversal ethr-did-resolver performs) vs view-call reads
  * (StorageDIDRegistry). Read-only; no key. Interleaved runs to spread public
  * RPC jitter fairly; n runs per design per network; wall-clock ms.
@@ -39,7 +38,7 @@ async function resolveErc(provider, iface, addr) {
   const idTopic = ethers.zeroPadValue(IDENTITY, 32);
   while (block !== 0n) {
     const logs = await provider.send("eth_getLogs", [{
-      address: addr, fromBlock: ethers.toBeHex(block), toBlock: ethers.toBeHex(block),
+      address: addr, fromBlock: ethers.toQuantity(block), toBlock: ethers.toQuantity(block),
       topics: [null, idTopic] }]);
     calls++;
     let prev = 0n;

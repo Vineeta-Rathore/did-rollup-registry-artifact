@@ -1,0 +1,159 @@
+{"design": "erc1056", "op": "changeOwner", "phase": "fresh", "payload": 0, "run": 0, "gasUsed": 68843, "calldataBytes": 68, "note": ""}
+{"design": "erc1056", "op": "deactivate", "phase": "fresh", "payload": 0, "run": 0, "gasUsed": 48703, "calldataBytes": 68, "note": "owner -> 0x0"}
+{"design": "erc1056", "op": "addDelegate", "phase": "fresh", "payload": 0, "run": 0, "gasUsed": 72214, "calldataBytes": 132, "note": "also writes the pointer"}
+{"design": "erc1056", "op": "addDelegate", "phase": "init", "payload": 0, "run": 0, "gasUsed": 55114, "calldataBytes": 132, "note": ""}
+{"design": "erc1056", "op": "addDelegate", "phase": "again", "payload": 0, "run": 0, "gasUsed": 38014, "calldataBytes": 132, "note": "extends an existing delegate"}
+{"design": "erc1056", "op": "revokeDelegate", "phase": "again", "payload": 0, "run": 0, "gasUsed": 37647, "calldataBytes": 100, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 32, "run": 0, "gasUsed": 34130, "calldataBytes": 196, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 32, "run": 0, "gasUsed": 34130, "calldataBytes": 196, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 32, "run": 0, "gasUsed": 33766, "calldataBytes": 164, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 33, "run": 0, "gasUsed": 34602, "calldataBytes": 228, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 33, "run": 0, "gasUsed": 34602, "calldataBytes": 228, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 33, "run": 0, "gasUsed": 34238, "calldataBytes": 196, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 64, "run": 0, "gasUsed": 34974, "calldataBytes": 228, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 64, "run": 0, "gasUsed": 34974, "calldataBytes": 228, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 64, "run": 0, "gasUsed": 34610, "calldataBytes": 196, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 128, "run": 0, "gasUsed": 36674, "calldataBytes": 292, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 128, "run": 0, "gasUsed": 36674, "calldataBytes": 292, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 128, "run": 0, "gasUsed": 36310, "calldataBytes": 260, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 256, "run": 0, "gasUsed": 40051, "calldataBytes": 420, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 256, "run": 0, "gasUsed": 40051, "calldataBytes": 420, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 256, "run": 0, "gasUsed": 39687, "calldataBytes": 388, "note": "must resend the value"}
+{"design": "erc1056", "op": "changeOwner", "phase": "init", "payload": 0, "run": 0, "gasUsed": 51731, "calldataBytes": 68, "note": "pointer written, owner slot empty"}
+{"design": "erc1056", "op": "changeOwner", "phase": "again", "payload": 0, "run": 0, "gasUsed": 34627, "calldataBytes": 68, "note": "owner slot already written"}
+{"design": "erc1056", "op": "deactivate", "phase": "again", "payload": 0, "run": 0, "gasUsed": 29587, "calldataBytes": 68, "note": "owner -> 0x0, slot cleared"}
+{"design": "storage", "op": "register", "phase": "fresh", "payload": 0, "run": 0, "gasUsed": 68173, "calldataBytes": 36, "note": "optional; writes registered and owners"}
+{"design": "storage", "op": "changeOwner", "phase": "init", "payload": 0, "run": 0, "gasUsed": 31429, "calldataBytes": 68, "note": "after registration (owner slot written)"}
+{"design": "storage", "op": "changeOwner", "phase": "again", "payload": 0, "run": 0, "gasUsed": 31429, "calldataBytes": 68, "note": ""}
+{"design": "storage", "op": "deactivate", "phase": "init", "payload": 0, "run": 0, "gasUsed": 47661, "calldataBytes": 36, "note": "sets the deactivated flag"}
+{"design": "storage", "op": "changeOwner", "phase": "fresh", "payload": 0, "run": 0, "gasUsed": 48519, "calldataBytes": 68, "note": "unregistered identity: writes the owner slot"}
+{"design": "storage", "op": "deactivate", "phase": "fresh", "payload": 0, "run": 0, "gasUsed": 47651, "calldataBytes": 36, "note": "unregistered identity"}
+{"design": "storage", "op": "addDelegate", "phase": "init", "payload": 0, "run": 0, "gasUsed": 49645, "calldataBytes": 132, "note": ""}
+{"design": "storage", "op": "addDelegate", "phase": "again", "payload": 0, "run": 0, "gasUsed": 32545, "calldataBytes": 132, "note": "extends an existing delegate"}
+{"design": "storage", "op": "revokeDelegate", "phase": "again", "payload": 0, "run": 0, "gasUsed": 32242, "calldataBytes": 100, "note": ""}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 32, "run": 0, "gasUsed": 95041, "calldataBytes": 196, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 32, "run": 0, "gasUsed": 38287, "calldataBytes": 196, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 32, "run": 0, "gasUsed": 41087, "calldataBytes": 196, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 32, "run": 0, "gasUsed": 33680, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 33, "run": 0, "gasUsed": 117335, "calldataBytes": 228, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 33, "run": 0, "gasUsed": 40681, "calldataBytes": 228, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 33, "run": 0, "gasUsed": 46281, "calldataBytes": 228, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 33, "run": 0, "gasUsed": 37719, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 64, "run": 0, "gasUsed": 117744, "calldataBytes": 228, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 64, "run": 0, "gasUsed": 41090, "calldataBytes": 228, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 64, "run": 0, "gasUsed": 46690, "calldataBytes": 228, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 64, "run": 0, "gasUsed": 37719, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 128, "run": 0, "gasUsed": 163162, "calldataBytes": 292, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 128, "run": 0, "gasUsed": 46708, "calldataBytes": 292, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 128, "run": 0, "gasUsed": 57908, "calldataBytes": 292, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 128, "run": 0, "gasUsed": 45807, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 256, "run": 0, "gasUsed": 253974, "calldataBytes": 420, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 256, "run": 0, "gasUsed": 57920, "calldataBytes": 420, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 256, "run": 0, "gasUsed": 80320, "calldataBytes": 420, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 256, "run": 0, "gasUsed": 61964, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "erc1056", "op": "changeOwner", "phase": "fresh", "payload": 0, "run": 1, "gasUsed": 68843, "calldataBytes": 68, "note": ""}
+{"design": "erc1056", "op": "deactivate", "phase": "fresh", "payload": 0, "run": 1, "gasUsed": 48703, "calldataBytes": 68, "note": "owner -> 0x0"}
+{"design": "erc1056", "op": "addDelegate", "phase": "fresh", "payload": 0, "run": 1, "gasUsed": 72226, "calldataBytes": 132, "note": "also writes the pointer"}
+{"design": "erc1056", "op": "addDelegate", "phase": "init", "payload": 0, "run": 1, "gasUsed": 55126, "calldataBytes": 132, "note": ""}
+{"design": "erc1056", "op": "addDelegate", "phase": "again", "payload": 0, "run": 1, "gasUsed": 38026, "calldataBytes": 132, "note": "extends an existing delegate"}
+{"design": "erc1056", "op": "revokeDelegate", "phase": "again", "payload": 0, "run": 1, "gasUsed": 37659, "calldataBytes": 100, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 32, "run": 1, "gasUsed": 34142, "calldataBytes": 196, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 32, "run": 1, "gasUsed": 34142, "calldataBytes": 196, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 32, "run": 1, "gasUsed": 33778, "calldataBytes": 164, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 33, "run": 1, "gasUsed": 34614, "calldataBytes": 228, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 33, "run": 1, "gasUsed": 34614, "calldataBytes": 228, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 33, "run": 1, "gasUsed": 34250, "calldataBytes": 196, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 64, "run": 1, "gasUsed": 34986, "calldataBytes": 228, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 64, "run": 1, "gasUsed": 34986, "calldataBytes": 228, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 64, "run": 1, "gasUsed": 34622, "calldataBytes": 196, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 128, "run": 1, "gasUsed": 36686, "calldataBytes": 292, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 128, "run": 1, "gasUsed": 36686, "calldataBytes": 292, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 128, "run": 1, "gasUsed": 36322, "calldataBytes": 260, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 256, "run": 1, "gasUsed": 40063, "calldataBytes": 420, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 256, "run": 1, "gasUsed": 40063, "calldataBytes": 420, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 256, "run": 1, "gasUsed": 39699, "calldataBytes": 388, "note": "must resend the value"}
+{"design": "erc1056", "op": "changeOwner", "phase": "init", "payload": 0, "run": 1, "gasUsed": 51743, "calldataBytes": 68, "note": "pointer written, owner slot empty"}
+{"design": "erc1056", "op": "changeOwner", "phase": "again", "payload": 0, "run": 1, "gasUsed": 34639, "calldataBytes": 68, "note": "owner slot already written"}
+{"design": "erc1056", "op": "deactivate", "phase": "again", "payload": 0, "run": 1, "gasUsed": 29599, "calldataBytes": 68, "note": "owner -> 0x0, slot cleared"}
+{"design": "storage", "op": "register", "phase": "fresh", "payload": 0, "run": 1, "gasUsed": 68173, "calldataBytes": 36, "note": "optional; writes registered and owners"}
+{"design": "storage", "op": "changeOwner", "phase": "init", "payload": 0, "run": 1, "gasUsed": 31429, "calldataBytes": 68, "note": "after registration (owner slot written)"}
+{"design": "storage", "op": "changeOwner", "phase": "again", "payload": 0, "run": 1, "gasUsed": 31429, "calldataBytes": 68, "note": ""}
+{"design": "storage", "op": "deactivate", "phase": "init", "payload": 0, "run": 1, "gasUsed": 47661, "calldataBytes": 36, "note": "sets the deactivated flag"}
+{"design": "storage", "op": "changeOwner", "phase": "fresh", "payload": 0, "run": 1, "gasUsed": 48507, "calldataBytes": 68, "note": "unregistered identity: writes the owner slot"}
+{"design": "storage", "op": "deactivate", "phase": "fresh", "payload": 0, "run": 1, "gasUsed": 47651, "calldataBytes": 36, "note": "unregistered identity"}
+{"design": "storage", "op": "addDelegate", "phase": "init", "payload": 0, "run": 1, "gasUsed": 49645, "calldataBytes": 132, "note": ""}
+{"design": "storage", "op": "addDelegate", "phase": "again", "payload": 0, "run": 1, "gasUsed": 32545, "calldataBytes": 132, "note": "extends an existing delegate"}
+{"design": "storage", "op": "revokeDelegate", "phase": "again", "payload": 0, "run": 1, "gasUsed": 32242, "calldataBytes": 100, "note": ""}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 32, "run": 1, "gasUsed": 95041, "calldataBytes": 196, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 32, "run": 1, "gasUsed": 38287, "calldataBytes": 196, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 32, "run": 1, "gasUsed": 41087, "calldataBytes": 196, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 32, "run": 1, "gasUsed": 33680, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 33, "run": 1, "gasUsed": 117335, "calldataBytes": 228, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 33, "run": 1, "gasUsed": 40681, "calldataBytes": 228, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 33, "run": 1, "gasUsed": 46281, "calldataBytes": 228, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 33, "run": 1, "gasUsed": 37719, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 64, "run": 1, "gasUsed": 117744, "calldataBytes": 228, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 64, "run": 1, "gasUsed": 41090, "calldataBytes": 228, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 64, "run": 1, "gasUsed": 46690, "calldataBytes": 228, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 64, "run": 1, "gasUsed": 37719, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 128, "run": 1, "gasUsed": 163162, "calldataBytes": 292, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 128, "run": 1, "gasUsed": 46708, "calldataBytes": 292, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 128, "run": 1, "gasUsed": 57908, "calldataBytes": 292, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 128, "run": 1, "gasUsed": 45807, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 256, "run": 1, "gasUsed": 253974, "calldataBytes": 420, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 256, "run": 1, "gasUsed": 57920, "calldataBytes": 420, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 256, "run": 1, "gasUsed": 80320, "calldataBytes": 420, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 256, "run": 1, "gasUsed": 61964, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "erc1056", "op": "changeOwner", "phase": "fresh", "payload": 0, "run": 2, "gasUsed": 68843, "calldataBytes": 68, "note": ""}
+{"design": "erc1056", "op": "deactivate", "phase": "fresh", "payload": 0, "run": 2, "gasUsed": 48703, "calldataBytes": 68, "note": "owner -> 0x0"}
+{"design": "erc1056", "op": "addDelegate", "phase": "fresh", "payload": 0, "run": 2, "gasUsed": 72226, "calldataBytes": 132, "note": "also writes the pointer"}
+{"design": "erc1056", "op": "addDelegate", "phase": "init", "payload": 0, "run": 2, "gasUsed": 55126, "calldataBytes": 132, "note": ""}
+{"design": "erc1056", "op": "addDelegate", "phase": "again", "payload": 0, "run": 2, "gasUsed": 38026, "calldataBytes": 132, "note": "extends an existing delegate"}
+{"design": "erc1056", "op": "revokeDelegate", "phase": "again", "payload": 0, "run": 2, "gasUsed": 37659, "calldataBytes": 100, "note": ""}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 32, "run": 2, "gasUsed": 34142, "calldataBytes": 196, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 32, "run": 2, "gasUsed": 34142, "calldataBytes": 196, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 32, "run": 2, "gasUsed": 33778, "calldataBytes": 164, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 33, "run": 2, "gasUsed": 34614, "calldataBytes": 228, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 33, "run": 2, "gasUsed": 34614, "calldataBytes": 228, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 33, "run": 2, "gasUsed": 34250, "calldataBytes": 196, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 64, "run": 2, "gasUsed": 34986, "calldataBytes": 228, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 64, "run": 2, "gasUsed": 34986, "calldataBytes": 228, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 64, "run": 2, "gasUsed": 34622, "calldataBytes": 196, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 128, "run": 2, "gasUsed": 36686, "calldataBytes": 292, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 128, "run": 2, "gasUsed": 36686, "calldataBytes": 292, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 128, "run": 2, "gasUsed": 36322, "calldataBytes": 260, "note": "must resend the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "init", "payload": 256, "run": 2, "gasUsed": 40063, "calldataBytes": 420, "note": "events only; no storage slot for the value"}
+{"design": "erc1056", "op": "setAttribute", "phase": "again", "payload": 256, "run": 2, "gasUsed": 40063, "calldataBytes": 420, "note": "append: a second valid value for the same name"}
+{"design": "erc1056", "op": "revokeAttribute", "phase": "again", "payload": 256, "run": 2, "gasUsed": 39699, "calldataBytes": 388, "note": "must resend the value"}
+{"design": "erc1056", "op": "changeOwner", "phase": "init", "payload": 0, "run": 2, "gasUsed": 51743, "calldataBytes": 68, "note": "pointer written, owner slot empty"}
+{"design": "erc1056", "op": "changeOwner", "phase": "again", "payload": 0, "run": 2, "gasUsed": 34639, "calldataBytes": 68, "note": "owner slot already written"}
+{"design": "erc1056", "op": "deactivate", "phase": "again", "payload": 0, "run": 2, "gasUsed": 29599, "calldataBytes": 68, "note": "owner -> 0x0, slot cleared"}
+{"design": "storage", "op": "register", "phase": "fresh", "payload": 0, "run": 2, "gasUsed": 68161, "calldataBytes": 36, "note": "optional; writes registered and owners"}
+{"design": "storage", "op": "changeOwner", "phase": "init", "payload": 0, "run": 2, "gasUsed": 31417, "calldataBytes": 68, "note": "after registration (owner slot written)"}
+{"design": "storage", "op": "changeOwner", "phase": "again", "payload": 0, "run": 2, "gasUsed": 31417, "calldataBytes": 68, "note": ""}
+{"design": "storage", "op": "deactivate", "phase": "init", "payload": 0, "run": 2, "gasUsed": 47649, "calldataBytes": 36, "note": "sets the deactivated flag"}
+{"design": "storage", "op": "changeOwner", "phase": "fresh", "payload": 0, "run": 2, "gasUsed": 48519, "calldataBytes": 68, "note": "unregistered identity: writes the owner slot"}
+{"design": "storage", "op": "deactivate", "phase": "fresh", "payload": 0, "run": 2, "gasUsed": 47651, "calldataBytes": 36, "note": "unregistered identity"}
+{"design": "storage", "op": "addDelegate", "phase": "init", "payload": 0, "run": 2, "gasUsed": 49645, "calldataBytes": 132, "note": ""}
+{"design": "storage", "op": "addDelegate", "phase": "again", "payload": 0, "run": 2, "gasUsed": 32545, "calldataBytes": 132, "note": "extends an existing delegate"}
+{"design": "storage", "op": "revokeDelegate", "phase": "again", "payload": 0, "run": 2, "gasUsed": 32242, "calldataBytes": 100, "note": ""}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 32, "run": 2, "gasUsed": 95041, "calldataBytes": 196, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 32, "run": 2, "gasUsed": 38287, "calldataBytes": 196, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 32, "run": 2, "gasUsed": 41087, "calldataBytes": 196, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 32, "run": 2, "gasUsed": 33680, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 33, "run": 2, "gasUsed": 117335, "calldataBytes": 228, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 33, "run": 2, "gasUsed": 40681, "calldataBytes": 228, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 33, "run": 2, "gasUsed": 46281, "calldataBytes": 228, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 33, "run": 2, "gasUsed": 37719, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 64, "run": 2, "gasUsed": 117744, "calldataBytes": 228, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 64, "run": 2, "gasUsed": 41090, "calldataBytes": 228, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 64, "run": 2, "gasUsed": 46690, "calldataBytes": 228, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 64, "run": 2, "gasUsed": 37719, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 128, "run": 2, "gasUsed": 163162, "calldataBytes": 292, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 128, "run": 2, "gasUsed": 46708, "calldataBytes": 292, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 128, "run": 2, "gasUsed": 57908, "calldataBytes": 292, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 128, "run": 2, "gasUsed": 45807, "calldataBytes": 68, "note": "delete; refund applies"}
+{"design": "storage", "op": "setAttribute", "phase": "init", "payload": 256, "run": 2, "gasUsed": 253974, "calldataBytes": 420, "note": "first write of a new name"}
+{"design": "storage", "op": "setAttribute", "phase": "again_same", "payload": 256, "run": 2, "gasUsed": 57920, "calldataBytes": 420, "note": "same value, new validTo (the earlier Table I 'update')"}
+{"design": "storage", "op": "setAttribute", "phase": "replace", "payload": 256, "run": 2, "gasUsed": 80320, "calldataBytes": 420, "note": "different value of the same size"}
+{"design": "storage", "op": "revokeAttribute", "phase": "again", "payload": 256, "run": 2, "gasUsed": 61964, "calldataBytes": 68, "note": "delete; refund applies"}

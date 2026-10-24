@@ -1,23 +1,14 @@
-// SPDX-License-Identifier: MIT
-/**
- * Arbitrum resolution-failure diagnostic.
- *
- * Explains the did:ethr resolution outcome by (a) reading the on-chain history
- * pointer `changed[identity]` and checking whether the identity's attributes
- * are still valid (validTo), and (b) printing the full resolver metadata so the
- * Arbitrum "notFound" error and its message are visible.
- *
- * Usage:   node scripts/did_prod_diag.js
- * Access:  read-only calls to public RPC endpoints; no private key required.
- */
+/** Diagnose the production ethr-did-resolver result: (a) are the identity's
+ * attributes/delegates EXPIRED (validTo < now)? (b) what exactly happens on
+ * Arbitrum? Read-only, public RPCs. */
 const { ethers } = require("ethers");
 const { getResolver } = require("ethr-did-resolver");
 const { Resolver } = require("did-resolver");
 
 const IDENTITY = "0x7ab54d25541FD1309457eE086A06dD0a42a88555";
 const NETS = {
-  sepolia: { rpc: process.env.SEPOLIA_RPC_URL || "https://ethereum-sepolia-rpc.publicnode.com", erc: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49", chainId: 11155111 },
-  arbsep:  { rpc: process.env.ARB_RPC || "https://sepolia-rollup.arbitrum.io/rpc",      erc: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d", chainId: 421614 },
+  sepolia: { rpc: "https://ethereum-sepolia-rpc.publicnode.com", erc: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49", chainId: 11155111 },
+  arbsep:  { rpc: "https://sepolia-rollup.arbitrum.io/rpc",      erc: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d", chainId: 421614 },
 };
 const ABI = ["function changed(address) view returns (uint256)"];
 const idTopic = ethers.zeroPadValue(IDENTITY, 32);
@@ -32,7 +23,7 @@ const idTopic = ethers.zeroPadValue(IDENTITY, 32);
     // walk one hop: get logs at the pointer block
     let events = [];
     try {
-      const logs = await p.send("eth_getLogs", [{ address: cfg.erc, fromBlock: ethers.toBeHex(V), toBlock: ethers.toBeHex(V), topics: [null, idTopic] }]);
+      const logs = await p.send("eth_getLogs", [{ address: cfg.erc, fromBlock: ethers.toQuantity(V), toBlock: ethers.toQuantity(V), topics: [null, idTopic] }]);
       events = logs;
     } catch (e) { console.log(net, "getLogs at pointer err:", e.message); }
     // decode validTo from DIDAttributeChanged / DIDDelegateChanged (validTo is 4th indexed-less arg)
@@ -44,9 +35,7 @@ const idTopic = ethers.zeroPadValue(IDENTITY, 32);
     for (const lg of events) {
       try { const pl = fullAbi.parseLog({ topics: lg.topics, data: lg.data }); validTos.push(Number(pl.args.validTo)); } catch (e) {}
     }
-    const attrStatus = validTos.length === 0 ? "no-attribute-event-at-pointer"
-      : (validTos.every(v => v < now) ? "all-expired" : "some-valid");
-    console.log(`[${net}] changed[identity]=${V}  logs_at_pointer=${events.length}  validTo(s)=${JSON.stringify(validTos)}  attributes=${attrStatus}`);
+    console.log(`[${net}] changed[identity]=${V}  logs_at_pointer=${events.length}  validTo(s)=${JSON.stringify(validTos)}  allExpired=${validTos.length>0 && validTos.every(v=>v<now)}`);
   }
   console.log("\n=== production resolver full output ===");
   const resolver = new Resolver(getResolver({ networks: [

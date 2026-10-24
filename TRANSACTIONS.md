@@ -84,7 +84,7 @@ files named below; open any address on its explorer to list the transactions.
 |---|---|---|---|
 | Payload compressibility (Fig. 2) | `0x599FAF924B0884D172e2147Ba36B8B3e15ea0630` | OP Sepolia, Arbitrum Sepolia | 48 + 48 (`data/did_compress.jsonl`) |
 | History sweep, run 1 | `0xd3401C1030aB8800CB89f2694F66f0D0f4853DfC` | Sepolia, OP Sepolia, Arbitrum Sepolia | 98 + 98 + 163 (`data/did_history_tx.jsonl`) |
-| History sweep, run 2 (Fig. 4) | `0x89b7aE28C9469B58ca48a53ED8C8CE178Cef25f0` | Sepolia, OP Sepolia, Arbitrum Sepolia | see `data/did_history_tx_v2.jsonl` |
+| History sweep, run 2 (Fig. 3) | `0x89b7aE28C9469B58ca48a53ED8C8CE178Cef25f0` | Sepolia, OP Sepolia, Arbitrum Sepolia | see `data/did_history_tx_v2.jsonl` |
 
 ArbSys-pointer registry (`contracts/did/EthereumDIDRegistryArbL2.sol`), Arbitrum Sepolia:
 

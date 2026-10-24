@@ -9,6 +9,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
 URL = re.compile(r"https?://[^\s\"',)}\]]+")
 TEXT_FIELDS = ("error", "message", "missed")
+# Reserved documentation domains (RFC 2606) are allowed to stay: the test DID documents use
+# https://didcomm.example.org/inbox as their service endpoint. Any other URL could be an RPC endpoint with a key.
+SAFE_URL = re.compile(r"https?://([^/@\s]+\.)?example\.(org|com)(/|$)")
+
+
+def leaked(text):
+    return [u for u in URL.findall(text) if not SAFE_URL.match(u)]
 
 
 def clean(row):
@@ -26,13 +33,17 @@ def main():
         src = os.path.join(build, n + ".jsonl")
         with open(src, encoding="utf-8") as f:
             rows = [clean(json.loads(l)) for l in f if l.strip()]
+        if n == "did_resolver_versions":      # keep only the final complete run; earlier development runs used another row format
+            runs = sorted(set(r["run"] for r in rows if r.get("run") and "docSet" in r))
+            complete = [x for x in runs if sum(1 for r in rows if r.get("run") == x) >= 24]
+            rows = [r for r in rows if r.get("run") == complete[-1]]
         with open(os.path.join(DATA, n + ".jsonl"), "w", encoding="utf-8", newline="\n") as f:
             for r in rows:
                 f.write(json.dumps(r) + "\n")
         print(f"vendored {n}.jsonl ({len(rows)} rows)")
     bad = []
     for f in sorted(os.listdir(DATA)):
-        if f.endswith(".jsonl") and URL.search(open(os.path.join(DATA, f), encoding="utf-8").read()):
+        if f.endswith(".jsonl") and leaked(open(os.path.join(DATA, f), encoding="utf-8").read()):
             bad.append(f)
     if bad:
         sys.exit(f"URL found after cleaning in {bad}; not publishing")

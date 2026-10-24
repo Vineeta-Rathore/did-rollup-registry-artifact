@@ -1,5 +1,4 @@
-// SPDX-License-Identifier: MIT
-/** Fig. 4 (Sec. V-C): resolution latency versus history length,
+/** Fig. 3 (Sec. V-C): resolution latency versus history length,
  * and the ArbSys.arbBlockNumber() pointer fix on Arbitrum.
  *
  * One fresh identity per network keeps a constant DID document - one service
@@ -74,8 +73,8 @@ async function specWalk(prov, iface, reg, identity, keyIdx) {
   const evs = [];
   let emptyAt = null;
   while (block !== 0n) {
-    const logs = await prov.send("eth_getLogs", [{ address: reg, fromBlock: ethers.toBeHex(block),
-      toBlock: ethers.toBeHex(block), topics: [null, idTopic] }]);
+    const logs = await prov.send("eth_getLogs", [{ address: reg, fromBlock: ethers.toQuantity(block),
+      toBlock: ethers.toQuantity(block), topics: [null, idTopic] }]);
     calls++;
     if (logs.length === 0) { emptyAt = block.toString(); break; } // the walk silently ends here
     let prev = 0n;

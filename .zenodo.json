@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "did-rollup-registry-artifact: event-based vs storage-based DID registries on Ethereum rollups",
-  "description": "Contracts, measurement scripts, raw measurement data, analysis and figure scripts, and the on-chain transaction trail for the paper 'Anchoring Decentralized Identifiers on Ethereum Rollups: A Gas-Level Comparison of Event-Based and Storage-Based Registry Designs' (IEEE INDICON 2026). Code: MIT. Data: CC-BY-4.0.",
+  "description": "Contracts, measurement scripts, raw measurement data, analysis, figure and table scripts, and the on-chain transaction trail for the paper 'Anchoring Decentralized Identifiers on Ethereum Rollups: A Gas-Level Comparison of Event-Based and Storage-Based Registry Designs' (IEEE INDICON 2026). Code: MIT. The measurement data in the data/ directory: CC-BY-4.0.",
   "creators": [
     {
       "name": "Rathore, Vineeta",
@@ -12,7 +12,7 @@
       "affiliation": "Medicaps University"
     }
   ],
-  "license": "MIT",
+  "license": "mit",
   "keywords": [
     "decentralized identifiers",
     "ERC-1056",
@@ -25,12 +25,5 @@
   ],
   "version": "1.0.0",
   "language": "eng",
-  "notes": "AI-use disclosure (per IEEE policy on AI-generated content): Claude (Anthropic), an AI assistant, assisted with writing the measurement, analysis and plotting scripts and the documentation. It produced no measurement data; the authors verified all results and take full responsibility.",
-  "related_identifiers": [
-    {
-      "identifier": "https://github.com/decentralized-identity/ethr-did-resolver/issues/328",
-      "relation": "references",
-      "resource_type": "other"
-    }
-  ]
+  "notes": "AI-use disclosure (IEEE policy on AI-generated content): Claude (Anthropic), an AI assistant, wrote the storage-registry contract, the ArbSys-pointer variant of ERC-1056, the measurement, analysis and plotting scripts and the documentation, and ran these scripts under the authors' direction. It generated no measurement data: every value comes from running the released scripts against the networks. The authors directed the work, reviewed the results and take full responsibility. The paper carries the same disclosure in its Acknowledgment. The ERC-1056 registry is third-party code."
 }

@@ -1,0 +1,4 @@
+{"net": "opSepolia", "sample": 200, "withOperatorFeeFields": 0, "withL1FeeField": 200, "ts": "2026-10-23T18:38:50.832Z"}
+{"net": "opMainnet", "sample": 200, "withOperatorFeeFields": 0, "withL1FeeField": 200, "ts": "2026-10-23T18:38:50.832Z"}
+{"net": "opSepolia", "sample": 200, "withOperatorFeeFields": 0, "withL1FeeField": 200, "predeploy": {"operatorFeeScalar": "0", "operatorFeeConstant": "0", "version": "1.9.0"}, "ts": "2026-10-24T17:07:11.370Z"}
+{"net": "opMainnet", "sample": 200, "withOperatorFeeFields": 0, "withL1FeeField": 200, "predeploy": {"operatorFeeScalar": "0", "operatorFeeConstant": "0", "version": "1.9.0"}, "ts": "2026-10-24T17:07:11.370Z"}

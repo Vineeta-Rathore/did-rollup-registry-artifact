@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Figures 1-4 of the paper (IEEE two-column) from the raw JSONL data.
+"""Figures 1-3 of the paper (IEEE two-column) from the raw JSONL data.
 Usage: python analysis/make_figures.py [data_dir] [--out DIR]   (defaults: ../data, ./figs)
 Figures are written at final size (3.5 in single column, 7.16 in double column) so LaTeX
 places them at 1:1 scale. Palette validated for colour-vision deficiency: ERC-1056 #0072B2,
 storage #D55E00; every series also has a marker or line-style cue for grayscale print.
 Fonts are embedded as TrueType (pdf.fonttype 42). Tested with matplotlib 3.10.5."""
-import os, sys
+import math, os, sys
 from statistics import median
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FixedLocator, FuncFormatter, NullLocator
-from common import (P, H, data_dir, local_gas, july_rows, july_row, compress_cells, charged_size, gas,
-                    premium, mainnet, history_cells, ok_ms, pct, ols)
+from common import (P, H, TIP_DEFAULT, data_dir, steady, erc_replace, july_rows, july_row, compress_cells, charged_size, real_txs, med_tx,
+                    history_cells, ok_ms, pct, ols, mainnet, tasks, task_premium)
 
 D = data_dir(sys.argv)
 OUT = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else os.path.join(os.path.dirname(os.path.abspath(__file__)), "figs")
@@ -23,7 +23,7 @@ COL, DCOL = 3.5, 7.16
 plt.rcParams.update({
     "pdf.fonttype": 42, "ps.fonttype": 42, "font.family": "serif",
     "font.serif": ["Times New Roman", "STIXGeneral", "DejaVu Serif"], "mathtext.fontset": "stix",
-    "font.size": 8, "axes.labelsize": 8.5, "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 8,
+    "font.size": 8, "axes.labelsize": 8.5, "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 7.5,
     "axes.linewidth": 0.6, "lines.linewidth": 1.3, "lines.markersize": 4.5,
     "xtick.major.width": 0.6, "ytick.major.width": 0.6, "xtick.major.size": 3, "ytick.major.size": 3,
     "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "axes.axisbelow": True,
@@ -40,76 +40,72 @@ def save(fig, name):
 
 kfmt = FuncFormatter(lambda v, _: f"{v/1000:g}k" if v >= 1000 else f"{v:g}")
 
-# ---- Fig. 1: setAttribute gas vs payload, local EVM -------------------------------------------
-gm = local_gas(D)
-fig, ax = plt.subplots(figsize=(COL, 2.15))
-for d, op, c, ls, mk, name in [("erc1056", "setAttribute", C_ERC, "-", "o", "ERC-1056 (event)"),
-                               ("storage", "setAttribute", C_STO, "-", "s", "Storage, first write"),
-                               ("storage", "setAttribute_update", C_STO, "--", "^", "Storage, update")]:
-    ys = [gm(d, op, p) for p in P]
-    ax.plot(P, ys, ls=ls, marker=mk, color=c, label=f"{name}, {ols(P, ys)[0]:.3g} gas/B")
+# ---- Fig. 1: gas against payload, first writes and replacements (local EVM) ----------------------
+g = steady(D)
+series = [("ERC-1056, first write", lambda p: g("erc1056", "setAttribute", "init", p), C_ERC, "-", "o"),
+          ("ERC-1056, replace (set + revoke)", lambda p: erc_replace(g, p), C_ERC, "--", "v"),
+          ("Storage, first write", lambda p: g("storage", "setAttribute", "init", p), C_STO, "-", "s"),
+          ("Storage, replace", lambda p: g("storage", "setAttribute", "replace", p), C_STO, "--", "^")]
+fig, ax = plt.subplots(figsize=(COL, 2.3))
+for name, f, c, ls, mk in series:
+    ys = [f(p) for p in P]
+    ax.plot(P, ys, ls=ls, marker=mk, color=c, label=f"{name}: {ols(P, ys)[0]:.3g} gas/B")
 ax.xaxis.set_major_locator(FixedLocator([0] + P)); ax.yaxis.set_major_formatter(kfmt)
-ax.set_xlabel("Attribute payload (bytes)"); ax.set_ylabel("Gas per setAttribute")
-ax.set_xlim(0, 270); ax.set_ylim(0, 270000); ax.legend(loc="upper left", handlelength=2.2)
+ax.set_xlabel("Attribute payload (bytes)"); ax.set_ylabel("Gas per operation")
+ax.set_xlim(0, 270); ax.set_ylim(0, 330000); ax.legend(loc="upper left", handlelength=2.6)
 save(fig, "fig1_payload_gas")
 
-# ---- Fig. 2: charged L1 size on OP Sepolia, repeated vs random payload ------------------------
+# ---- Fig. 2: the rollup fee. (a) charged L1 size, repeated vs random payload, real keys; (b) fee ratio vs gas price ----
 cells, _ = compress_cells(D)
 jr = july_rows(D)
-fig, ax = plt.subplots(figsize=(COL, 2.05))
+rt = real_txs(D)
+m = mainnet(D)
+tk = tasks(D)
+fig, (ax, bx) = plt.subplots(1, 2, figsize=(DCOL, 2.3), gridspec_kw={"width_ratios": [1, 1.1]})
 ax.axhline(100, color=MUTED, lw=0.8, ls=":")
 ax.text(255, 96, "100-byte floor", color=MUTED, fontsize=7.5, va="top", ha="right")
-ax.plot(P, [charged_size(cells, "rnd", p) for p in P], "-o", color=INK, label="Random bytes (incompressible)")
+ax.plot(P, [charged_size(cells, "rnd", p) for p in P], "-o", color=INK, label="Random bytes")
 ax.plot(P, [charged_size(cells, "rep", p) for p in P], "--s", color=MUTED, label="Repeated byte 0xab")
 jp = [32, 256]
 ax.plot(jp, [int(july_row(jr, "opSepolia", "erc1056", "setAttribute", p)["l1GasUsed"]) / 16 for p in jp], "D", color=MUTED,
         mfc="white", ms=5, ls="none", label="July receipts (0xab)")
-ax.xaxis.set_major_locator(FixedLocator([0] + P)); ax.set_xlim(0, 270); ax.set_ylim(75, 360)
+ax.plot([33], [med_tx(rt[("erc1056", "set")])[1]], "*", color=C_ERC, ms=9, ls="none", label="Real 33-byte key")
+ax.xaxis.set_major_locator(FixedLocator([0] + P)); ax.set_xlim(0, 270); ax.set_ylim(75, 380)
 ax.set_xlabel("Attribute payload (bytes)"); ax.set_ylabel("Charged L1 size (bytes)")
-ax.legend(loc="upper left")
-save(fig, "fig2_l1_size")
+ax.legend(loc="upper left", ncol=1)
+ax.set_title("(a) Charged size, OP Sepolia", fontsize=8.5, loc="left")
 
-# ---- Fig. 3: premium vs data share, Eq. (2), with operating points ----------------------------
-eA, sA = july_row(jr, "opSepolia", "erc1056", "setAttribute", 256), july_row(jr, "opSepolia", "storage", "setAttribute", 256)
-pA, l2A = int(eA["l1Fee"]) / (int(eA["l1GasUsed"]) / 16), int(eA["effectiveGasPriceWei"])
-m = mainnet(D)
-ge, gs, L = gas(cells, "rnd", 256, "erc1056"), gas(cells, "rnd", 256, "storage"), charged_size(cells, "rnd", 256)
-R256, R32 = gs / ge, gas(cells, "rnd", 32, "storage") / gas(cells, "rnd", 32, "erc1056")
-pts = [("A", "o", int(eA["l1Fee"]) / int(eA["totalFeeWei"]), int(sA["totalFeeWei"]) / int(eA["totalFeeWei"])),
-       ("B", "s", *premium(ge, gs, L, pA, l2A)[::-1]),
-       ("C", "^", *premium(ge, gs, L, m["c_median"], m["egp_p50"])[::-1]),
-       ("D", "v", *premium(ge, gs, L, m["c_median"], m["egp_p90"])[::-1]),
-       ("E", "D", *premium(ge, gs, L, m["c_median"], m["base_median"])[::-1])]
-fig, ax = plt.subplots(figsize=(COL, 2.35))
-s = [i / 100 for i in range(101)]
-ax.plot([x * 100 for x in s], [R256 - x * (R256 - 1) for x in s], "-", color=INK, lw=1.2)
-ax.plot([x * 100 for x in s], [R32 - x * (R32 - 1) for x in s], "--", color=MUTED, lw=1.2)
-ax.text(72, R256 - 0.72 * (R256 - 1) + 0.35, "256-B payload", fontsize=7.5, color=INK, rotation=-30, rotation_mode="anchor")
-ax.text(14, R32 - 0.14 * (R32 - 1) + 0.12, "32-B payload", fontsize=7.5, color=MUTED, rotation=-10, rotation_mode="anchor")
-ax.axhline(1, color=MUTED, lw=0.7, ls=":")
-offs = {"A": (6, 4), "B": (7, 2), "C": (-4, -14), "D": (4, 7), "E": (-6, 6)}
-for tag, mk, sh, pr in pts:
-    ax.plot(sh * 100, pr, mk, color=C_STO, mec="white", mew=0.7, ms=6, zorder=5)
-    dx, dy = offs[tag]
-    ax.annotate(tag, (sh * 100, pr), xytext=(dx, dy), textcoords="offset points", fontsize=8, fontweight="bold",
-                color=INK, ha="left" if dx > 0 else "right")
-ax.set_xlabel("L1 data share of the ERC-1056 fee (%)"); ax.set_ylabel("Storage / ERC-1056 fee")
-ax.set_xlim(-2, 102); ax.set_ylim(0.6, 7.0)
-save(fig, "fig3_premium")
-print("  Fig. 3 points:", [(t, round(sh * 100, 1), round(pr, 2)) for t, _, sh, pr in pts], f"R256={R256:.2f} R32={R32:.2f}; mainnet source: {m['label']}")
+c0, base = m["c_median"], m["base_median"]
+ps = [10 ** (2.2 + 0.1 * i) for i in range(59)]                  # 158 wei .. 1e8 wei
+bx.axvspan(m["egp_p10"], m["egp_p90"], color="#9a9a9a", alpha=0.18, lw=0)
+bx.axhline(1, color=MUTED, lw=0.8, ls=":")
+marks = [(base, "o"), (base + TIP_DEFAULT, "s"), (m["egp_p90"], "^")]   # the three mainnet columns of Table II
+for key, lbl, ls, col in [("first_256", "First write, 256 B", "-", INK), ("first_33", "First write, 33 B key", "--", INK),
+                          ("replace_33", "Replace a 33 B key", "-.", MUTED)]:
+    bx.plot(ps, [task_premium(tk[key], c0, p) for p in ps], ls=ls, color=col, label=lbl)
+    for x, mk in marks:
+        bx.plot([x], [task_premium(tk[key], c0, x)], mk, color=col, mfc="white", ms=4.5, ls="none")
+bx.set_xscale("log"); bx.set_xlim(150, 1e8); bx.set_ylim(0, 7)
+bx.xaxis.set_major_locator(FixedLocator([1e3, 1e4, 1e5, 1e6, 1e7, 1e8]))
+bx.xaxis.set_major_formatter(FuncFormatter(lambda v, _: "10$^{%d}$" % round(math.log10(v))))
+bx.xaxis.set_minor_locator(NullLocator())
+bx.set_xlabel("Effective L2 gas price (wei)"); bx.set_ylabel("Fee ratio, storage / ERC-1056")
+bx.legend(loc="upper left", ncol=1)
+bx.set_title("(b) Fee ratio at the OP Mainnet L1 price", fontsize=8.5, loc="left")
+save(fig, "fig2_rollup_fee")
 
-# ---- Fig. 4: resolution latency vs history length (run 2), median with interquartile band -----
+# ---- Fig. 3: resolution latency vs history length (run 2), median with interquartile band -------
 hc, _ = history_cells(D, "did_history_v2.jsonl")
 fig, axes = plt.subplots(1, 3, figsize=(DCOL, 2.15), sharey=True)
 panels = [("sepolia", "erc1056", "Sepolia (L1)"), ("opSepolia", "erc1056", "OP Sepolia"),
           ("arbSepolia", "erc1056_arbL2", "Arbitrum Sepolia, ArbSys-pointer registry")]
 for ax, (net, ed, title) in zip(axes, panels):
-    for design, method, c, ls, mk, lbl in [(ed, "spec_walk", C_ERC, "-", "o", "Event walk (spec)"),
+    for design, method, c, ls, mk, lbl in [(ed, "spec_walk", C_ERC, "-", "o", "Pointer walk (specification)"),
                                            (ed, "production_cold", C_ERC, "--", "s", "ethr-did-resolver, cold"),
-                                           ("storage", "view_calls", C_STO, "-", "^", "Storage view calls")]:
+                                           ("storage", "view_calls", C_STO, "-", "^", "Storage, 3 sequential reads")]:
         xs = [h for h in H if ok_ms(hc.get((net, design, method, h), []))]
         v = [[x / 1000 for x in ok_ms(hc[(net, design, method, h)])] for h in xs]
-        ax.fill_between(xs, [pct(a, 25) for a in v], [pct(a, 75) for a in v], color=c, alpha=0.15, lw=0)
+        ax.fill_between(xs, [pct(a, 25) for a in v], [pct(a, 75) for a in v], color=c, alpha=0.3, lw=0)
         ax.plot(xs, [median(a) for a in v], ls=ls, marker=mk, color=c, label=lbl)
     w = [x / 1000 for x in ok_ms(hc.get((net, ed, "production_warm", 64), []))]
     if w:
@@ -123,4 +119,4 @@ for ax, (net, ed, title) in zip(axes, panels):
 axes[0].set_ylabel("Resolution latency (s)")
 h_, l_ = axes[0].get_legend_handles_labels()
 fig.legend(h_, l_, loc="outside upper center", ncol=4, handlelength=2.2)
-save(fig, "fig4_history")
+save(fig, "fig3_history")

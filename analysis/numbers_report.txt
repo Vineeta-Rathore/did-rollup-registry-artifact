@@ -1,0 +1,367 @@
+==============================================================================
+RQ1  gas on the local EVM by phase (did_gas_steady.jsonl) -> Table I, Fig. 1
+  phases: fresh = first operation on an identity; init = identity initialised, slot still empty; again = slot already in use
+  create (storage: register)                                               ERC         0  storage    68,173  storage/ERC nan
+  rotate owner, first change of a fresh identity                           ERC    68,843  storage    48,519  storage/ERC 0.70
+  rotate owner, identity initialised (ERC pointer set / storage registered) ERC    51,743  storage    31,429  storage/ERC 0.61
+  rotate owner, later                                                      ERC    34,639  storage    31,429  storage/ERC 0.91
+  add delegate (new)                                                       ERC    55,126  storage    49,645  storage/ERC 0.90
+  revoke delegate                                                          ERC    37,659  storage    32,242  storage/ERC 0.86
+  deactivate, first operation                                              ERC    48,703  storage    47,651  storage/ERC 0.98
+  deactivate, later                                                        ERC    29,599  storage    47,661  storage/ERC 1.61
+  set attribute 32 B (first write of a name)                               ERC    34,142  storage    95,041  storage/ERC 2.78
+  replace attribute 32 B (ERC: set + revoke, two transactions)             ERC    67,920  storage    41,087  storage/ERC 0.60
+  set attribute 33 B (first write of a name)                               ERC    34,614  storage   117,335  storage/ERC 3.39
+  replace attribute 33 B (ERC: set + revoke, two transactions)             ERC    68,864  storage    46,281  storage/ERC 0.67
+  set attribute 256 B (first write of a name)                              ERC    40,063  storage   253,974  storage/ERC 6.34
+  replace attribute 256 B (ERC: set + revoke, two transactions)            ERC    79,762  storage    80,320  storage/ERC 1.01
+  revoke attribute 256 B                                                   ERC    39,699  storage    61,964  storage/ERC 1.56
+  create + first rotation: ERC 68,843  storage 99,602
+  one-time ERC pointer initialisation (fresh rotation - initialised rotation): 17,100 gas
+  attribute-name storage: set attribute again_same (same value, new validTo) 256 B: 57,920
+  slope ERC set attribute (first write = append)      26.4 gas/B   32B=34,142  64B=34,986  128B=36,686  256B=40,063
+  slope ERC replace (set + revoke)                    52.9 gas/B   32B=67,920  64B=69,608  128B=73,008  256B=79,762
+  slope storage first write                          709.5 gas/B   32B=95,041  64B=117,744  128B=163,162  256B=253,974
+  slope storage replace                              175.2 gas/B   32B=41,087  64B=46,690  128B=57,908  256B=80,320
+  first write storage/ERC 32 B: 2.78x ; replace 0.60x
+  first write storage/ERC 33 B: 3.39x ; replace 0.67x
+  first write storage/ERC 256 B: 6.34x ; replace 1.01x
+  consistency with the earlier matrix (did_gas_local.jsonl, first writes): max relative difference 0.035%
+  Sepolia October receipts (after the Glamsterdam upgrade, EIP-8037) against July:
+    storage registration: October 238,213 vs July 68,173
+    storage first write of a 33-B key: October 463,425 (OP Sepolia 117,645)
+    ERC-1056 first write of an identity (pointer written): October 133,974 (OP Sepolia 51,954)
+    October Sepolia: replacement of a 33-B key ERC 71,852 (set + revoke) vs storage 61,891 gas (ratio 0.86); break-even 33.1 replacements (ERC first write with pointer slot) to 42.9 (without)
+    OP Sepolia (July rules): replacement of a 33-B key ERC 69,452 (set + revoke) vs storage 46,591 gas (ratio 0.67); break-even 2.9 replacements (ERC first write with pointer slot) to 3.6 (without)
+==============================================================================
+RQ2a  July 2026 OP Sepolia receipts, canonical pair (did_l2_measured.jsonl)
+  32B: calldata 196 B; l1GasUsed 1687 -> charged 105.4 B; l1Fee 18.48 gwei; price per charged byte ERC 1.75296e+08 wei, storage 1.74927e+08 wei; gas ratio 2.78x; fee ratio 2.157x; ERC data share 0.351
+  256B: calldata 420 B; l1GasUsed 1714 -> charged 107.1 B; l1Fee 18.78 gwei; price per charged byte ERC 1.75272e+08 wei, storage 1.74902e+08 wei; gas ratio 6.34x; fee ratio 4.635x; ERC data share 0.319
+  ERC-1056 receipts, 32 B vs 256 B: l1Fee ratio 1.01586, charged-size ratio 1.01600, price-per-byte difference 0.014%
+  point A (July 256-B ERC receipt): L1 1.75272e+08 wei per charged byte, L2 gas price 1000250 wei (base 250 + tip 1000000)
+  FastLZ size implied by Eq. (3) for charged 105.44 B: 177.0 B (inferred, not measured)
+  FastLZ size implied by Eq. (3) for charged 107.12 B: 179.0 B (inferred, not measured)
+==============================================================================
+RQ2b  payload compressibility (did_compress.jsonl) -> Fig. 2
+  pointer-initialising ERC writes excluded (gas above the cell minimum): arbSepolia: [17100]; local: [17100]; opSepolia: [17100]
+  rep32   charged size 116.3 B (l1GasUsed [1861], n=5); signed tx [309] B; gas ERC 34286.0 storage 95195
+  rep64   charged size 116.3 B (l1GasUsed [1861], n=6); signed tx [341] B; gas ERC 35130 storage 117898
+  rep128  charged size 117.1 B (l1GasUsed [1874], n=6); signed tx [406] B; gas ERC 36830 storage 163316
+  rep256  charged size 118.0 B (l1GasUsed [1888], n=6); signed tx [534] B; gas ERC 40207 storage 254128
+  charged-size slope rep: 0.008 B per payload byte
+  rnd32   charged size 139.8 B (l1GasUsed [2236], n=6); signed tx [309] B; gas ERC 34286 storage 95195
+  rnd64   charged size 167.4 B (l1GasUsed [2678], n=6); signed tx [341] B; gas ERC 35130 storage 117898
+  rnd128  charged size 223.4 B (l1GasUsed [3574], n=6); signed tx [406] B; gas ERC 36830 storage 163316
+  rnd256  charged size 334.6 B (l1GasUsed [5354], n=6); signed tx [534] B; gas ERC 40207 storage 254128
+  charged-size slope rnd: 0.870 B per payload byte
+  execution gas, random vs repeated payload (paired rows, local EVM + OP Sepolia, n=46): max |diff| = 24 gas
+  arbSepolia: gasUsedForL1 values ['0']
+  real transaction erc1056  first : gas 34,914, charged 158.1 B (n=1)
+  real transaction erc1056  set   : gas 34,914, charged 158.1 B (n=31)
+  real transaction erc1056  revoke: gas 34,538, charged 150.6 B (n=31)
+  real transaction erc1056  svc   : gas 51,954, charged 151.4 B (n=1)
+  real transaction storage  first : gas 117,645, charged 158.1 B (n=1)
+  real transaction storage  set   : gas 46,591, charged 158.1 B (n=31)
+  task first_33: ERC [(34914, 158.1)]  storage [(117645, 158.1)]  gas ratio 3.37
+  task first_256: ERC [(40207, 334.6)]  storage [(254128, 334.6)]  gas ratio 6.32
+  task replace_33: ERC [(34914, 158.1), (34538, 150.6)]  storage [(46591, 158.1)]  gas ratio 0.67
+==============================================================================
+RQ2c  fee premium by task and price point (model: Eq. (1) per transaction, measured gas and sizes)
+  source: sample of 48 half-hourly rounds; OP Mainnet: 540 transactions from 46 blocks, 46 rounds, 2026-10-23T05:34:33.000Z .. 2026-10-24T17:12:41.000Z; missed samples 7
+  OP Mainnet L1 price per charged byte: median 8.002e+06 wei (IQR 5.99e+06-2.244e+07); block base fee median 296 wei; effective gas price of sampled transactions p10/p50/p90 = 338/21863/1000344 wei; share of transactions at base fee + default tip (1e6 wei) or less: 0.82
+                                              July OP Sepolia prices (point A)    mainnet, base fee onlymainnet, default tip (1e6 wei)mainnet, median of other sendersmainnet, 90th percentile of other senders
+  premium  first_33                                                2.32                      1.02                      3.29                      1.89                      3.29
+  premium  first_256                                               3.16                      1.02                      5.99                      2.31                      5.99
+  premium  replace_33                                              0.60                      0.51                      0.67                      0.57                      0.67
+  L1 share first_33                                               0.442                     0.992                     0.035                     0.624                     0.035
+  L1 share first_256                                              0.593                     0.996                     0.062                     0.753                     0.062
+  L1 share replace_33                                             0.438                     0.992                     0.034                     0.619                     0.034
+  per-transaction premium over the sampled OP Mainnet transactions (each with its own L1 and L2 price), p10 / p50 / p90:
+    first_33     1.02 / 1.82 / 3.30
+    first_256    1.02 / 2.18 / 6.06
+    replace_33   0.51 / 0.57 / 0.67
+  absolute fee of the storage 256-B first write at the default tip: 2.57e+11 wei = 2.6e-07 ETH
+  Arbitrum One sample: 136/136 receipts with gasUsedForL1 > 0; median share of gasUsed 0.004
+  sample coverage: 46 distinct blocks from 2026-10-23 05:34Z to 2026-10-24 17:12Z; largest gap 7:21:00 (between 2026-10-23 06:04Z and 2026-10-23 13:25Z); UTC hours of the day with at least one sampled block: 19 of 24; weekdays covered: ['Fri', 'Sat']
+  ArbGasInfo.getL1BaseFeeEstimate now: Arbitrum Sepolia 0 wei, Arbitrum One 7757121 wei; at July receipt blocks: 1 of 13 readable (['0']), the others pruned by the endpoint
+  OP Stack operator fee: opSepolia: 0 of 200 receipts carry operatorFeeScalar/operatorFeeConstant (200 carry l1Fee)
+  OP Stack operator fee: opMainnet: 0 of 200 receipts carry operatorFeeScalar/operatorFeeConstant (200 carry l1Fee)
+  OP Stack operator fee: opSepolia: 0 of 200 receipts carry operatorFeeScalar/operatorFeeConstant (200 carry l1Fee); L1Block predeploy 1.9.0: operatorFeeScalar 0, operatorFeeConstant 0
+  OP Stack operator fee: opMainnet: 0 of 200 receipts carry operatorFeeScalar/operatorFeeConstant (200 carry l1Fee); L1Block predeploy 1.9.0: operatorFeeScalar 0, operatorFeeConstant 0
+==============================================================================
+RQ3  resolution vs history length, run 2 (paper, Fig. 3): did_history_v2.jsonl
+  duplicate (cell, round) rows dropped: 0
+  arbSepolia erc1056        production_cold   H= 2 ok 0/20 ['No logs found for block 11973032 but previousChange points h']
+  arbSepolia erc1056        production_cold   H= 4 ok 0/20 ['No logs found for block 11973042 but previousChange points h']
+  arbSepolia erc1056        production_cold   H= 8 ok 0/20 ['No logs found for block 11973057 but previousChange points h']
+  arbSepolia erc1056        production_cold   H=16 ok 0/20 ['No logs found for block 11973081 but previousChange points h']
+  arbSepolia erc1056        production_cold   H=32 ok 0/20 ['No logs found for block 11973118 but previousChange points h']
+  arbSepolia erc1056        production_cold   H=64 ok 0/20 ['No logs found for block 11973183 but previousChange points h']
+  arbSepolia erc1056        production_warm   H=64 ok 0/20 ['No logs found for block 11973183 but previousChange points h']
+  arbSepolia erc1056        production_warmup H=64 ok 0/1 ['No logs found for block 11973183 but previousChange points h']
+  arbSepolia erc1056        spec_walk         H= 2 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H= 4 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H= 8 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H=16 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H=32 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H=64 ok 0/20 []
+  arbSepolia erc1056_arbL2  production_cold   H= 2 ok 20/20 median    1926 IQR [1908,1938] p95    2042 CI [1910,1936] calls None 
+  arbSepolia erc1056_arbL2  production_cold   H= 4 ok 20/20 median    2713 IQR [2673,2744] p95    2772 CI [2676,2740] calls None 
+  arbSepolia erc1056_arbL2  production_cold   H= 8 ok 20/20 median    4475 IQR [4319,4555] p95    4629 CI [4330,4551] calls None 
+  arbSepolia erc1056_arbL2  production_cold   H=16 ok 20/20 median    7520 IQR [7428,7776] p95    7935 CI [7452,7750] calls None 
+  arbSepolia erc1056_arbL2  production_cold   H=32 ok 20/20 median   13669 IQR [13515,13821] p95   14104 CI [13556,13799] calls None 
+  arbSepolia erc1056_arbL2  production_cold   H=64 ok 20/20 median   29325 IQR [27063,30466] p95   36872 CI [27300,30271] calls None 
+  arbSepolia erc1056_arbL2  production_warm   H=64 ok 19/20 median    1022 IQR [931,1063] p95    1252 CI [938,1063] calls None ['missing revert data (action="call", data=null, reason=null, ']
+  arbSepolia erc1056_arbL2  production_warmup H=64 ok 1/1 median   33896 IQR [33896,33896] p95   33896 CI [33896,33896] calls None 
+  arbSepolia erc1056_arbL2  spec_walk         H= 2 ok 20/20 median    1153 IQR [1143,1178] p95    1232 CI [1145,1173] calls 3 
+  arbSepolia erc1056_arbL2  spec_walk         H= 4 ok 20/20 median    1940 IQR [1921,1969] p95    2083 CI [1927,1965] calls 5 
+  arbSepolia erc1056_arbL2  spec_walk         H= 8 ok 20/20 median    3582 IQR [3497,3723] p95    3786 CI [3505,3715] calls 9 
+  arbSepolia erc1056_arbL2  spec_walk         H=16 ok 20/20 median    6729 IQR [6619,6852] p95    7016 CI [6660,6842] calls 17 
+  arbSepolia erc1056_arbL2  spec_walk         H=32 ok 20/20 median   12741 IQR [12591,12930] p95   13187 CI [12623,12906] calls 33 
+  arbSepolia erc1056_arbL2  spec_walk         H=64 ok 20/20 median   27575 IQR [25830,29161] p95   31185 CI [26243,29124] calls 65 
+  arbSepolia storage        view_calls        H= 2 ok 20/20 median    1160 IQR [1142,1193] p95    1275 CI [1148,1186] calls 3 
+  arbSepolia storage        view_calls        H= 4 ok 20/20 median    1162 IQR [1142,1184] p95    1254 CI [1148,1182] calls 3 
+  arbSepolia storage        view_calls        H= 8 ok 20/20 median    1170 IQR [1150,1226] p95    1317 CI [1151,1209] calls 3 
+  arbSepolia storage        view_calls        H=16 ok 20/20 median    1197 IQR [1147,1213] p95    1326 CI [1159,1207] calls 3 
+  arbSepolia storage        view_calls        H=32 ok 20/20 median    1146 IQR [1131,1169] p95    1689 CI [1133,1167] calls 3 
+  arbSepolia storage        view_calls        H=64 ok 20/20 median    1218 IQR [1164,1514] p95    2175 CI [1166,1417] calls 3 
+  opSepolia  erc1056        production_cold   H= 2 ok 20/20 median    2715 IQR [2450,2883] p95    3380 CI [2502,2830] calls None 
+  opSepolia  erc1056        production_cold   H= 4 ok 20/20 median    3184 IQR [3049,3376] p95    3857 CI [3069,3337] calls None 
+  opSepolia  erc1056        production_cold   H= 8 ok 20/20 median    5110 IQR [4881,5389] p95    5971 CI [4902,5379] calls None 
+  opSepolia  erc1056        production_cold   H=16 ok 20/20 median    9115 IQR [8785,9863] p95   10404 CI [8801,9598] calls None 
+  opSepolia  erc1056        production_cold   H=32 ok 20/20 median   17030 IQR [15810,18772] p95   21325 CI [15859,18405] calls None 
+  opSepolia  erc1056        production_cold   H=64 ok 19/20 median   36684 IQR [32871,40109] p95   46847 CI [33392,40030] calls None ['could not coalesce error (error={ "code": -32016, "message":']
+  opSepolia  erc1056        production_warm   H=64 ok 20/20 median    1192 IQR [1143,1372] p95   21324 CI [1156,1356] calls None 
+  opSepolia  erc1056        production_warmup H=64 ok 1/1 median   43573 IQR [43573,43573] p95   43573 CI [43573,43573] calls None 
+  opSepolia  erc1056        spec_walk         H= 2 ok 20/20 median    1638 IQR [1597,1971] p95    3004 CI [1611,1943] calls 3 
+  opSepolia  erc1056        spec_walk         H= 4 ok 20/20 median    2238 IQR [2162,2381] p95    2730 CI [2167,2331] calls 4 
+  opSepolia  erc1056        spec_walk         H= 8 ok 20/20 median    4552 IQR [4375,4903] p95    6312 CI [4400,4817] calls 8 
+  opSepolia  erc1056        spec_walk         H=16 ok 20/20 median    8993 IQR [8777,9786] p95   11477 CI [8835,9609] calls 16 
+  opSepolia  erc1056        spec_walk         H=32 ok 19/20 median   17459 IQR [16789,17847] p95   22238 CI [16991,17823] calls 30 ['server response 503 Service Unavailable']
+  opSepolia  erc1056        spec_walk         H=64 ok 20/20 median   36852 IQR [34810,38547] p95   45698 CI [34986,37729] calls 59 
+  opSepolia  storage        view_calls        H= 2 ok 20/20 median    1597 IQR [1506,1710] p95    2169 CI [1509,1677] calls 3 
+  opSepolia  storage        view_calls        H= 4 ok 20/20 median    1616 IQR [1497,1728] p95    1793 CI [1508,1707] calls 3 
+  opSepolia  storage        view_calls        H= 8 ok 20/20 median    1636 IQR [1590,1735] p95    1789 CI [1609,1697] calls 3 
+  opSepolia  storage        view_calls        H=16 ok 20/20 median    1648 IQR [1562,1824] p95    1970 CI [1579,1780] calls 3 
+  opSepolia  storage        view_calls        H=32 ok 20/20 median    1623 IQR [1553,1710] p95    1827 CI [1565,1695] calls 3 
+  opSepolia  storage        view_calls        H=64 ok 20/20 median    1710 IQR [1583,1824] p95    2741 CI [1621,1782] calls 3 
+  sepolia    erc1056        production_cold   H= 2 ok 20/20 median     764 IQR [740,780] p95     809 CI [747,777] calls None 
+  sepolia    erc1056        production_cold   H= 4 ok 20/20 median    1124 IQR [1095,1157] p95    1210 CI [1100,1153] calls None 
+  sepolia    erc1056        production_cold   H= 8 ok 20/20 median    1773 IQR [1746,1790] p95    1971 CI [1752,1788] calls None 
+  sepolia    erc1056        production_cold   H=16 ok 20/20 median    2990 IQR [2974,3057] p95    3135 CI [2979,3037] calls None 
+  sepolia    erc1056        production_cold   H=32 ok 20/20 median    5589 IQR [5570,5650] p95    5697 CI [5579,5633] calls None 
+  sepolia    erc1056        production_cold   H=64 ok 20/20 median   10834 IQR [10716,11116] p95   11288 CI [10720,11006] calls None 
+  sepolia    erc1056        production_warm   H=64 ok 20/20 median     327 IQR [319,336] p95     347 CI [320,333] calls None 
+  sepolia    erc1056        production_warmup H=64 ok 1/1 median   12114 IQR [12114,12114] p95   12114 CI [12114,12114] calls None 
+  sepolia    erc1056        spec_walk         H= 2 ok 20/20 median     421 IQR [410,440] p95     458 CI [411,439] calls 3 
+  sepolia    erc1056        spec_walk         H= 4 ok 20/20 median     728 IQR [723,751] p95     774 CI [726,749] calls 5 
+  sepolia    erc1056        spec_walk         H= 8 ok 20/20 median    1297 IQR [1279,1328] p95    1356 CI [1281,1327] calls 9 
+  sepolia    erc1056        spec_walk         H=16 ok 20/20 median    2436 IQR [2406,2476] p95    2556 CI [2415,2465] calls 17 
+  sepolia    erc1056        spec_walk         H=32 ok 20/20 median    4755 IQR [4691,4799] p95    4907 CI [4698,4795] calls 33 
+  sepolia    erc1056        spec_walk         H=64 ok 20/20 median    9390 IQR [9155,9552] p95   10105 CI [9216,9545] calls 65 
+  sepolia    storage        view_calls        H= 2 ok 20/20 median     418 IQR [409,424] p95     441 CI [412,422] calls 3 
+  sepolia    storage        view_calls        H= 4 ok 20/20 median     430 IQR [420,450] p95     469 CI [422,446] calls 3 
+  sepolia    storage        view_calls        H= 8 ok 20/20 median     440 IQR [430,445] p95     451 CI [432,444] calls 3 
+  sepolia    storage        view_calls        H=16 ok 20/20 median     418 IQR [409,439] p95     462 CI [411,438] calls 3 
+  sepolia    storage        view_calls        H=32 ok 20/20 median     427 IQR [416,437] p95     457 CI [419,436] calls 3 
+  sepolia    storage        view_calls        H=64 ok 20/20 median     420 IQR [415,429] p95     481 CI [416,428] calls 3 
+  sepolia: 380/380 correct; failures: []
+  fit sepolia    erc1056        spec_walk       :  144.5 ms/event +    137 ms   H2=0.42s  H4=0.73s  H8=1.30s  H16=2.44s  H32=4.75s  H64=9.39s
+      spec_walk/storage reads: H=2 1.01x  H=64 22.34x; walk at H=64: 65 requests, 144 ms each
+  fit sepolia    erc1056        production_cold :  161.9 ms/event +    445 ms   H2=0.76s  H4=1.12s  H8=1.77s  H16=2.99s  H32=5.59s  H64=10.83s
+      production_cold/storage reads: H=2 1.83x  H=64 25.78x
+  fit sepolia    storage        view_calls      :   -0.1 ms/event +    428 ms   H2=0.42s  H4=0.43s  H8=0.44s  H16=0.42s  H32=0.43s  H64=0.42s
+  sepolia production_warm H=64: median 327 ms (ok 20/20); resolutions slower than 5 s: 0 []
+  opSepolia: 378/380 correct; failures: [(32, 'spec_walk', 'server response 503 Service Unavailable'), (64, 'production_cold', 'could not coalesce error (error={ "code": -32016, ')]
+  fit opSepolia  erc1056        spec_walk       :  569.8 ms/event +    -10 ms   H2=1.64s  H4=2.24s  H8=4.55s  H16=8.99s  H32=17.46s  H64=36.85s
+      spec_walk/storage reads: H=2 1.03x  H=64 21.55x; walk at H=64: 59 requests, 625 ms each
+  fit opSepolia  erc1056        production_cold :  549.8 ms/event +    762 ms   H2=2.72s  H4=3.18s  H8=5.11s  H16=9.12s  H32=17.03s  H64=36.68s
+      production_cold/storage reads: H=2 1.70x  H=64 21.45x
+  fit opSepolia  storage        view_calls      :    1.4 ms/event +   1608 ms   H2=1.60s  H4=1.62s  H8=1.64s  H16=1.65s  H32=1.62s  H64=1.71s
+  opSepolia production_warm H=64: median 1192 ms (ok 20/20); resolutions slower than 5 s: 2 [27.1, 21.0]
+  arbSepolia: 379/380 correct; failures: [(64, 'production_warm', 'missing revert data (action="call", data=null, rea')]
+  arbSepolia unmodified ERC-1056: 0/260 correct
+  fit arbSepolia erc1056_arbL2  spec_walk       :  423.2 ms/event +     67 ms   H2=1.15s  H4=1.94s  H8=3.58s  H16=6.73s  H32=12.74s  H64=27.58s
+      spec_walk/storage reads: H=2 0.99x  H=64 22.64x; walk at H=64: 65 requests, 424 ms each
+  fit arbSepolia erc1056_arbL2  production_cold :  438.1 ms/event +    738 ms   H2=1.93s  H4=2.71s  H8=4.48s  H16=7.52s  H32=13.67s  H64=29.32s
+      production_cold/storage reads: H=2 1.66x  H=64 24.08x
+  fit arbSepolia storage        view_calls      :    0.7 ms/event +   1161 ms   H2=1.16s  H4=1.16s  H8=1.17s  H16=1.20s  H32=1.15s  H64=1.22s
+  arbSepolia production_warm H=64: median 1022 ms (ok 19/20); resolutions slower than 5 s: 1 [11.0]
+  ArbSys write overhead: 32 paired key writes; vs pointer-changing writes +1151 gas (n=13); vs same-value writes +3951 gas (n=19); mean over all pairs +2814 gas
+  unmodified registry on Arbitrum: a write that leaves the pointer unchanged costs 2800 gas less (32114 vs 34914); 19 of 32 consecutive key writes left it unchanged
+  unmodified registry, last event: L2 block 321,890,189, receipt l1BlockNumber 11,973,183
+==============================================================================
+RQ3  resolution vs history length, run 1 (replicate; its production timings mix cold and warm cache): did_history.jsonl
+  duplicate (cell, round) rows dropped: 0
+  arbSepolia erc1056        production        H= 2 ok 0/20 ['No logs found for block 11972503 but previousChange points h']
+  arbSepolia erc1056        production        H= 4 ok 0/20 ['No logs found for block 11972515 but previousChange points h']
+  arbSepolia erc1056        production        H= 8 ok 0/20 ['No logs found for block 11972532 but previousChange points h']
+  arbSepolia erc1056        production        H=16 ok 0/20 ['No logs found for block 11972554 but previousChange points h']
+  arbSepolia erc1056        production        H=32 ok 0/20 ['No logs found for block 11972592 but previousChange points h']
+  arbSepolia erc1056        production        H=64 ok 0/20 ['No logs found for block 11972653 but previousChange points h']
+  arbSepolia erc1056        spec_walk         H= 2 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H= 4 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H= 8 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H=16 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H=32 ok 0/20 []
+  arbSepolia erc1056        spec_walk         H=64 ok 0/20 []
+  arbSepolia erc1056_arbL2  production        H= 2 ok 20/20 median    2182 IQR [1904,2369] p95    3064 CI [1911,2343] calls None 
+  arbSepolia erc1056_arbL2  production        H= 4 ok 20/20 median    3045 IQR [2757,3265] p95    4337 CI [2792,3220] calls None 
+  arbSepolia erc1056_arbL2  production        H= 8 ok 20/20 median    4535 IQR [4221,4566] p95    4609 CI [4224,4565] calls None 
+  arbSepolia erc1056_arbL2  production        H=16 ok 20/20 median    7667 IQR [7572,7885] p95    8098 CI [7576,7810] calls None 
+  arbSepolia erc1056_arbL2  production        H=32 ok 20/20 median   12397 IQR [11332,12624] p95   12972 CI [11779,12605] calls None 
+  arbSepolia erc1056_arbL2  production        H=64 ok 20/20 median   14812 IQR [13597,20937] p95   24556 CI [14126,18732] calls None 
+  arbSepolia erc1056_arbL2  spec_walk         H= 2 ok 20/20 median    1156 IQR [1139,1172] p95    1324 CI [1140,1163] calls 3 
+  arbSepolia erc1056_arbL2  spec_walk         H= 4 ok 20/20 median    1979 IQR [1880,2307] p95    2998 CI [1886,2200] calls 5 
+  arbSepolia erc1056_arbL2  spec_walk         H= 8 ok 20/20 median    3414 IQR [3396,3498] p95    3515 CI [3401,3468] calls 9 
+  arbSepolia erc1056_arbL2  spec_walk         H=16 ok 20/20 median    6465 IQR [6401,6544] p95    6601 CI [6423,6538] calls 17 
+  arbSepolia erc1056_arbL2  spec_walk         H=32 ok 20/20 median   12809 IQR [12681,12946] p95   13256 CI [12690,12902] calls 33 
+  arbSepolia erc1056_arbL2  spec_walk         H=64 ok 20/20 median   26345 IQR [25958,27028] p95   27716 CI [26071,26928] calls 65 
+  arbSepolia storage        view_calls        H= 2 ok 20/20 median    1148 IQR [1112,1235] p95    1621 CI [1116,1228] calls 3 
+  arbSepolia storage        view_calls        H= 4 ok 20/20 median    1213 IQR [1152,1471] p95    2160 CI [1157,1367] calls 3 
+  arbSepolia storage        view_calls        H= 8 ok 20/20 median    1138 IQR [1123,1156] p95    1192 CI [1123,1151] calls 3 
+  arbSepolia storage        view_calls        H=16 ok 20/20 median    1126 IQR [1115,1144] p95    1178 CI [1118,1138] calls 3 
+  arbSepolia storage        view_calls        H=32 ok 20/20 median    1145 IQR [1128,1190] p95    1354 CI [1128,1187] calls 3 
+  arbSepolia storage        view_calls        H=64 ok 20/20 median    1190 IQR [1165,1222] p95    1303 CI [1168,1210] calls 3 
+  opSepolia  erc1056        production        H= 2 ok 20/20 median    3137 IQR [2818,3378] p95    4853 CI [2847,3285] calls None 
+  opSepolia  erc1056        production        H= 4 ok 20/20 median    3850 IQR [3598,4346] p95    4734 CI [3689,4256] calls None 
+  opSepolia  erc1056        production        H= 8 ok 20/20 median    5702 IQR [5344,5781] p95    6909 CI [5471,5778] calls None 
+  opSepolia  erc1056        production        H=16 ok 20/20 median    9632 IQR [9511,9752] p95   10677 CI [9516,9733] calls None 
+  opSepolia  erc1056        production        H=32 ok 20/20 median   15313 IQR [12545,15579] p95   17670 CI [12643,15571] calls None 
+  opSepolia  erc1056        production        H=64 ok 19/20 median   20272 IQR [18717,22918] p95   29300 CI [18745,21439] calls None ['could not coalesce error (error={ "code": -32011, "message":']
+  opSepolia  erc1056        spec_walk         H= 2 ok 20/20 median    1747 IQR [1576,2168] p95    2668 CI [1582,2129] calls 3 
+  opSepolia  erc1056        spec_walk         H= 4 ok 20/20 median    3085 IQR [2716,3399] p95    4255 CI [2762,3329] calls 5 
+  opSepolia  erc1056        spec_walk         H= 8 ok 20/20 median    4748 IQR [4580,5133] p95    5932 CI [4609,4960] calls 9 
+  opSepolia  erc1056        spec_walk         H=16 ok 20/20 median    9317 IQR [9032,9898] p95   10469 CI [9101,9845] calls 17 
+  opSepolia  erc1056        spec_walk         H=32 ok 20/20 median   18581 IQR [17881,18924] p95   21406 CI [17951,18884] calls 33 
+  opSepolia  erc1056        spec_walk         H=64 ok 20/20 median   39623 IQR [38463,42366] p95   57309 CI [38523,41892] calls 65 
+  opSepolia  storage        view_calls        H= 2 ok 20/20 median    1693 IQR [1572,1941] p95    3017 CI [1578,1894] calls 3 
+  opSepolia  storage        view_calls        H= 4 ok 20/20 median    1623 IQR [1526,1783] p95    2986 CI [1528,1753] calls 3 
+  opSepolia  storage        view_calls        H= 8 ok 20/20 median    1612 IQR [1527,1737] p95    1845 CI [1528,1712] calls 3 
+  opSepolia  storage        view_calls        H=16 ok 20/20 median    1586 IQR [1518,1682] p95    1769 CI [1521,1661] calls 3 
+  opSepolia  storage        view_calls        H=32 ok 20/20 median    1685 IQR [1587,1746] p95    1794 CI [1623,1739] calls 3 
+  opSepolia  storage        view_calls        H=64 ok 20/20 median    1678 IQR [1614,1750] p95    1856 CI [1624,1737] calls 3 
+  sepolia    erc1056        production        H= 2 ok 20/20 median    1124 IQR [1073,1231] p95    1459 CI [1088,1183] calls None 
+  sepolia    erc1056        production        H= 4 ok 20/20 median    1634 IQR [1548,1762] p95    1862 CI [1553,1724] calls None 
+  sepolia    erc1056        production        H= 8 ok 20/20 median    2504 IQR [2430,2626] p95    3390 CI [2444,2570] calls None 
+  sepolia    erc1056        production        H=16 ok 20/20 median    4092 IQR [3998,4131] p95    4249 CI [4009,4122] calls None 
+  sepolia    erc1056        production        H=32 ok 20/20 median    6210 IQR [6061,6769] p95    9940 CI [6095,6679] calls None 
+  sepolia    erc1056        production        H=64 ok 20/20 median    6848 IQR [6043,8049] p95   10484 CI [6060,7982] calls None 
+  sepolia    erc1056        spec_walk         H= 2 ok 20/20 median     632 IQR [609,660] p95     875 CI [615,659] calls 3 
+  sepolia    erc1056        spec_walk         H= 4 ok 20/20 median    1046 IQR [1021,1096] p95    2292 CI [1022,1086] calls 5 
+  sepolia    erc1056        spec_walk         H= 8 ok 20/20 median    1873 IQR [1834,2235] p95    3817 CI [1838,2220] calls 9 
+  sepolia    erc1056        spec_walk         H=16 ok 20/20 median    3478 IQR [3469,3485] p95    3614 CI [3471,3483] calls 17 
+  sepolia    erc1056        spec_walk         H=32 ok 20/20 median    7142 IQR [6867,7227] p95    7381 CI [6954,7196] calls 33 
+  sepolia    erc1056        spec_walk         H=64 ok 20/20 median   14568 IQR [14232,14928] p95   15476 CI [14284,14825] calls 65 
+  sepolia    storage        view_calls        H= 2 ok 20/20 median     634 IQR [618,697] p95    1182 CI [620,690] calls 3 
+  sepolia    storage        view_calls        H= 4 ok 20/20 median     638 IQR [625,653] p95    1182 CI [626,651] calls 3 
+  sepolia    storage        view_calls        H= 8 ok 20/20 median     615 IQR [596,637] p95    1670 CI [597,630] calls 3 
+  sepolia    storage        view_calls        H=16 ok 20/20 median     610 IQR [597,618] p95     640 CI [599,616] calls 3 
+  sepolia    storage        view_calls        H=32 ok 20/20 median     627 IQR [606,667] p95     753 CI [609,660] calls 3 
+  sepolia    storage        view_calls        H=64 ok 20/20 median     636 IQR [612,716] p95     770 CI [612,696] calls 3 
+  sepolia: 360/360 correct; failures: []
+  fit sepolia    erc1056        spec_walk       :  225.1 ms/event +     62 ms   H2=0.63s  H4=1.05s  H8=1.87s  H16=3.48s  H32=7.14s  H64=14.57s
+      spec_walk/storage reads: H=2 1.00x  H=64 22.89x; walk at H=64: 65 requests, 224 ms each
+  fit sepolia    erc1056        production      :   92.6 ms/event +   1790 ms   H2=1.12s  H4=1.63s  H8=2.50s  H16=4.09s  H32=6.21s  H64=6.85s
+      production/storage reads: H=2 1.77x  H=64 10.76x
+  fit sepolia    storage        view_calls      :    0.1 ms/event +    624 ms   H2=0.63s  H4=0.64s  H8=0.61s  H16=0.61s  H32=0.63s  H64=0.64s
+  opSepolia: 359/360 correct; failures: [(64, 'production', 'could not coalesce error (error={ "code": -32011, ')]
+  fit opSepolia  erc1056        spec_walk       :  609.2 ms/event +     57 ms   H2=1.75s  H4=3.09s  H8=4.75s  H16=9.32s  H32=18.58s  H64=39.62s
+      spec_walk/storage reads: H=2 1.03x  H=64 23.61x; walk at H=64: 65 requests, 610 ms each
+  fit opSepolia  erc1056        production      :  281.7 ms/event +   3735 ms   H2=3.14s  H4=3.85s  H8=5.70s  H16=9.63s  H32=15.31s  H64=20.27s
+      production/storage reads: H=2 1.85x  H=64 12.08x
+  fit opSepolia  storage        view_calls      :    0.7 ms/event +   1631 ms   H2=1.69s  H4=1.62s  H8=1.61s  H16=1.59s  H32=1.69s  H64=1.68s
+  arbSepolia: 360/360 correct; failures: []
+  arbSepolia unmodified ERC-1056: 0/240 correct
+  fit arbSepolia erc1056_arbL2  spec_walk       :  405.6 ms/event +    177 ms   H2=1.16s  H4=1.98s  H8=3.41s  H16=6.47s  H32=12.81s  H64=26.35s
+      spec_walk/storage reads: H=2 1.01x  H=64 22.14x; walk at H=64: 65 requests, 405 ms each
+  fit arbSepolia erc1056_arbL2  production      :  207.1 ms/event +   3091 ms   H2=2.18s  H4=3.04s  H8=4.53s  H16=7.67s  H32=12.40s  H64=14.81s
+      production/storage reads: H=2 1.90x  H=64 12.45x
+  fit arbSepolia storage        view_calls      :    0.3 ms/event +   1153 ms   H2=1.15s  H4=1.21s  H8=1.14s  H16=1.13s  H32=1.15s  H64=1.19s
+  run 1 vs run 2 (same endpoints, a different identity, hours apart), H=64 medians in ms:
+    sepolia    spec_walk  run1    14568  run2     9390  run1/run2 1.55
+    sepolia    view_calls run1      636  run2      420  run1/run2 1.51
+    opSepolia  spec_walk  run1    39623  run2    36852  run1/run2 1.08
+    opSepolia  view_calls run1     1678  run2     1710  run1/run2 0.98
+    arbSepolia spec_walk  run1    26345  run2    27575  run1/run2 0.96
+    arbSepolia view_calls run1     1190  run2     1218  run1/run2 0.98
+  ArbSys write overhead: 32 paired key writes; vs pointer-changing writes +1151.0 gas (n=12); vs same-value writes +3951.0 gas (n=20); mean over all pairs +2901 gas
+  unmodified registry on Arbitrum: a write that leaves the pointer unchanged costs 2800 gas less (32102 vs 34902); 20 of 32 consecutive key writes left it unchanged
+  unmodified registry, last event: L2 block 321,866,066, receipt l1BlockNumber 11,972,653
+==============================================================================
+Table III  resolution strategies at 64 events (did_resolve_methods.jsonl; two sessions of 20 rounds, pooled)
+  sepolia: endpoint ethereum-sepolia-rpc.publicnode.com; scan range 11,288,126..11,977,398 from 2026-07-17T00:00:00Z in 69 chunks of 10,000 blocks; 6 requests in flight for range_par
+    spec_walk     ok 40/40  median  27.63 s  IQR [24.44, 29.98]  requests median 65.0
+        sessions: S1 26.02 s (20/20), S2 28.35 s (20/20); S2/S1 = 1.09
+    range_seq     ok 40/40  median  27.94 s  IQR [25.27, 31.22]  requests median 69.0 (splits 0)
+        sessions: S1 27.22 s (20/20), S2 27.96 s (20/20); S2/S1 = 1.03
+    range_par     ok 39/40  median  20.12 s  IQR [7.09, 41.93]  requests median 69 (splits 0)  errors ['request timeout']
+        sessions: S1 20.12 s (19/20), S2 21.33 s (20/20); S2/S1 = 1.06
+    storage_seq3  ok 40/40  median   1.09 s  IQR [0.98, 1.30]  requests median 3.0
+        sessions: S1 1.07 s (20/20), S2 1.17 s (20/20); S2/S1 = 1.09
+    storage_full  ok 40/40  median   0.72 s  IQR [0.55, 1.14]  requests median 4.0
+        sessions: S1 0.59 s (20/20), S2 0.88 s (20/20); S2/S1 = 1.49
+  opSepolia: endpoint sepolia.optimism.io; scan range 46,221,930..50,482,392 from 2026-07-17T00:00:00Z in 43 chunks of 100,000 blocks; 6 requests in flight for range_par
+    spec_walk     ok 38/40  median  35.84 s  IQR [32.15, 39.18]  requests median 59.0  errors ['server response 503 Service Unavailable']
+        sessions: S1 35.99 s (19/20), S2 35.68 s (19/20); S2/S1 = 0.99
+    range_seq     ok 39/40  median  59.21 s  IQR [53.02, 66.36]  requests median 95 (splits 26)  errors ['server response 503 Service Unavailable']
+        sessions: S1 59.57 s (19/20), S2 57.71 s (20/20); S2/S1 = 0.97
+    range_par     ok 40/40  median  12.13 s  IQR [10.24, 14.74]  requests median 96.0 (splits 26)
+        sessions: S1 11.03 s (20/20), S2 13.50 s (20/20); S2/S1 = 1.22
+    storage_seq3  ok 40/40  median   1.76 s  IQR [1.60, 1.89]  requests median 3.0
+        sessions: S1 1.69 s (20/20), S2 1.78 s (20/20); S2/S1 = 1.05
+    storage_full  ok 40/40  median   0.77 s  IQR [0.61, 1.11]  requests median 4.0
+        sessions: S1 0.87 s (20/20), S2 0.71 s (20/20); S2/S1 = 0.81
+  arbSepolia: endpoint sepolia-rollup.arbitrum.io; scan range 288,241,084..322,085,512 from 2026-07-17T00:00:00Z in 4 chunks of 10,000,000 blocks; 6 requests in flight for range_par
+    spec_walk     ok 40/40  median  30.31 s  IQR [28.62, 32.67]  requests median 65.0
+        sessions: S1 28.72 s (20/20), S2 32.07 s (20/20); S2/S1 = 1.12
+    range_seq     ok 40/40  median   1.90 s  IQR [1.76, 2.25]  requests median 4.0 (splits 0)
+        sessions: S1 1.82 s (20/20), S2 2.07 s (20/20); S2/S1 = 1.13
+    range_par     ok 40/40  median   0.86 s  IQR [0.80, 1.04]  requests median 4.0 (splits 0)
+        sessions: S1 0.81 s (20/20), S2 0.97 s (20/20); S2/S1 = 1.19
+    storage_seq3  ok 40/40  median   1.30 s  IQR [1.25, 1.47]  requests median 3.0
+        sessions: S1 1.28 s (20/20), S2 1.38 s (20/20); S2/S1 = 1.08
+    storage_full  ok 40/40  median   0.50 s  IQR [0.46, 0.78]  requests median 4.0
+        sessions: S1 0.46 s (20/20), S2 0.54 s (20/20); S2/S1 = 1.17
+  session-to-session ratio of the medians over 15 cells: min 0.81 (opSepolia storage_full), max 1.49 (sepolia storage_full); 14 of 15 within 0.8-1.25
+==============================================================================
+Table IV  resolver releases vs on-chain truth (latest run without endpoint failures)
+  runs skipped because of endpoint failures: 0; run 2026-10-23T14:05:52.568Z
+  A arbSepolia v11.0.4  FAILS OPEN    err=None controller_ok=False docEntries=0 truthEntries=0 truthEvents=6 pointer=11300426
+  A arbSepolia v14.1.2  FAILS CLOSED  err=notFound controller_ok=False docEntries=0 truthEntries=0 truthEvents=6 pointer=11300426
+  A arbSepolia v14.1.4  FAILS CLOSED  err=internalError controller_ok=False docEntries=0 truthEntries=0 truthEvents=6 pointer=11300426
+  B arbSepolia v11.0.4  FAILS OPEN    err=None controller_ok=True docEntries=0 truthEntries=2 truthEvents=64 pointer=11972653
+  B arbSepolia v14.1.2  FAILS CLOSED  err=notFound controller_ok=False docEntries=0 truthEntries=2 truthEvents=64 pointer=11972653
+  B arbSepolia v14.1.4  FAILS CLOSED  err=internalError controller_ok=False docEntries=0 truthEntries=2 truthEvents=64 pointer=11972653
+  C arbSepolia v11.0.4  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=10 pointer=11375764
+  C arbSepolia v14.1.2  FAILS CLOSED  err=notFound controller_ok=False docEntries=0 truthEntries=0 truthEvents=10 pointer=11375764
+  C arbSepolia v14.1.4  FAILS CLOSED  err=internalError controller_ok=False docEntries=0 truthEntries=0 truthEvents=10 pointer=11375764
+  D arbSepolia v11.0.4  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=321866475
+  D arbSepolia v14.1.2  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=321866475
+  D arbSepolia v14.1.4  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=321866475
+  E sepolia    v11.0.4  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=11972656
+  E sepolia    v14.1.2  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=11972656
+  E sepolia    v14.1.4  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=11972656
+  F opSepolia  v11.0.4  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=50453699
+  F opSepolia  v14.1.2  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=50453699
+  F opSepolia  v14.1.4  CORRECT       err=None controller_ok=True docEntries=2 truthEntries=2 truthEvents=64 pointer=50453699
+  G sepolia    v11.0.4  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=6 pointer=11300445
+  G sepolia    v14.1.2  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=6 pointer=11300445
+  G sepolia    v14.1.4  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=6 pointer=11300445
+  H opSepolia  v11.0.4  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=6 pointer=46297692
+  H opSepolia  v14.1.2  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=6 pointer=46297692
+  H opSepolia  v14.1.4  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=6 pointer=46297692
+==============================================================================
+  block-level bootstrap over 46 blocks (2000 resamples), 95% interval; point estimate in the full sample in brackets:
+    L1 price per charged byte, median: 6.75e+06 - 1.86e+07 wei [8e+06]
+    premium first_33    base fee only : 1.01 - 1.02 [1.02]
+    premium first_33    default tip   : 3.19 - 3.30 [3.29]
+    premium first_33    median sender : 1.49 - 2.37 [1.89]
+    premium first_256   base fee only : 1.01 - 1.03 [1.02]
+    premium first_256   default tip   : 5.61 - 6.04 [5.99]
+    premium first_256   median sender : 1.66 - 3.27 [2.31]
+    premium replace_33  base fee only : 0.51 - 0.51 [0.51]
+    premium replace_33  default tip   : 0.66 - 0.67 [0.67]
+    premium replace_33  median sender : 0.55 - 0.60 [0.57]
+  first half of the blocks (23 blocks, 320 tx): c median 9.48e+06 wei; premium 256-B first write: base fee only 1.02, default tip 5.93, median sender 2.21
+  second half of the blocks (23 blocks, 220 tx): c median 6.8e+06 wei; premium 256-B first write: base fee only 1.03, default tip 6.04, median sender 2.22

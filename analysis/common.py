@@ -3,13 +3,16 @@
 number in the text and every point in a figure comes from the same rows.
 
 Filters applied everywhere:
- - did_compress: the first ERC-1056 write of each network run initialises the registry's
-   `changed` pointer (about 17.1 kgas extra) and is excluded from per-payload medians.
+ - did_gas_steady: median over three runs on separate identities, per (design, op, phase, payload).
+ - did_compress: the first ERC-1056 write on a network also initialises the registry's `changed`
+   pointer (about 17,100 gas extra). It is identified by its gas (more than 10,000 above the minimum
+   of its cell), not by file order, and excluded from per-payload medians.
  - did_l2_measured: only rows after the last deployment of each network (the canonical pair).
  - did_history*: rows are de-duplicated by (net, design, method, H, round), keeping the last
    (a restarted checkpoint re-measures every round); latency statistics use correct
    resolutions only (`ok` true), and the number of excluded rows is reported.
- - did_resolver_versions: only the latest complete run.
+ - did_resolve_methods: correct resolutions only; calls are medians.
+ - did_resolver_versions: the latest run without endpoint failures.
 """
 import json, os, random, sys
 from statistics import median
@@ -18,6 +21,7 @@ from collections import defaultdict
 HERE = os.path.dirname(os.path.abspath(__file__))
 P = [32, 64, 128, 256]
 H = [2, 4, 8, 16, 32, 64]
+TIP_DEFAULT = 1_000_000          # wei: the priority fee that our own clients paid on OP (July 2026 receipts)
 
 
 def data_dir(argv):
@@ -62,13 +66,22 @@ def ols(x, y):
     return slope, my - slope * mx
 
 
-# ---------------------------------------------------------------- RQ1: local lifecycle gas
-def local_gas(D):
-    rows = [r for r in load(D, "did_gas_local.jsonl") if r.get("op")]
-    def gmed(design, op, p=0):
-        v = [r["gasUsed"] for r in rows if r["design"] == design and r["op"] == op and r["payload"] == p]
-        return median(v) if v else None
-    return gmed
+# ---------------------------------------------------------------- RQ1: gas by phase (local EVM)
+def steady(D):
+    """Median gas per (design, op, phase, payload) from did_gas_steady.jsonl (three runs each)."""
+    cells = defaultdict(list)
+    for r in load(D, "did_gas_steady.jsonl"):
+        cells[(r["design"], r["op"], r["phase"], r["payload"])].append(r["gasUsed"])
+    def g(design, op, phase, payload=0):
+        v = cells.get((design, op, phase, payload))
+        assert v and len(v) == 3, (design, op, phase, payload, v)
+        return median(v)
+    return g
+
+
+def erc_replace(g, p):
+    """ERC-1056 has no replace: a new value is a setAttribute plus a revokeAttribute of the old one."""
+    return g("erc1056", "setAttribute", "again", p) + g("erc1056", "revokeAttribute", "again", p)
 
 
 # ---------------------------------------------------------------- RQ2: July receipts
@@ -91,24 +104,32 @@ def july_row(rows, net, design, op, payload):
     return c[0]
 
 
-def july_prices(rows):
-    pb = [int(r["l1Fee"]) / (int(r["l1GasUsed"]) / 16) for r in rows if r["net"] == "opSepolia" and r.get("l1Fee")]
-    l2 = [int(r["effectiveGasPriceWei"]) for r in rows if r["net"] == "opSepolia"]
-    return median(pb), median(l2), (min(pb), max(pb))
+def price_per_byte(r):
+    """L1 price per charged byte of one OP receipt: l1Fee / (l1GasUsed / 16)."""
+    return int(r["l1Fee"]) / (int(r["l1GasUsed"]) / 16)
 
 
-# ---------------------------------------------------------------- RQ2: compressibility sweep
+def july_point(rows):
+    """Prices of the July ERC-1056 256-byte receipt (point A): (L1 wei per charged byte, L2 gas price in wei)."""
+    e = july_row(rows, "opSepolia", "erc1056", "setAttribute", 256)
+    return price_per_byte(e), int(e["effectiveGasPriceWei"])
+
+
+# ---------------------------------------------------------------- RQ2: compressibility sweep and real transactions
 def compress_cells(D):
     rows = [r for r in load(D, "did_compress.jsonl") if r.get("op") == "setAttribute"]
-    first = {}
-    for r in rows:                              # first ERC-1056 write per network = pointer initialisation
-        if r.get("firstWrite") or (r["design"] == "erc1056" and r["net"] not in first and "firstWrite" not in r):
-            first.setdefault(r["net"], r["txHash"])
-    cells = defaultdict(list)
+    raw = defaultdict(list)
     for r in rows:
-        if first.get(r["net"]) != r["txHash"]:
-            cells[(r["net"], r["design"], r["kind"], r["payload"])].append(r)
-    return cells, first
+        raw[(r["net"], r["design"], r["kind"], r["payload"])].append(r)
+    cells, init = {}, defaultdict(list)
+    for k, v in raw.items():
+        if k[1] == "erc1056":                   # drop the write that also initialised the pointer
+            lo = min(x["gasUsed"] for x in v)
+            cells[k] = [x for x in v if x["gasUsed"] - lo <= 10000]
+            init[k[0]] += [x["gasUsed"] - lo for x in v if x["gasUsed"] - lo > 10000]
+        else:
+            cells[k] = v
+    return cells, dict(init)
 
 
 def charged_size(cells, kind, p, net="opSepolia"):
@@ -120,9 +141,57 @@ def gas(cells, kind, p, design, net="opSepolia"):
     return median(x["gasUsed"] for x in cells[(net, design, kind, p)])
 
 
-def premium(g_erc, g_sto, size, price_per_byte, l2_price):
-    """Eq. (1)-(2): returns (fee premium, L1 data share of the ERC-1056 fee)."""
-    d = size * price_per_byte
+def real_txs(D):
+    """Measured OP Sepolia transactions of the October history run with real 33-byte secp256k1 keys:
+    {(design, kind): [(gas, charged bytes), ...]} for set-key (first write and replacements) and revoke-key."""
+    out = defaultdict(list)
+    for r in load(D, "did_history_tx_v2.jsonl"):
+        if r.get("net") != "opSepolia" or not r.get("l1GasUsed") or not r.get("tag"):
+            continue
+        t = r["tag"]
+        kind = ("first" if t == "set-key0" else "set" if t.startswith("set-key") else
+                "revoke" if t.startswith("revoke-key") else "svc" if t == "set-svc" else None)
+        if kind:
+            out[(r["design"], kind)].append((r["gasUsed"], int(r["l1GasUsed"]) / 16))
+    return out
+
+
+def med_tx(lst):
+    return (median(g for g, _ in lst), median(s for _, s in lst))
+
+
+def tasks(D):
+    """Fee-model inputs per task, from measured OP Sepolia transactions: {task: (erc_txs, sto_txs)} with
+    each tx = (gas, charged bytes). Replacement = ERC-1056 set + revoke (two transactions) against one
+    storage overwrite."""
+    rt = real_txs(D)
+    erc_set, erc_rev, sto_set = med_tx(rt[("erc1056", "set")]), med_tx(rt[("erc1056", "revoke")]), med_tx(rt[("storage", "set")])
+    erc_first, sto_first = med_tx(rt[("erc1056", "first")]), med_tx(rt[("storage", "first")])
+    cells, _ = compress_cells(D)
+    big = (gas(cells, "rnd", 256, "erc1056"), charged_size(cells, "rnd", 256)), (gas(cells, "rnd", 256, "storage"), charged_size(cells, "rnd", 256))
+    return {"first_33": ([erc_first], [sto_first]),
+            "first_256": ([big[0]], [big[1]]),
+            "replace_33": ([erc_set, erc_rev], [sto_set])}
+
+
+def task_fee(txs, c, p):
+    """Eq. (1) summed over the transactions of a task: gas * L2 price + charged bytes * L1 price per byte."""
+    return sum(g * p + s * c for g, s in txs)
+
+
+def task_premium(task, c, p):
+    erc, sto = task
+    return task_fee(sto, c, p) / task_fee(erc, c, p)
+
+
+def data_share(txs, c, p):
+    d = sum(s * c for _, s in txs)
+    return d / task_fee(txs, c, p)
+
+
+def premium(g_erc, g_sto, size, price_per_byte_, l2_price):
+    """Eq. (3) for a single transaction of equal size: returns (fee premium, L1 data share of the ERC-1056 fee)."""
+    d = size * price_per_byte_
     f_erc, f_sto = g_erc * l2_price + d, g_sto * l2_price + d
     return f_sto / f_erc, d / f_erc
 
@@ -130,18 +199,23 @@ def premium(g_erc, g_sto, size, price_per_byte, l2_price):
 # ---------------------------------------------------------------- RQ2: mainnet sample
 def mainnet(D):
     rows = load(D, "did_mainnet_snapshot_24h.jsonl", required=False)
-    label = "24-hour sample"
+    label = "sample of 48 half-hourly rounds"
     if not rows:
         rows, label = load(D, "did_mainnet_snapshot.jsonl"), "36-second snapshot (superseded)"
     op = [r for r in rows if r.get("net") == "opMainnet" and int(r.get("l1GasUsed", 0) or 0) > 0]
     arb = [r for r in rows if r.get("net") == "arbOne" and "gasUsedForL1" in r]
-    c = [int(r["l1Fee"]) / (int(r["l1GasUsed"]) / 16) for r in op]
+    if not op:
+        sys.exit("no OP Mainnet rows in the mainnet sample")
+    c = [price_per_byte(r) for r in op]
     egp = [int(r["effectiveGasPriceWei"]) for r in op]
-    out = {"label": label, "n_op": len(op), "n_arb": len(arb),
-           "blocks_op": sorted(set(r["block"] for r in op)), "times": sorted(r.get("blockTime", "") for r in op if r.get("blockTime")),
+    by_block = {r["block"]: int(r["baseFeeWei"]) for r in op}      # one base fee per block
+    times = sorted(r["blockTime"] for r in op if r.get("blockTime"))
+    out = {"label": label, "n_op": len(op), "n_arb": len(arb), "n_blocks": len(by_block),
+           "rounds": len(set(r["round"] for r in op if "round" in r)), "times": times,
+           "c": c, "egp": egp, "ops": op,
            "c_median": median(c), "c_p25": pct(c, 25), "c_p75": pct(c, 75),
-           "base_median": median(int(r["baseFeeWei"]) for r in op),
-           "egp": egp, "egp_p10": pct(egp, 10), "egp_p50": pct(egp, 50), "egp_p90": pct(egp, 90),
+           "base_median": median(by_block.values()),
+           "egp_p10": pct(egp, 10), "egp_p50": pct(egp, 50), "egp_p90": pct(egp, 90),
            "missed": [r for r in rows if r.get("missed")]}
     nz = [r for r in arb if int(r["gasUsedForL1"]) > 0]
     out["arb_nonzero"] = len(nz)
@@ -165,8 +239,34 @@ def ok_ms(rows):
     return [r["ms"] for r in rows if r.get("ok") and r.get("ms") is not None]
 
 
-# ---------------------------------------------------------------- Table II
+def methods_cells(D):
+    """Table III: resolution strategies at 64 events. Returns ({(net, method): rows}, {net: setup}).
+    The file holds two sessions of the same protocol (20 interleaved rounds per network each), merged
+    and ordered by timestamp; a `setup` row opens each session. Every result row is tagged
+    r["session"] = 1 or 2 by the number of setup rows of its network that precede it, so that the
+    sessions can be compared; the table pools both. `setup` keeps the latest setup row per network."""
+    rows = sorted(load(D, "did_resolve_methods.jsonl", required=False), key=lambda r: r["ts"])
+    cells, setup, opened = defaultdict(list), {}, defaultdict(int)
+    for r in rows:
+        if r.get("setup"):
+            opened[r["net"]] += 1
+            setup[r["net"]] = r["setup"]
+        elif r.get("method"):
+            r["session"] = max(1, opened[r["net"]])
+            cells[(r["net"], r["method"])].append(r)
+    return cells, setup
+
+
+# ---------------------------------------------------------------- Table IV
 def latest_versions(D):
+    """Rows of the latest resolver-release run in which every result is a resolver result (no endpoint
+    failures, truth available). Returns (rows, number of runs skipped)."""
     rows = load(D, "did_resolver_versions.jsonl")
-    runs = sorted(set(r.get("run") for r in rows if r.get("run")))
-    return [r for r in rows if r.get("run") == runs[-1]] if runs else rows
+    runs = sorted(set(r["run"] for r in rows if r.get("run")))
+    skipped = 0
+    for run in reversed(runs):
+        rs = [r for r in rows if r.get("run") == run]
+        if all(not r["verdict"].startswith(("INFRA", "UNKNOWN")) for r in rs) and len(rs) >= 24:
+            return rs, skipped
+        skipped += 1
+    sys.exit("no complete resolver-release run in did_resolver_versions.jsonl")

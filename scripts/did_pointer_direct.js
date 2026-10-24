@@ -1,36 +1,29 @@
-// SPDX-License-Identifier: MIT
-/**
- * Direct on-chain evidence for the Arbitrum did:ethr resolution failure.
- *
- * Reads the ERC-1056 history pointer `changed[identity]` live and compares it
- * to (a) the L2 block where the identity's events were actually mined and (b)
- * the chain's current L1-block estimate, then queries `eth_getLogs` at the
- * pointer block versus at the true event block. On Arbitrum the pointer holds
- * an L1 estimate while the events sit at a much larger L2 height, so the query
- * at the pointer block returns zero logs.
- *
- * Usage:   node scripts/did_pointer_direct.js   (reads deployments.json)
- * Access:  read-only calls to public RPC endpoints; no private key required.
- * Output:  one JSON line per network; also written to build/did_pointer_direct.jsonl.
+/** Direct evidence for the Arbitrum ERC-1056 resolution failure (Sec. V-C).
+ * Reads the on-chain history pointer changed[identity] live and compares it to
+ * (a) the actual L2 block where the identity's events were mined and (b) the
+ * chain's current L1-block estimate, then checks eth_getLogs at the pointer vs
+ * at the true event block. Read-only, public RPCs, no keys.
+ * Writes build/did_pointer_direct.jsonl
  */
 const fs = require("fs"), path = require("path");
 const { ethers } = require("ethers");
 
 const IDENTITY = "0x7ab54d25541FD1309457eE086A06dD0a42a88555";
 const NETS = {
-  sepolia:    { rpc: process.env.SEPOLIA_RPC_URL || "https://ethereum-sepolia-rpc.publicnode.com", erc: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49" },
-  opSepolia:  { rpc: process.env.OP_RPC || "https://sepolia.optimism.io",                 erc: "0x98C8d0dF99E0D4C599fe69242aE4daD95b9A148D" },
-  arbSepolia: { rpc: process.env.ARB_RPC || "https://sepolia-rollup.arbitrum.io/rpc",      erc: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d" },
+  sepolia:    { rpc: "https://ethereum-sepolia-rpc.publicnode.com", erc: "0xB38D5Ce0197293A596015BbCa7E7A2C864033d49" },
+  opSepolia:  { rpc: "https://sepolia.optimism.io",                 erc: "0x98C8d0dF99E0D4C599fe69242aE4daD95b9A148D" },
+  arbSepolia: { rpc: "https://sepolia-rollup.arbitrum.io/rpc",      erc: "0xa8d4a9222e40D3049297F88494f8F06A654F9c5d" },
 };
 const iface = new ethers.Interface(["function changed(address) view returns (uint256)"]);
 const idTopic = ethers.zeroPadValue(IDENTITY, 32);
 
-const dep = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "deployments.json"), "utf8"));
-const setAttrTx = (net) => (dep.networks[net] || {}).setAttributeTx;
+const l2 = fs.readFileSync(path.join(__dirname, "..", "build", "did_l2_measured.jsonl"), "utf8")
+  .split("\n").filter(Boolean).map(JSON.parse);
+const setAttrTx = (net) => (l2.find(x => x.net === net && x.design === "erc1056" && x.op === "setAttribute" && x.txHash) || {}).txHash;
 
 async function logsAt(p, addr, block) {
-  return (await p.send("eth_getLogs", [{ address: addr, fromBlock: ethers.toBeHex(block),
-    toBlock: ethers.toBeHex(block), topics: [null, idTopic] }])).length;
+  return (await p.send("eth_getLogs", [{ address: addr, fromBlock: ethers.toQuantity(block),
+    toBlock: ethers.toQuantity(block), topics: [null, idTopic] }])).length;
 }
 
 async function probe(net, cfg) {
@@ -56,9 +49,6 @@ async function probe(net, cfg) {
     try { const r = await probe(net, cfg); out.push(r); console.log(JSON.stringify(r, null, 0)); }
     catch (e) { console.log(net, "ERR", e.message || e); }
   }
-  if (out.length) {
-    fs.mkdirSync(path.join(__dirname, "..", "build"), { recursive: true });
-    fs.writeFileSync(path.join(__dirname, "..", "build", "did_pointer_direct.jsonl"),
-      out.map(x => JSON.stringify(x)).join("\n") + "\n");
-  }
+  if (out.length) fs.writeFileSync(path.join(__dirname, "..", "build", "did_pointer_direct.jsonl"),
+    out.map(x => JSON.stringify(x)).join("\n") + "\n");
 })();
