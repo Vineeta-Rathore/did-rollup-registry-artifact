@@ -52,16 +52,16 @@ deployments.json, TRANSACTIONS.md   addresses and transaction hashes
 ## Reproduce the paper's numbers and figures (no network, about 1 min)
 
 ```bash
-pip install -r analysis/requirements.txt          # matplotlib 3.10.x (Python 3.10+)
+pip install -r analysis/requirements.txt          # matplotlib 3.10.5 (the paper used Python 3.12)
 python3 analysis/paper_numbers.py data            # prints every quoted number
 python3 analysis/make_figures.py data             # writes analysis/figs/*.pdf
 python3 analysis/make_tables.py data              # writes analysis/tables/*.tex
 python3 analysis/test_model.py data               # checks Eq. (1)-(3), the Fjord size rule, the quoted slopes and the data checksums
-sha256sum -c data/SHA256SUMS                       # optional: check the data files (run inside data/)
+(cd data && sha256sum -c SHA256SUMS)               # optional; test_model.py runs the same check on any OS
 ```
 
-On Windows use `py` instead of `python3`. Filters (for example, dropping the first
-ERC-1056 write of each run, which also initialises the registry pointer) are defined
+On Windows use `py` instead of `python3`. Filters (for example, dropping ERC-1056 writes whose gas is more
+than 10,000 above their cell's minimum, i.e. the write that initialises the pointer) are defined
 once in `analysis/common.py` and documented there.
 
 ## Check the on-chain claims (read-only, no keys)
@@ -75,7 +75,7 @@ npm run verify-bytecode   # all 8 deployments equal the compiled sources, metada
 npm run prod-resolver     # Sepolia and OP Sepolia resolve; Arbitrum Sepolia returns notFound
 npm run pointer           # Arbitrum: changed[identity] holds an L1 block estimate
 cd resver && npm ci && node did_resolver_versions.js    # Table IV (11.0.4 / 14.1.2 / 14.1.4)
-cd .. && node scripts/did_resolve_methods.js            # Table III: needs NET=sepolia|opSepolia|arbSepolia and the state files of did_history.js
+cd .. && node scripts/did_resolve_methods.js            # Table III (read-only), but needs build/did_history_state_<net>_v2.json, written by did_history.js (which sends transactions)
 ```
 
 Each run of `did_resolve_methods.js` appends one session of 20 interleaved rounds. Table III pools
@@ -108,6 +108,7 @@ NET=opSepolia REPS=3 node scripts/did_compress.js      # also arbSepolia; NET=lo
 NET=sepolia node scripts/did_history.js                # also opSepolia, arbSepolia; resumable (RUN=v2 is the default)
 node scripts/did_mainnet_snapshot.js                   # read-only; 48 rounds, one every 30 min
 SAMPLES=14 START_ROUND=48 node scripts/did_mainnet_snapshot.js   # continuation, appends to the same file
+SAMPLES=1 START_ROUND=62 node scripts/did_mainnet_snapshot.js    # round 62 (hour 0 UTC)
 ```
 
 In PowerShell set variables first, e.g. `$env:NET="opSepolia"; node scripts/did_compress.js`.
@@ -159,10 +160,18 @@ written only when the checkpoint completes.
 - `StorageDIDRegistry.changeOwner(identity, address(0))` hands control back to the
   identity key, as in ERC-1056; use `deactivate()` to end an identity. The contract is
   kept as deployed (changing the source would change the bytecode checked by
-  `verify_bytecode.js`); do not reuse it in production without hardening.
-- Use a testnet-only key. Scripts never print it, read it from `.env` without exposing it
-  to dependencies, pin each network's chain ID, and strip RPC URLs (which may carry API
-  keys) from logged and saved error messages.
+  `verify_bytecode.js`); do not reuse it in production without hardening. In particular,
+  `deactivate()` only sets a flag: `validDelegate` and `getAttribute` still answer for a
+  deactivated identity, and `getAttribute` returns expired values, so a resolver must check
+  `deactivated(identity)` and `validTo` itself.
+- `EthereumDIDRegistryArbL2.sol` keeps the upstream ERC-1056 signature scheme: signed calls
+  carry no chain ID (a signature is valid on every chain where the contract has the same
+  address) and an invalid signature recovers `address(0)`, which is accepted for the identity
+  `0x0`. Use EIP-712 with a chain ID and reject a zero signer in production.
+- Use a testnet-only key. Scripts never print it and pin each network's chain ID. The
+  revision scripts (those using `did_rev_common.js`) read `.env` without exposing it to
+  dependencies and strip RPC URLs (which may carry API keys) from logged and saved errors;
+  the older `did_l2.js`, `did_resolve.js`, `did_gas.js` and `did_gas_steady.js` do not.
 
 ## Provenance and versions
 

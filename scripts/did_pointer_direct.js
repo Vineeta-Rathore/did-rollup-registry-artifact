@@ -17,7 +17,8 @@ const NETS = {
 const iface = new ethers.Interface(["function changed(address) view returns (uint256)"]);
 const idTopic = ethers.zeroPadValue(IDENTITY, 32);
 
-const l2 = fs.readFileSync(path.join(__dirname, "..", "build", "did_l2_measured.jsonl"), "utf8")
+const L2_FILE = ["data", "build"].map((d) => path.join(__dirname, "..", d, "did_l2_measured.jsonl")).find((f) => fs.existsSync(f));
+const l2 = fs.readFileSync(L2_FILE, "utf8")
   .split("\n").filter(Boolean).map(JSON.parse);
 const setAttrTx = (net) => (l2.find(x => x.net === net && x.design === "erc1056" && x.op === "setAttribute" && x.txHash) || {}).txHash;
 
@@ -49,6 +50,7 @@ async function probe(net, cfg) {
     try { const r = await probe(net, cfg); out.push(r); console.log(JSON.stringify(r, null, 0)); }
     catch (e) { console.log(net, "ERR", e.message || e); }
   }
+  fs.mkdirSync(path.join(__dirname, "..", "build"), { recursive: true });
   if (out.length) fs.writeFileSync(path.join(__dirname, "..", "build", "did_pointer_direct.jsonl"),
     out.map(x => JSON.stringify(x)).join("\n") + "\n");
 })();
