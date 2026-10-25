@@ -46,7 +46,7 @@ series = [("ERC-1056, first write", lambda p: g("erc1056", "setAttribute", "init
           ("ERC-1056, replace (set + revoke)", lambda p: erc_replace(g, p), C_ERC, "--", "v"),
           ("Storage, first write", lambda p: g("storage", "setAttribute", "init", p), C_STO, "-", "s"),
           ("Storage, replace", lambda p: g("storage", "setAttribute", "replace", p), C_STO, "--", "^")]
-fig, ax = plt.subplots(figsize=(COL, 2.3))
+fig, ax = plt.subplots(figsize=(COL, 2.1))
 for name, f, c, ls, mk in series:
     ys = [f(p) for p in P]
     ax.plot(P, ys, ls=ls, marker=mk, color=c, label=f"{name}: {ols(P, ys)[0]:.3g} gas/B")
@@ -61,7 +61,7 @@ jr = july_rows(D)
 rt = real_txs(D)
 m = mainnet(D)
 tk = tasks(D)
-fig, (ax, bx) = plt.subplots(1, 2, figsize=(DCOL, 2.3), gridspec_kw={"width_ratios": [1, 1.1]})
+fig, (ax, bx) = plt.subplots(1, 2, figsize=(DCOL, 2.1), gridspec_kw={"width_ratios": [1, 1.1]})
 ax.axhline(100, color=MUTED, lw=0.8, ls=":")
 ax.text(255, 96, "100-byte floor", color=MUTED, fontsize=8, va="top", ha="right")
 ax.plot(P, [charged_size(cells, "rnd", p) for p in P], "-o", color=INK, label="Random bytes")
@@ -96,7 +96,7 @@ save(fig, "fig2_rollup_fee")
 
 # ---- Fig. 3: resolution latency vs history length (run 2), median with interquartile band -------
 hc, _ = history_cells(D, "did_history_v2.jsonl")
-fig, axes = plt.subplots(1, 3, figsize=(DCOL, 2.15), sharey=True)
+fig, axes = plt.subplots(1, 3, figsize=(DCOL, 2.0), sharey=True)
 panels = [("sepolia", "erc1056", "Sepolia (L1)"), ("opSepolia", "erc1056", "OP Sepolia"),
           ("arbSepolia", "erc1056_arbL2", "Arbitrum Sepolia, ArbSys-pointer registry")]
 for ax, (net, ed, title) in zip(axes, panels):

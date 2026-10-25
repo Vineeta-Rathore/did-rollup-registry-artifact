@@ -75,7 +75,7 @@ write("tab_methods.tex", body)
 
 # ---- Table IV: resolver releases ----------------------------------------------------------------
 vrows, skipped = latest_versions(D)
-code = {"CORRECT": "correct", "FAILS OPEN": "open", "FAILS CLOSED": None}
+code = {"CORRECT": "correct", "FAILS OPEN": "wrong", "FAILS CLOSED": None}
 def cell(r):
     if r["verdict"] == "FAILS CLOSED":
         return {"notFound": "notFound", "internalError": "internalError"}.get(r["error"], r["error"])

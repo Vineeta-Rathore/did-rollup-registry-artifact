@@ -191,8 +191,9 @@ maintainers before publication of the paper: [ethr-did-resolver issue #328](http
 In line with IEEE policy on AI-generated content (text, figures, images and code), we disclose that Claude
 (Anthropic), an AI assistant, was used in preparing this artifact and the paper. It drafted and edited the text of the paper and wrote the
 storage-registry contract, the ArbSys-pointer variant of ERC-1056, the measurement, analysis and plotting scripts and the
-documentation, and it ran these scripts under the authors' direction. It generated no measurement data: every
-value comes from running the released scripts against the networks. The authors directed the work, reviewed the
+documentation, and it ran these scripts under the authors' direction. Every reported
+value comes from the records these scripts made of EVM executions and RPC queries; the assistant did not invent
+or edit any measurement. The authors directed the work, reviewed the
 results and take full responsibility for the artifact. The paper carries the same disclosure in its
 Acknowledgment. The ERC-1056 registry itself is third-party code.
 
