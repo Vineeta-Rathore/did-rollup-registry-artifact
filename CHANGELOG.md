@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.1 (2026-10-25): matches the camera-ready paper
+
+Same data as v1.0.0. The analysis now reproduces the final paper exactly: Table IV labels a silent wrong result
+"wrong", figure heights match the paper, the report prints the October replacement parts and the one-transaction
+estimate, the tip share is computed against each block's base fee, Table III request counts come from the same rows as
+the latencies, and the checksum test covers every data file. README security notes, filter description and commands
+were corrected after a final review.
+
 ## v1.0.0 (2026-10-25): camera-ready release
 
 Measurements and analysis behind the camera-ready version of the paper.

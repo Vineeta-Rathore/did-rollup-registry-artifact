@@ -23,7 +23,7 @@
     "OP Stack",
     "gas"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "language": "eng",
   "notes": "AI-use disclosure (IEEE policy on AI-generated content): Claude (Anthropic), an AI assistant, drafted and edited the text of the paper and wrote the storage-registry contract, the ArbSys-pointer variant of ERC-1056, the measurement, analysis and plotting scripts and the documentation, and ran these scripts under the authors' direction. Every reported value comes from the records these scripts made of EVM executions and RPC queries; the assistant did not invent or edit any measurement. The authors directed the work, reviewed the results and take full responsibility. The paper carries the same disclosure in its Acknowledgment. The ERC-1056 registry is third-party code."
 }
