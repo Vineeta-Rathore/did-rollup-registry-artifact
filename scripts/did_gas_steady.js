@@ -4,7 +4,7 @@
  * cost of an operation on an identity whose slots are already in use.
  *
  * Phases (column `phase`):
- *   fresh  - the very first operation on an identity with no prior state;
+ *   fresh  - the first operation on an identity with no prior state;
  *   init   - the identity is initialised (ERC-1056: `changed` pointer written; storage
  *            registry: registered) but the slots this operation writes are still empty;
  *   again  - the slots this operation writes already hold non-zero values.

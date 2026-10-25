@@ -4,7 +4,7 @@ Public, independently verifiable record of every deployment and
 transaction behind this paper. Inspect any address/hash on its block
 explorer. The July lifecycle runs act on the identity `0x7ab54d25541FD1309457eE086A06dD0a42a88555`; the October revision runs use the identities listed at the end.
 
-Only transactions sent to the **canonical** registry pair on each network are
+Only transactions sent to the canonical registry pair on each network are
 listed (development re-deployments on OP Sepolia are omitted).
 
 ## Registry deployments (canonical)

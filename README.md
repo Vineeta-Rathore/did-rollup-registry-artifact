@@ -152,7 +152,7 @@ written only when the checkpoint completes.
 
 ## Security notes
 
-- **The revision DIDs are public test material.** The secp256k1 verification keys set on
+- The revision DIDs are public test material. The secp256k1 verification keys set on
   the history identities (`did_history.js`, `keyAt`) are derived from public strings, so
   anyone can compute their private keys. Never accept these DIDs as credential issuers.
   The keys stay valid until about October 2027 so that Table IV can be rerun.
