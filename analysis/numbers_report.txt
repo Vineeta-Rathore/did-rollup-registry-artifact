@@ -41,8 +41,8 @@ RQ2a  July 2026 OP Sepolia receipts, canonical pair (did_l2_measured.jsonl)
   256B: calldata 420 B; l1GasUsed 1714 -> charged 107.1 B; l1Fee 18.78 gwei; price per charged byte ERC 1.75272e+08 wei, storage 1.74902e+08 wei; gas ratio 6.34x; fee ratio 4.635x; ERC data share 0.319
   ERC-1056 receipts, 32 B vs 256 B: l1Fee ratio 1.01586, charged-size ratio 1.01600, price-per-byte difference 0.014%
   point A (July 256-B ERC receipt): L1 1.75272e+08 wei per charged byte, L2 gas price 1000250 wei (base 250 + tip 1000000)
-  FastLZ size implied by Eq. (3) for charged 105.44 B: 177.0 B (inferred, not measured)
-  FastLZ size implied by Eq. (3) for charged 107.12 B: 179.0 B (inferred, not measured)
+  FastLZ size implied by Eq. (2) for charged 105.44 B: 177.0 B (inferred, not measured)
+  FastLZ size implied by Eq. (2) for charged 107.12 B: 179.0 B (inferred, not measured)
 ==============================================================================
 RQ2b  payload compressibility (did_compress.jsonl) -> Fig. 2
   pointer-initialising ERC writes excluded (gas above the cell minimum): arbSepolia: [17100]; local: [17100]; opSepolia: [17100]
@@ -70,7 +70,7 @@ RQ2b  payload compressibility (did_compress.jsonl) -> Fig. 2
 ==============================================================================
 RQ2c  fee premium by task and price point (model: Eq. (1) per transaction, measured gas and sizes)
   source: sample of 63 half-hourly rounds; OP Mainnet: 600 transactions from 60 blocks, 60 rounds, 2026-10-23T05:34:33.000Z .. 2026-10-25T00:13:09.000Z; missed samples 7
-  OP Mainnet L1 price per charged byte: median 7.922e+06 wei (IQR 5.979e+06-1.905e+07); block base fee median 296 wei; effective gas price of sampled transactions p10/p50/p90 = 336/22257/1000353 wei; share of transactions at base fee + default tip (1e6 wei) or less: 0.81
+  OP Mainnet L1 price per charged byte: median 7.922e+06 wei (IQR 5.979e+06-1.905e+07); block base fee median 296 wei; effective gas price of sampled transactions p10/p50/p90 = 336/22257/1000353 wei; share of transactions at base fee + default tip (1e6 wei) or less: 0.90 (each against its own block's base fee)
                                               July OP Sepolia prices (point A)    mainnet, base fee onlymainnet, default tip (1e6 wei)mainnet, median of other sendersmainnet, 90th percentile of other senders
   premium  first_33                                                2.32                      1.02                      3.29                      1.91                      3.29
   premium  first_256                                               3.16                      1.02                      5.99                      2.34                      5.99

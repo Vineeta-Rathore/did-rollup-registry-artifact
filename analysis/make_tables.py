@@ -67,7 +67,7 @@ for method, label in labels:
         if not ms:
             cells.append("--")
             continue
-        calls = median(r["calls"] for r in rs if r.get("calls") is not None)
+        calls = median(r["calls"] for r in rs if r.get("ok") and r.get("calls") is not None)   # same rows as the latency
         cells.append(f"{median(ms)/1000:.2f} ({calls:.0f})" + ("" if len(ms) == len(rs) else f"$^{{b}}$"))
     body += f"{label} & " + " & ".join(cells) + " \\\\\n"
 body += "\\bottomrule\n\\end{tabular}\n"

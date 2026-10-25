@@ -73,7 +73,11 @@ check("October Sepolia break-even is between 30 and 45 replacements", 30 < n_wit
 
 # Vendored data files match their checksums.
 sums = os.path.join(D, "SHA256SUMS")
+check("data/SHA256SUMS exists", os.path.exists(sums))
 if os.path.exists(sums):
+    listed = {l.split(None, 1)[1].strip().lstrip("*") for l in open(sums) if l.strip()}
+    on_disk = {f for f in os.listdir(D) if f.endswith(".jsonl")}
+    check("every data file is listed in SHA256SUMS", on_disk <= listed, ", ".join(sorted(on_disk - listed)))
     bad = []
     for line in open(sums):
         if line.strip():

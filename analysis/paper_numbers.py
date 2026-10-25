@@ -121,7 +121,7 @@ span = (m["times"][0], m["times"][-1]) if m["times"] else ("?", "?")
 print(f"  source: {m['label']}; OP Mainnet: {m['n_op']} transactions from {m['n_blocks']} blocks, {m['rounds']} rounds, {span[0]} .. {span[1]}; missed samples {len(m['missed'])}")
 print(f"  OP Mainnet L1 price per charged byte: median {m['c_median']:.4g} wei (IQR {m['c_p25']:.4g}-{m['c_p75']:.4g}); block base fee median {m['base_median']:.0f} wei; "
       f"effective gas price of sampled transactions p10/p50/p90 = {m['egp_p10']:.0f}/{m['egp_p50']:.0f}/{m['egp_p90']:.0f} wei; "
-      f"share of transactions at base fee + default tip (1e6 wei) or less: {sum(1 for x in m['egp'] if x <= m['base_median'] + TIP_DEFAULT)/len(m['egp']):.2f}")
+      f"share of transactions at base fee + default tip (1e6 wei) or less: {sum(1 for r in m['ops'] if int(r['effectiveGasPriceWei']) <= int(r['baseFeeWei']) + TIP_DEFAULT)/len(m['ops']):.2f} (each against its own block's base fee)")
 points = [("July OP Sepolia prices (point A)", cA, pA), ("mainnet, base fee only", m["c_median"], m["base_median"]),
           ("mainnet, default tip (1e6 wei)", m["c_median"], m["base_median"] + TIP_DEFAULT),
           ("mainnet, median of other senders", m["c_median"], m["egp_p50"]), ("mainnet, 90th percentile of other senders", m["c_median"], m["egp_p90"])]
