@@ -6,8 +6,8 @@ date-released: 2026-10-25
 doi: 10.5281/zenodo.23629515
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.23629516
-    description: "Archived release v1.0.0"
+    value: 10.5281/zenodo.23633430
+    description: "Archived release v1.0.1"
 license: MIT
 repository-code: "https://github.com/Vineeta-Rathore/did-rollup-registry-artifact"
 authors:
