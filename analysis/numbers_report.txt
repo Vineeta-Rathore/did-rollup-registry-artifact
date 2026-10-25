@@ -71,6 +71,7 @@ RQ2b  payload compressibility (did_compress.jsonl) -> Fig. 2
 RQ2c  fee premium by task and price point (model: Eq. (1) per transaction, measured gas and sizes)
   source: sample of 63 half-hourly rounds; OP Mainnet: 600 transactions from 60 blocks, 60 rounds, 2026-10-23T05:34:33.000Z .. 2026-10-25T00:13:09.000Z; missed samples 7
   OP Mainnet L1 price per charged byte: median 7.922e+06 wei (IQR 5.979e+06-1.905e+07); block base fee median 296 wei; effective gas price of sampled transactions p10/p50/p90 = 336/22257/1000353 wei; share of transactions at base fee + default tip (1e6 wei) or less: 0.90 (each against its own block's base fee)
+  tips (effective price minus own block base fee): exactly the default 1e6 wei 0.175; below it 0.728; above it 0.097
                                               July OP Sepolia prices (point A)    mainnet, base fee onlymainnet, default tip (1e6 wei)mainnet, median of other sendersmainnet, 90th percentile of other senders
   premium  first_33                                                2.32                      1.02                      3.29                      1.91                      3.29
   premium  first_256                                               3.16                      1.02                      5.99                      2.34                      5.99
