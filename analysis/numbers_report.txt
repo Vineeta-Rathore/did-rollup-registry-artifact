@@ -33,6 +33,8 @@ RQ1  gas on the local EVM by phase (did_gas_steady.jsonl) -> Table I, Fig. 1
     ERC-1056 first write of an identity (pointer written): October 133,974 (OP Sepolia 51,954)
     October Sepolia: replacement of a 33-B key ERC 71,852 (set + revoke) vs storage 61,891 gas (ratio 0.86); break-even 33.1 replacements (ERC first write with pointer slot) to 42.9 (without)
     OP Sepolia (July rules): replacement of a 33-B key ERC 69,452 (set + revoke) vs storage 46,591 gas (ratio 0.67); break-even 2.9 replacements (ERC first write with pointer slot) to 3.6 (without)
+    October Sepolia ERC-1056 replacement parts: set 36,114, revoke 35,738 gas
+  base cost in the 33-B replacement: ERC 68,864 = 2 x 21,000 + 26,864; storage 46,281 = 21,000 + 25,281; a one-transaction ERC replacement would cost about 47,864 gas (estimate: the work of both transactions plus one base cost)
 ==============================================================================
 RQ2a  July 2026 OP Sepolia receipts, canonical pair (did_l2_measured.jsonl)
   32B: calldata 196 B; l1GasUsed 1687 -> charged 105.4 B; l1Fee 18.48 gwei; price per charged byte ERC 1.75296e+08 wei, storage 1.74927e+08 wei; gas ratio 2.78x; fee ratio 2.157x; ERC data share 0.351

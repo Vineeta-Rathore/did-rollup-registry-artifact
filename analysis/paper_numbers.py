@@ -65,6 +65,11 @@ for net, label, e_rep in [("sepolia", "October Sepolia", tx_gas("sepolia", "erc1
     s_rep, saving, n_with, n_without = break_even(net, e_rep)
     print(f"    {label}: replacement of a 33-B key ERC {e_rep:,} (set + revoke) vs storage {s_rep:,} gas (ratio {s_rep/e_rep:.2f}); "
           f"break-even {n_with:.1f} replacements (ERC first write with pointer slot) to {n_without:.1f} (without)")
+print(f"    October Sepolia ERC-1056 replacement parts: set {tx_gas('sepolia','erc1056','set-key1')[0]:,}, revoke {tx_gas('sepolia','erc1056','revoke-key0')[0]:,} gas")
+# Share of the local-EVM replacement gap that is transaction base cost (21,000 gas per transaction).
+_e_rep33, _s_rep33 = erc_replace(g, 33), g("storage", "setAttribute", "replace", 33)
+print(f"  base cost in the 33-B replacement: ERC {_e_rep33:,} = 2 x 21,000 + {_e_rep33 - 42000:,}; storage {_s_rep33:,} = 21,000 + {_s_rep33 - 21000:,}; "
+      f"a one-transaction ERC replacement would cost about {_e_rep33 - 21000:,} gas (estimate: the work of both transactions plus one base cost)")
 
 line("RQ2a  July 2026 OP Sepolia receipts, canonical pair (did_l2_measured.jsonl)")
 for p in [32, 256]:
