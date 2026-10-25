@@ -199,7 +199,8 @@ def premium(g_erc, g_sto, size, price_per_byte_, l2_price):
 # ---------------------------------------------------------------- RQ2: mainnet sample
 def mainnet(D):
     rows = load(D, "did_mainnet_snapshot_24h.jsonl", required=False)
-    label = "sample of 48 half-hourly rounds"
+    attempted = {r["round"] for r in rows or [] if r.get("net") == "opMainnet" and "round" in r}
+    label = f"sample of {len(attempted)} half-hourly rounds"
     if not rows:
         rows, label = load(D, "did_mainnet_snapshot.jsonl"), "36-second snapshot (superseded)"
     op = [r for r in rows if r.get("net") == "opMainnet" and int(r.get("l1GasUsed", 0) or 0) > 0]

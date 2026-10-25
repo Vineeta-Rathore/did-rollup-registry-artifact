@@ -9,7 +9,7 @@
  *    the L1 price per charged byte is l1Fee / (l1GasUsed / 16) for each transaction.
  *  - Arbitrum One: gasUsedForL1, gasUsed, effectiveGasPrice, block base fee.
  * A later run can continue an earlier one: it restores the per-sender counts from the output file and
- * numbers its rounds from START_ROUND (the first run used 0..47, the continuation 48..61).
+ * numbers its rounds from START_ROUND (the first run used 0..47, the continuations 48..61 and 62).
  * Env: [SAMPLES=48] [START_ROUND=0] [INTERVAL_MIN=30] [MAX_PER_SENDER=5] [OPMAIN_RPC] [ARB1_RPC]
  * Appends build/did_mainnet_snapshot_24h.jsonl (a header row per chain, then one row per tx).
  */

@@ -23,7 +23,7 @@ COL, DCOL = 3.5, 7.16
 plt.rcParams.update({
     "pdf.fonttype": 42, "ps.fonttype": 42, "font.family": "serif",
     "font.serif": ["Times New Roman", "STIXGeneral", "DejaVu Serif"], "mathtext.fontset": "stix",
-    "font.size": 8, "axes.labelsize": 8.5, "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 7.5,
+    "font.size": 8, "axes.labelsize": 8.5, "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 8,
     "axes.linewidth": 0.6, "lines.linewidth": 1.3, "lines.markersize": 4.5,
     "xtick.major.width": 0.6, "ytick.major.width": 0.6, "xtick.major.size": 3, "ytick.major.size": 3,
     "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True, "axes.axisbelow": True,
@@ -63,7 +63,7 @@ m = mainnet(D)
 tk = tasks(D)
 fig, (ax, bx) = plt.subplots(1, 2, figsize=(DCOL, 2.3), gridspec_kw={"width_ratios": [1, 1.1]})
 ax.axhline(100, color=MUTED, lw=0.8, ls=":")
-ax.text(255, 96, "100-byte floor", color=MUTED, fontsize=7.5, va="top", ha="right")
+ax.text(255, 96, "100-byte floor", color=MUTED, fontsize=8, va="top", ha="right")
 ax.plot(P, [charged_size(cells, "rnd", p) for p in P], "-o", color=INK, label="Random bytes")
 ax.plot(P, [charged_size(cells, "rep", p) for p in P], "--s", color=MUTED, label="Repeated byte 0xab")
 jp = [32, 256]

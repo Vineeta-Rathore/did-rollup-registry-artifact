@@ -11,9 +11,12 @@
     "prod-resolver": "node scripts/did_prod_resolver.js",
     "pointer": "node scripts/did_pointer_direct.js",
     "prod-diag": "node scripts/did_prod_diag.js",
+    "gas-steady": "hardhat run scripts/did_gas_steady.js",
     "gas-local": "hardhat run scripts/did_gas.js",
     "numbers": "python analysis/paper_numbers.py data",
-    "figures": "python analysis/make_figures.py data"
+    "figures": "python analysis/make_figures.py data",
+    "tables": "python analysis/make_tables.py data",
+    "check": "python analysis/test_model.py data"
   },
   "dependencies": {
     "did-resolver": "5.0.1",

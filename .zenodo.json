@@ -25,5 +25,5 @@
   ],
   "version": "1.0.0",
   "language": "eng",
-  "notes": "AI-use disclosure (IEEE policy on AI-generated content): Claude (Anthropic), an AI assistant, wrote the storage-registry contract, the ArbSys-pointer variant of ERC-1056, the measurement, analysis and plotting scripts and the documentation, and ran these scripts under the authors' direction. It generated no measurement data: every value comes from running the released scripts against the networks. The authors directed the work, reviewed the results and take full responsibility. The paper carries the same disclosure in its Acknowledgment. The ERC-1056 registry is third-party code."
+  "notes": "AI-use disclosure (IEEE policy on AI-generated content): Claude (Anthropic), an AI assistant, drafted and edited the text of the paper and wrote the storage-registry contract, the ArbSys-pointer variant of ERC-1056, the measurement, analysis and plotting scripts and the documentation, and ran these scripts under the authors' direction. It generated no measurement data: every value comes from running the released scripts against the networks. The authors directed the work, reviewed the results and take full responsibility. The paper carries the same disclosure in its Acknowledgment. The ERC-1056 registry is third-party code."
 }

@@ -67,22 +67,22 @@ RQ2b  payload compressibility (did_compress.jsonl) -> Fig. 2
   task replace_33: ERC [(34914, 158.1), (34538, 150.6)]  storage [(46591, 158.1)]  gas ratio 0.67
 ==============================================================================
 RQ2c  fee premium by task and price point (model: Eq. (1) per transaction, measured gas and sizes)
-  source: sample of 48 half-hourly rounds; OP Mainnet: 540 transactions from 46 blocks, 46 rounds, 2026-10-23T05:34:33.000Z .. 2026-10-24T17:12:41.000Z; missed samples 7
-  OP Mainnet L1 price per charged byte: median 8.002e+06 wei (IQR 5.99e+06-2.244e+07); block base fee median 296 wei; effective gas price of sampled transactions p10/p50/p90 = 338/21863/1000344 wei; share of transactions at base fee + default tip (1e6 wei) or less: 0.82
+  source: sample of 63 half-hourly rounds; OP Mainnet: 600 transactions from 60 blocks, 60 rounds, 2026-10-23T05:34:33.000Z .. 2026-10-25T00:13:09.000Z; missed samples 7
+  OP Mainnet L1 price per charged byte: median 7.922e+06 wei (IQR 5.979e+06-1.905e+07); block base fee median 296 wei; effective gas price of sampled transactions p10/p50/p90 = 336/22257/1000353 wei; share of transactions at base fee + default tip (1e6 wei) or less: 0.81
                                               July OP Sepolia prices (point A)    mainnet, base fee onlymainnet, default tip (1e6 wei)mainnet, median of other sendersmainnet, 90th percentile of other senders
-  premium  first_33                                                2.32                      1.02                      3.29                      1.89                      3.29
-  premium  first_256                                               3.16                      1.02                      5.99                      2.31                      5.99
+  premium  first_33                                                2.32                      1.02                      3.29                      1.91                      3.29
+  premium  first_256                                               3.16                      1.02                      5.99                      2.34                      5.99
   premium  replace_33                                              0.60                      0.51                      0.67                      0.57                      0.67
-  L1 share first_33                                               0.442                     0.992                     0.035                     0.624                     0.035
-  L1 share first_256                                              0.593                     0.996                     0.062                     0.753                     0.062
-  L1 share replace_33                                             0.438                     0.992                     0.034                     0.619                     0.034
+  L1 share first_33                                               0.442                     0.992                     0.035                     0.617                     0.035
+  L1 share first_256                                              0.593                     0.996                     0.062                     0.748                     0.062
+  L1 share replace_33                                             0.438                     0.992                     0.034                     0.613                     0.034
   per-transaction premium over the sampled OP Mainnet transactions (each with its own L1 and L2 price), p10 / p50 / p90:
-    first_33     1.02 / 1.82 / 3.30
-    first_256    1.02 / 2.18 / 6.06
+    first_33     1.02 / 1.84 / 3.31
+    first_256    1.02 / 2.23 / 6.07
     replace_33   0.51 / 0.57 / 0.67
   absolute fee of the storage 256-B first write at the default tip: 2.57e+11 wei = 2.6e-07 ETH
-  Arbitrum One sample: 136/136 receipts with gasUsedForL1 > 0; median share of gasUsed 0.004
-  sample coverage: 46 distinct blocks from 2026-10-23 05:34Z to 2026-10-24 17:12Z; largest gap 7:21:00 (between 2026-10-23 06:04Z and 2026-10-23 13:25Z); UTC hours of the day with at least one sampled block: 19 of 24; weekdays covered: ['Fri', 'Sat']
+  Arbitrum One sample: 171/173 receipts with gasUsedForL1 > 0; median share of gasUsed 0.004
+  sample coverage: 60 distinct blocks from 2026-10-23 05:34Z to 2026-10-25 00:13Z; largest gap 7:21:00 (between 2026-10-23 06:04Z and 2026-10-23 13:25Z); UTC hours of the day with at least one sampled block: 23 of 24; weekdays covered: ['Fri', 'Sat', 'Sun']
   ArbGasInfo.getL1BaseFeeEstimate now: Arbitrum Sepolia 0 wei, Arbitrum One 7757121 wei; at July receipt blocks: 1 of 13 readable (['0']), the others pruned by the endpoint
   OP Stack operator fee: opSepolia: 0 of 200 receipts carry operatorFeeScalar/operatorFeeConstant (200 carry l1Fee)
   OP Stack operator fee: opMainnet: 0 of 200 receipts carry operatorFeeScalar/operatorFeeConstant (200 carry l1Fee)
@@ -352,16 +352,16 @@ Table IV  resolver releases vs on-chain truth (latest run without endpoint failu
   H opSepolia  v14.1.2  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=6 pointer=46297692
   H opSepolia  v14.1.4  CORRECT       err=None controller_ok=True docEntries=0 truthEntries=0 truthEvents=6 pointer=46297692
 ==============================================================================
-  block-level bootstrap over 46 blocks (2000 resamples), 95% interval; point estimate in the full sample in brackets:
-    L1 price per charged byte, median: 6.75e+06 - 1.86e+07 wei [8e+06]
+  block-level bootstrap over 60 blocks (2000 resamples), 95% interval; point estimate in the full sample in brackets:
+    L1 price per charged byte, median: 6.75e+06 - 1.51e+07 wei [7.92e+06]
     premium first_33    base fee only : 1.01 - 1.02 [1.02]
-    premium first_33    default tip   : 3.19 - 3.30 [3.29]
-    premium first_33    median sender : 1.49 - 2.37 [1.89]
+    premium first_33    default tip   : 3.22 - 3.30 [3.29]
+    premium first_33    median sender : 1.57 - 2.49 [1.91]
     premium first_256   base fee only : 1.01 - 1.03 [1.02]
-    premium first_256   default tip   : 5.61 - 6.04 [5.99]
-    premium first_256   median sender : 1.66 - 3.27 [2.31]
+    premium first_256   default tip   : 5.73 - 6.04 [5.99]
+    premium first_256   median sender : 1.79 - 3.55 [2.34]
     premium replace_33  base fee only : 0.51 - 0.51 [0.51]
     premium replace_33  default tip   : 0.66 - 0.67 [0.67]
-    premium replace_33  median sender : 0.55 - 0.60 [0.57]
-  first half of the blocks (23 blocks, 320 tx): c median 9.48e+06 wei; premium 256-B first write: base fee only 1.02, default tip 5.93, median sender 2.21
-  second half of the blocks (23 blocks, 220 tx): c median 6.8e+06 wei; premium 256-B first write: base fee only 1.03, default tip 6.04, median sender 2.22
+    premium replace_33  median sender : 0.55 - 0.61 [0.57]
+  first half of the blocks (30 blocks, 410 tx): c median 7.06e+06 wei; premium 256-B first write: base fee only 1.03, default tip 6.03, median sender 2.18
+  second half of the blocks (30 blocks, 190 tx): c median 9.41e+06 wei; premium 256-B first write: base fee only 1.02, default tip 5.93, median sender 3.99

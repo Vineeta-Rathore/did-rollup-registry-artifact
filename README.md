@@ -21,7 +21,7 @@ scripts/
   did_gas.js            first lifecycle matrix on the local EVM (superseded by did_gas_steady.js)
   did_l2.js             lifecycle transactions on the three testnets     (July receipts)
   did_compress.js       repetitive vs random payloads, rollup data fee   (Fig. 2a)
-  did_mainnet_snapshot.js  read-only OP Mainnet / Arbitrum One fee levels, 48 rounds (Table II, Fig. 2b)
+  did_mainnet_snapshot.js  read-only OP Mainnet / Arbitrum One fee levels, 63 rounds (Table II, Fig. 2b)
   did_history.js        resolution latency vs history length, ArbSys fix (Fig. 3)
   did_resolve_methods.js  read-only: walk vs ranged scans vs storage reads at 64 events (Table III)
   did_arb_l1price.js    read-only: Arbitrum L1 price estimate at the July receipt blocks
@@ -36,11 +36,12 @@ resver/                 isolated install of ethr-did-resolver 11.0.4, 14.1.2, 14
                         pr329_live_check*.mjs + pr329_results.jsonl: run of a third party's fix (PR 329)
   did_resolver_versions.js                                                (Table IV)
 analysis/
-  common.py             data filters shared by the two scripts below (one definition each)
+  common.py             data filters shared by the scripts below (one definition each)
   paper_numbers.py      recomputes every number quoted in the paper from data/
   make_figures.py       regenerates Figs. 1-3 from data/
   make_tables.py        regenerates the LaTeX tables I-IV from data/
   vendor_data.py        copies build/*.jsonl into data/, strips URLs from error text, writes SHA256SUMS
+  test_model.py         consistency checks: Eq. (1)-(3), Fjord size rule, quoted slopes, data checksums
 data/                   raw JSONL measurements (see data/README.md), CC BY 4.0
 deployments.json, TRANSACTIONS.md   addresses and transaction hashes
 ```
@@ -98,16 +99,17 @@ reruns do not touch the identities used in the paper. Outputs go to `build/`, wh
 not tracked; the published data are in `data/`.
 
 ```bash
-npx hardhat run scripts/did_gas.js                     # local EVM, deterministic
+npx hardhat run scripts/did_gas_steady.js              # Table I, Fig. 1: local EVM, deterministic
+npx hardhat run scripts/did_gas.js                     # first matrix (superseded by did_gas_steady.js)
 NET=opSepolia REPS=3 node scripts/did_compress.js      # also arbSepolia; NET=local needs `npx hardhat node` running
 NET=sepolia node scripts/did_history.js                # also opSepolia, arbSepolia; resumable (RUN=v2 is the default)
 node scripts/did_mainnet_snapshot.js                   # read-only; 48 rounds, one every 30 min
+SAMPLES=14 START_ROUND=48 node scripts/did_mainnet_snapshot.js   # continuation, appends to the same file
 ```
 
 In PowerShell set variables first, e.g. `$env:NET="opSepolia"; node scripts/did_compress.js`.
 Do not run two measurement scripts on the same network at the same time: they share
 the funding wallet.
-```
 
 `did_history.js` stores its progress in `build/did_history_state_<net>_v2.json` (no
 suffix for the first run) and
@@ -134,13 +136,16 @@ written only when the checkpoint completes.
   by timestamp restores the order. An earlier attempt of the same experiment hit a local DNS
   outage and was discarded (its failures were network errors, not endpoint answers); the script
   now repeats a round that is hit by a network error.
-- The OP Mainnet / Arbitrum One sample (`did_mainnet_snapshot_24h.jsonl`) was planned as 48 rounds, one block every
-  30 minutes. Forty-five OP Mainnet rounds (44 for Arbitrum One) returned a block, 533 and 131 transactions. The rounds
-  took 35.4 hours (23 Oct 05:34Z to 24 Oct 16:58Z) because the sampling laptop slept twice (gaps of 7.4 and 5.6 hours)
-  and three consecutive rounds failed (2 hours; `missed` rows). 19 of the 24 hours of the day are covered, on a Friday
-  and a Saturday. `paper_numbers.py` prints the coverage; the sample says nothing about other days or fee spikes.
+- The OP Mainnet / Arbitrum One sample (`did_mainnet_snapshot_24h.jsonl`) has 63 rounds, one block every 30 minutes:
+  48 planned rounds (0-47) and two continuations, 48-61 and 62, run to cover the evening hours and a Sunday block. Sixty OP
+  Mainnet rounds (59 for Arbitrum One) returned a block, 600 and 173 transactions. The rounds took 42.6 hours (23 Oct
+  05:34Z to 25 Oct 00:13Z) because the sampling laptop slept twice (gaps of 7.4 and 5.6 hours) and three consecutive
+  rounds failed (2 hours; `missed` rows). 23 of the 24 hours of the day are covered, Friday to Sunday (UTC).
+  `paper_numbers.py` prints the coverage and block-level bootstrap intervals; the ratio for the median sender is the
+  least stable figure, and the sample says nothing about other weeks or fee spikes.
 - `did_operator_fee_check.jsonl` counts, in recent receipts of OP Sepolia and OP Mainnet, those
-  that carry OP Stack operator-fee fields (Isthmus); the fee model of the paper omits that term.
+  that carry OP Stack operator-fee fields (Isthmus), and reads the operator-fee scalar and constant
+  from the L1Block predeploy (both 0 on 24 October 2026); the fee model of the paper omits that term.
 
 ## Security notes
 
@@ -159,7 +164,7 @@ written only when the checkpoint completes.
 ## Provenance and versions
 
 - Lifecycle gas and testnet lifecycle runs: July 2026. Payload, resolution-history,
-  resolver-release and mainnet-fee experiments: 22-24 October 2026. Each JSONL row
+  resolver-release and mainnet-fee experiments: 22-25 October 2026. Each JSONL row
   carries its own timestamp; `data/README.md` lists script, date and content per file.
 - Toolchain: Node 22, Hardhat 2.28.6, ethers 6.17.0, Solidity 0.8.24 (optimizer 200
   runs, Paris EVM), ethr-did-resolver 14.1.2 (Table IV also 11.0.4 and 14.1.4),
@@ -181,8 +186,8 @@ maintainers before publication of the paper: [ethr-did-resolver issue #328](http
 ## Use of AI tools
 
 In line with IEEE policy on AI-generated content (text, figures, images and code), we disclose that Claude
-(Anthropic), an AI assistant, was used in preparing this artifact and the paper. It wrote the storage-registry
-contract, the ArbSys-pointer variant of ERC-1056, the measurement, analysis and plotting scripts and the
+(Anthropic), an AI assistant, was used in preparing this artifact and the paper. It drafted and edited the text of the paper and wrote the
+storage-registry contract, the ArbSys-pointer variant of ERC-1056, the measurement, analysis and plotting scripts and the
 documentation, and it ran these scripts under the authors' direction. It generated no measurement data: every
 value comes from running the released scripts against the networks. The authors directed the work, reviewed the
 results and take full responsibility for the artifact. The paper carries the same disclosure in its

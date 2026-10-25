@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this artifact, please cite the paper and the artifact."
 title: "did-rollup-registry-artifact: event-based vs storage-based DID registries on Ethereum rollups"
 version: 1.0.0
-date-released: 2026-10-24
+date-released: 2026-10-25
 license: MIT
 repository-code: "https://github.com/Vineeta-Rathore/did-rollup-registry-artifact"
 authors:
