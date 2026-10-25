@@ -84,7 +84,7 @@ print(f"  ERC-1056 receipts, 32 B vs 256 B: l1Fee ratio {int(e256['l1Fee'])/int(
 cA, pA = july_point(jr)
 print(f"  point A (July 256-B ERC receipt): L1 {cA:.6g} wei per charged byte, L2 gas price {pA} wei (base 250 + tip {pA-250})")
 for L in [int(e32['l1GasUsed'])/16, int(e256['l1GasUsed'])/16]:
-    print(f"  FastLZ size implied by Eq. (3) for charged {L:.2f} B: {(L + 42.5856)/0.8365:.1f} B (inferred, not measured)")
+    print(f"  FastLZ size implied by Eq. (2) for charged {L:.2f} B: {(L + 42.5856)/0.8365:.1f} B (inferred, not measured)")
 
 line("RQ2b  payload compressibility (did_compress.jsonl) -> Fig. 2")
 cells, init = compress_cells(D)

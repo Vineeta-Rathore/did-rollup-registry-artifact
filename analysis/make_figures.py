@@ -96,7 +96,7 @@ save(fig, "fig2_rollup_fee")
 
 # ---- Fig. 3: resolution latency vs history length (run 2), median with interquartile band -------
 hc, _ = history_cells(D, "did_history_v2.jsonl")
-fig, axes = plt.subplots(1, 3, figsize=(DCOL, 2.0), sharey=True)
+fig, axes = plt.subplots(1, 3, figsize=(DCOL, 1.9), sharey=True)
 panels = [("sepolia", "erc1056", "Sepolia (L1)"), ("opSepolia", "erc1056", "OP Sepolia"),
           ("arbSepolia", "erc1056_arbL2", "Arbitrum Sepolia, ArbSys-pointer registry")]
 for ax, (net, ed, title) in zip(axes, panels):
