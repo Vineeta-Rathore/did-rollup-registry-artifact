@@ -9,6 +9,9 @@ table and figure, the analysis and figure scripts, and the on-chain transaction 
 All deployments are on public testnets, so every measured transaction can be checked on
 a block explorer.
 
+Archived on Zenodo: release v1.0.0, [doi:10.5281/zenodo.23629516](https://doi.org/10.5281/zenodo.23629516);
+all versions, [doi:10.5281/zenodo.23629515](https://doi.org/10.5281/zenodo.23629515).
+
 ## Layout
 
 ```
@@ -212,6 +215,7 @@ Please cite the paper and, when you use the code or data, this artifact
   title   = {did-rollup-registry-artifact: event-based vs storage-based DID registries on Ethereum rollups},
   version = {1.0.0},
   year    = {2026},
+  doi     = {10.5281/zenodo.23629516},
   url     = {https://github.com/Vineeta-Rathore/did-rollup-registry-artifact}
 }
 ```

@@ -3,6 +3,11 @@ message: "If you use this artifact, please cite the paper and the artifact."
 title: "did-rollup-registry-artifact: event-based vs storage-based DID registries on Ethereum rollups"
 version: 1.0.0
 date-released: 2026-10-25
+doi: 10.5281/zenodo.23629515
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23629516
+    description: "Archived release v1.0.0"
 license: MIT
 repository-code: "https://github.com/Vineeta-Rathore/did-rollup-registry-artifact"
 authors:
